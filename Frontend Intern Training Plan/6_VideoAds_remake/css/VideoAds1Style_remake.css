@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../../assets/fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.video-ads{
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 16px 16px 0 0;
+    border: 1px solid #858585;
+    background-color: rgba(44, 44, 44, 0.75);
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    position: fixed;
+    bottom: 0;
+}
+
+.video-ads #video-ads__close-button{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(83, 83, 83, 0.9);
+    border: 1px solid #858585;
+    position: absolute;
+    top: -14px;
+    right: 15px;
+}
+
+#video-ads__close-button img{
+    height: 15px;
+    width: 15px;
+}
+
+.video-ads .video-ads__content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.video-ads__content .video-ads__title{
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Merriweather;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.video-ads__content .video-ads__brand{
+    display: flex;
+    align-items: center;
+}
+
+.video-ads .video-ads__Img{
+    aspect-ratio: 4/3;
+    height: 66px;
+}
+
+.video-ads__Img img{
+    width: 100%;
+    height: 100%;
+}
+
+.video-ads__content .video-ads__brand{
+    display: flex;
+    gap: 3px;
+}
+
+.video-ads__brand .logo-container{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.logo-container .logoSMA{
+    height: 16px;
+}
+
+.logo-container .logo2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6px;
+}
+
+.logo2 .textSMA{
+    height: 6.5px;
+}
+
+.logo2 .power{
+    display: flex;
+    align-items: center;
+    gap: 1.2px;
+}
+
+.power .powered-by{
+    height: 3px;
+}
+
+.power .FPT-Online{
+    height: 5px;
+}
+
+.video-ads__brand .divider{
+    width: 0.5px;
+    height: 7px;
+    background-color: rgba(102, 102, 102, 0.50);
+}
+
+.video-ads__brand .partner{
+    color: rgba(117, 117, 117, 0.80);
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+}
+
+.partner strong{
+    color: #757575;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+}

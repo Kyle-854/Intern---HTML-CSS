@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../../assets/fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    src: url('../../assets/fonts/PublicSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.masthead{
+    width: 100%;
+    padding-left: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.masthead .masthead__content-container{
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.masthead__content-container .masthead__content{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.masthead__content .icon{
+    width: 42px;
+    aspect-ratio: 21/10;
+}
+
+.masthead__content .masthead__title{
+    overflow: hidden;
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Merriweather;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    align-self: stretch;
+}
+
+.masthead__content .masthead__brand{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.masthead__brand .logoSMA{
+    width: 10px;
+    height: 13.491px;
+    aspect-ratio: 10.00/13.49;
+}
+
+.masthead__brand .divider{
+    width: 0.5px;
+    height: 7px;
+    background-color: rgba(102, 102, 102, 0.50);
+}
+
+.masthead__brand .partner{
+    color: rgba(102, 102, 102, 0.80);
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */           
+}
+
+.partner strong{
+    color: #000;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+
+.masthead .masthead__img{
+    aspect-ratio: 1/1;
+    width: 50%;
+    flex-shrink: 0;
+
+}
+
+.masthead__img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 377px){
+    .partner span{
+        display: none;
+    }
+}
+

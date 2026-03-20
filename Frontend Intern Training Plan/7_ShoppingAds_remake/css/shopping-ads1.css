@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 680px;
+    border: 1px solid #000;
+    margin: 20px;
+}
+
+.window .track{
+    display: flex;
+    gap: 6px;
+}
+
+.track .item{
+    width: 114px;
+    height: 230px;
+    border: 1px solid #ECECEC;
+    border-radius: 8px;
+    padding-bottom: 5px;
+}
+
+.item img{
+    width: 100%;
+    height: 114px;
+    border-radius: 7px 7px 0 0;
+    margin-bottom: 4px;
+}
+
+.item .name{
+    width: 102px;
+    height: 28px;
+    font-size: 12px;
+    font-weight: 400;
+
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    margin-bottom: 4px;
+}
+
+.item .price1{
+    color: #767676;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.item .price2{
+    color: #DD2225;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.item .recomment{
+    color: #048845;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.item .brand{
+    height: 16px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.brand .logo{
+    height: 16px;
+    width: 16px;
+}
+
+.brand p{
+    font-size: 11px;
+}
+
+.brand .verified{
+    height: 14px;
+    width: 14px;
+}

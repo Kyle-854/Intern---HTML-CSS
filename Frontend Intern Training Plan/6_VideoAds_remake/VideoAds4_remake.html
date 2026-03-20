@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Ads 4 - remake</title>
+    <link rel="stylesheet" href="./css/VideoAds4Style_remake.css">
+</head>
+<body>
+    <div class="video-ads">
+        <button id="video-ads__close-button">
+            <img src="../assets/images/close_fill.svg" alt="ic_close">
+        </button>
+
+        <div class="video-ads__Img">
+            <img src="../assets/images/video-ads.png" alt="image">
+        </div>
+
+        <div class="video-ads__content">
+            <div class="video-ads__info">
+                <h2 class="video-ads__title">
+                    Bcons City Dĩ An 2,2 tỷ đồng căn 2 phòng ngủ, giao nhà hoàn thiện
+                </h2>
+
+                <p class="video-ads__decription">
+                    Giỏ hàng tháng 04/2025 với chính sách hấp dẫn: Thanh toán 20% chiết khấu ngay 3% ký hợp đồng.
+                </p>
+            </div>
+
+            <div class="video-ads__brand">
+                <div class="logo-container">
+                    <img class="logoSMA" src="../assets/images/Vector (1).svg" alt="logoSMA">
+
+                    <div class="logo2">
+                        <img class="textSMA" src="../assets/images/SmartAds.svg" alt="textSMA">
+
+                        <div class="power">
+                            <img class="powered-by" src="../assets/images/Vector.svg" alt="powered-by">
+                            <img class="FPT-Online" src="../assets/images/Group 44.svg" alt="fpt-online">
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <p class="partner">Sponsored by <strong>Bcons Home</strong></p>
+                <img class="verified" src="../assets/images/verified 1.svg" alt="verified">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const closeButton = document.getElementById('video-ads__close-button');
+
+        closeButton.addEventListener('click', function(){
+            document.body.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

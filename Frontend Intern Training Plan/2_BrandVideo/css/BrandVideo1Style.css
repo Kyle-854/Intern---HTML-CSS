@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.brand-video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 680px;
+    height: 425px;
+    border: 1px solid #000;
+    margin: 20px;
+}
+
+.brand-video .brand-video__ad{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.brand-video .brand-video__content{
+    width: 600px;
+    height: 399px;
+}
+
+.brand-video__content .brand-video__iframe{
+    width: 100%;
+    height: 337px;
+    margin-bottom: 5px;
+}
+
+.brand-video__content .brand-video__title{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.brand-video__brand{
+    display: flex;
+    height: 16px;
+    width: 600px;
+}
+
+.brand-video__brand .Logo-SmartAds{
+    margin-right: 3.2px;
+}
+
+.brand-video__brand .logo__content{
+    display: flex;
+    flex-direction: column;
+    width: 37.6px;
+    height: 13.1px;
+    gap: 1px;
+    margin-top: auto;
+}
+
+.logo__content .SmartAds{
+    width: 100%;
+    height: 6.4px;
+}
+
+.logo__content .logo__sub-content{
+    display: flex;
+    width: 100%;
+    height: 5.09px;
+}
+
+.brand-video__brand p{
+    color: #757575;
+    font-size: 12px;
+}
+
+.brand-video__brand .divider{
+    margin: 0 6px;
+}
+
+.brand-video__brand img{
+    margin-left: 2px;
+}

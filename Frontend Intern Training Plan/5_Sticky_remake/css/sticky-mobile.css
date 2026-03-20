@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../../assets/fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sticky{
+    width: 100%;
+    padding: 8px 20px;
+    background: #FFF;
+    box-shadow: 0 -6px 16px 0 rgba(0, 0, 0, 0.10);
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+}
+
+.sticky #sticky__close-button{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 1px rgba(0, 0, 0, 0.10);
+    position: absolute;
+    top: -10px;
+    right: 15px;
+}
+
+.sticky__close-button img{
+    height: 12px;
+    width: 12px;
+}
+
+.sticky .sticky__content-container{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 84px;
+}
+
+.sticky__content-container .sticky__img{
+    aspect-ratio: 1/1;
+    height: 84px;
+}
+
+.sticky__img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sticky__content-container .sticky__content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: space-between;
+}
+
+.sticky__content .sticky__title{
+    color: #0F0F0F;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.sticky__content .sticky__brand{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sticky__brand .divider{
+    width: 0.5px;
+    height: 7px;
+    background-color: rgba(102, 102, 102, 0.50);
+}
+
+.sticky__brand .partner{
+    color: #666;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.partner strong{
+    color: #000;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.sticky .sticky__button-tu-van{
+    width: 24px;
+    height: 24px;
+    background-color: #03A9F5;
+    padding: 4px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

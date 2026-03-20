@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sticky{
+    width: 728px;
+    height: 91px;
+    background-color: #EBF7FF;
+    border: 1px solid #DADADA;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    padding-right: 16px;
+    margin: 20px;
+    position: relative;
+}
+
+.sticky .sticky__Close{
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    top: 1px;
+    right: 1px;
+    background-color: #FAFAFA;
+}
+
+.sticky .sticky__content{
+    display: flex;
+    width: 712px;
+    height: 90px;
+}
+
+.sticky__content .sticky__subcontent{
+    width: 567px;
+    height: 90px;
+    display: flex;
+}
+
+.sticky__subcontent .sticky__Img{
+    width: 160px;
+    margin-right: 12px;
+}
+
+.sticky__subcontent .sticky__Img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px 0 0 0;
+}
+
+.sticky__subcontent .sticky__Info{
+    width: 395px;
+    height: 64px;
+    margin: auto 0;
+    margin-right: 12px;
+}
+
+.sticky__Info .sticky__title{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.sticky__brand{
+    display: flex;
+    height: 16px;
+    width: 600px;
+}
+
+.sticky__brand .Logo-SmartAds{
+    margin-right: 3.2px;
+}
+
+.sticky__brand .logo__content{
+    display: flex;
+    flex-direction: column;
+    width: 37.6px;
+    height: 13.1px;
+    gap: 1px;
+    margin-top: auto;
+}
+
+.logo__content .SmartAds{
+    width: 100%;
+    height: 6.4px;
+}
+
+.logo__content .logo__sub-content{
+    display: flex;
+    width: 100%;
+    height: 5.09px;
+}
+
+.sticky__brand p{
+    color: #757575;
+    font-size: 12px;
+}
+
+.sticky__brand .divider{
+    margin: 0 6px;
+}
+
+.sticky__brand img{
+    margin-left: 2px;
+}
+
+.sticky__content .sticky__button{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sticky__button .btn-Tu-Van{
+    text-decoration: none;
+    font-size: 14px;
+    color: #FFFFFF;
+    background-color: #03A9F5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 133px;
+    height: 32px;
+    text-align: center;
+}
+
+.text-Mobile{
+    display: none;
+}
+
+@media (max-width: 767px){
+    .sticky{
+        width: 414px;
+        height: 100px;
+        padding: 8px 20px;
+        background-color: #EBF7FF;
+        border: 2px solid #DADADA;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    .sticky .sticky__Close{
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ECECEC;
+        border-radius: 50%;
+        top: -10px;
+        right: 10px;
+        background-color: #FAFAFA;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sticky__Close img{
+        width: 12px;
+        height: 12px;
+    }
+
+    .sticky .sticky__content{
+        display: flex;
+        width: 374px;
+        height: 90px;
+    }
+
+    .sticky__content .sticky__subcontent{
+        width: 346px;
+        height: 84px;
+        display: flex;
+    }
+
+    .sticky__subcontent .sticky__Img{
+        width: 84px;
+        margin-right: 12px;
+    }
+
+    .sticky__subcontent .sticky__Img img{
+        width: 84px;
+        height: 100%;
+        border-radius: 3px 0 0 0;
+    }
+
+    .sticky__subcontent .sticky__Info{
+        width: 254px;
+        height: 64px;
+        margin: auto 0;
+        margin-right: 12px;
+    }
+
+    .sticky__Info .sticky__title{
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .sticky__brand{
+        display: flex;
+        height: 16px;
+        width: 600px;
+    }
+
+    .sticky__brand .Logo-SmartAds{
+        margin-right: 3.2px;
+    }
+
+    .sticky__brand .logo__content{
+        display: flex;
+        flex-direction: column;
+        width: 37.6px;
+        height: 13.1px;
+        gap: 1px;
+        margin-top: auto;
+    }
+
+    .logo__content .SmartAds{
+        width: 100%;
+        height: 6.4px;
+    }
+
+    .logo__content .logo__sub-content{
+        display: flex;
+        width: 100%;
+        height: 5.09px;
+    }
+
+    .sticky__brand p{
+        color: #757575;
+        font-size: 12px;
+    }
+
+    .sticky__brand .divider{
+        margin: 0 6px;
+    }
+
+    .sticky__brand img{
+        margin-left: 2px;
+    }
+
+    .sticky__content .sticky__button{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .sticky__button .btn-Tu-Van{
+        font-size: 14px;
+        color: #FFFFFF;
+        background-color: #03A9F5;
+        padding: 4px;
+        border-radius: 12px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .text-PC{
+        display: none;
+    }
+
+    .text-Mobile{
+        display: block;
+    }
+}

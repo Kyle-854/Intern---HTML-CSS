@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Web</title>
+    <link rel="stylesheet" href="./css/sticky-web.css">
+</head>
+<body>
+    <div class="sticky">
+
+        <button id="sticky__close-button">
+            <img src="../assets/images/close_fill.svg" alt="ic_close">
+        </button>
+
+        <div class="sticky__content-container">
+            <div class="sticky__img">
+                <img src="../assets/images/Event image.png" alt="image">
+            </div>
+
+            <div class="sticky__content">
+                <h2 class="sticky__title">
+                    Biệt thự song lập, đơn lập view biển hồ 800 ha, cạnh 2 sân golf
+                </h2>
+
+                <div class="sticky__brand">
+                    <div class="logo-container">
+                        <img class="logoSMA" src="../assets/images/Vector (1).svg" alt="logoSMA">
+
+                        <div class="logo2">
+                            <img class="textSMA" src="../assets/images/SmartAds.svg" alt="textSMA">
+
+                            <div class="power">
+                                <img class="powered-by" src="../assets/images/Vector.svg" alt="powered-by">
+                                <img class="FPT-Online" src="../assets/images/Group 44.svg" alt="fpt-online">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <p class="partner">CEI Vietnam</p>
+                    <img class="verified" src="../assets/images/verified 1.svg" alt="verified">
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="sticky__button-tu-van">
+            Tư vấn miễn phí
+        </a>
+    </div>
+
+    <script>
+        const closeButton = document.getElementById('sticky__close-button');
+
+        closeButton.addEventListener('click', function(){
+            document.body.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

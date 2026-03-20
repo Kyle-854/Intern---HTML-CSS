@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.native{
+    display: flex;
+    width: 1209px;
+    height: 275px;
+    border: 0.9483px solid #D0D9D8;
+}
+
+.native .native__Img{
+    width: 376.7956px;
+}
+
+.native .native__Img img{
+    width: 100%;
+    height: 100%;
+}
+
+.native .native__Info{
+    display: flex;
+    flex-direction: column;
+    padding: 30.3867px;
+    height: 275px;
+    width:771px;
+}
+
+.native .native__Info .native__Title{
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Merriweather;
+    margin-bottom: 20px;
+}
+
+.native .native__Info .native__Description{
+    color: #9B9B9B;
+    margin-bottom: 20px;
+}
+
+.native__Brand{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

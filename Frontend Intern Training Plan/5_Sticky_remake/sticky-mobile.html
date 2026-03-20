@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Web</title>
+    <link rel="stylesheet" href="./css/sticky-mobile.css">
+</head>
+<body>
+    <div class="sticky">
+
+        <button id="sticky__close-button">
+            <img src="../assets/images/close_fill.svg" alt="ic_close">
+        </button>
+
+        <div class="sticky__content-container">
+            <div class="sticky__img">
+                <img src="../assets/images/Event image.png" alt="image">
+            </div>
+
+            <div class="sticky__content">
+                <h2 class="sticky__title">
+                    Tham gia sự kiện ngày hội trung học nội trú Canada 2024 ngay!
+                </h2>
+
+                <div class="sticky__brand">
+                    <img class="logoSMA" src="../assets/images/Logo_SMA.svg" alt="logoSMA">
+                    <div class="divider"></div>
+                    <p class="partner">Sponsored <strong>Bosch Home</strong></p>
+                    <img class="verified" src="../assets/images/verified 1.svg" alt="verified">
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="sticky__button-tu-van">
+            <img src="../assets/images/arrow_right_line.svg" alt="arrow_right_line">
+        </a>
+    </div>
+
+    <script>
+        const closeButton = document.getElementById('sticky__close-button');
+
+        closeButton.addEventListener('click', function(){
+            document.body.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
