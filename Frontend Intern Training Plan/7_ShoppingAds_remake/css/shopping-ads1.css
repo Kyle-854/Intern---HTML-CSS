@@ -4,85 +4,173 @@
     box-sizing: border-box;
 }
 
-.wrapper{
-    width: 680px;
-    border: 1px solid #000;
+/* .shopping-ads {
+    width: 100%;
+
+} */
+
+.shopping-ads{
+    max-width: 600px;
+    padding: 16px 8px;
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
     margin: 20px;
+
 }
 
-.window .track{
+.shopping-ads .items-container{
+    width: 100%;
     display: flex;
     gap: 6px;
 }
 
-.track .item{
-    width: 114px;
-    height: 230px;
+.items-container .item {
     border: 1px solid #ECECEC;
     border-radius: 8px;
     padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.item img{
+.item .item__img{
+    aspect-ratio: 1/1;
+    width: 114px;
+    
+}
+
+.item__img img{
     width: 100%;
-    height: 114px;
+    height: 100%;
+    object-fit: cover;
     border-radius: 7px 7px 0 0;
-    margin-bottom: 4px;
+
 }
 
-.item .name{
-    width: 102px;
-    height: 28px;
-    font-size: 12px;
-    font-weight: 400;
+.item .item__content{
+    padding: 0 6px;
+}
 
-    /* white-space: nowrap;
+.item__content .item__name {
     overflow: hidden;
-    text-overflow: ellipsis; */
+    color: #222;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
-
-    margin-bottom: 4px;
+    -webkit-line-clamp: 2;
+    align-self: stretch;
 }
 
-.item .price1{
-    color: #767676;
-    font-size: 12px;
-    text-decoration: line-through;
-}
-
-.item .price2{
-    color: #DD2225;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.item .recomment{
-    color: #048845;
-    font-size: 11px;
-    margin-bottom: 8px;
-}
-
-.item .brand{
-    height: 16px;
+.item__content .item__price1{
     display: flex;
+    gap: 1px;
     align-items: center;
+    margin-top: 4px;
+}
+
+.item__price1 .price1{
+    overflow: hidden;
+    color: #767676;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: line-through;
+}
+
+.item__price1 .unit1{
+    font-size: 10px;
+}
+
+.item__content .item__price2{
+    display: flex;
+    gap: 1px;
+    align-items: center;
+}
+
+.item__price2 .price2{
+    overflow: hidden;
+    color: #DD2225;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.item__price2 .unit2{
+    font-size: 12px;
+}
+
+.item__content .item__recommend{
+    overflow: hidden;
+    color: #048845;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2px;
+}
+
+.item__content .item__brand{
+    margin-top: 8px;
+    display: flex;
     gap: 2px;
 }
 
-.brand .logo{
+.item__brand .brand__logo{
     height: 16px;
     width: 16px;
+    aspect-ratio: 1/1;
 }
 
-.brand p{
-    font-size: 11px;
+.item__brand .brand__name{
+    color: #222;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 16.5px */
 }
 
-.brand .verified{
-    height: 14px;
-    width: 14px;
+.shopping-ads #prev-button, .shopping-ads #next-button{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: none;
+    background: rgba(0, 0, 0, 0.20);
+}
+
+.shopping-ads #prev-button{
+    position: absolute;
+    left: 4px;
+    top: 35%;
+}
+
+.shopping-ads #next-button{
+    position: absolute;
+    right: 4px;
+    top: 35%;
 }
