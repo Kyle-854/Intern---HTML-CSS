@@ -4,88 +4,94 @@
     box-sizing: border-box;
 }
 
-/* .shopping-ads {
-    width: 100%;
-
-} */
-
 .shopping-ads{
-    /* max-width: 600px; */
-    padding: 16px 8px;
-    border-radius: 2px;
-    border: 1px solid #ECECEC;
+    border: 1px solid #E5E5E5;
+    padding: 20px 8px 8px 8px;
     position: relative;
-    
-    /* margin: 20px; */
 
+    height: 100vh;
+
+    /* margin: 20px; */
 }
 
-.shopping-ads .items-container{
+.shopping-ads .shopping-ads__wrapper{
     display: flex;
+    flex-direction: column;
     gap: 6px;
-    overflow: hidden;
 
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    scroll-snap-type:  y mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-.items-container::-webkit-scrollbar{
+.shopping-ads__wrapper::-webkit-scrollbar{
     display: none;
 }
 
-.items-container .item {
-    border: 1px solid #ECECEC;
-    border-radius: 8px;
-    padding-bottom: 5px;
+.shopping-ads__wrapper .items-container{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    gap: 8px;
 
     scroll-snap-align: start;
 }
 
+.items-container .item{
+    display: flex;
+    padding-bottom: 5px;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
+    border: 1px solid #F2F2F2;
+    background: #FFF;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.10);
+    width: 100%;
+
+}
+
 .item .item__img{
     aspect-ratio: 1/1;
-    width: 114px;
-    
+    /* width: 138px; */
 }
 
 .item__img img{
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
-    border-radius: 7px 7px 0 0;
 
+    border-radius: 7px 7px 0 0;
 }
 
 .item .item__content{
-    padding: 0 6px;
+    padding: 0 8px;
 }
 
-.item__content .item__name {
-    overflow: hidden;
+.item__content .item__name{
     color: #222;
     font-variant-numeric: lining-nums proportional-nums;
     text-overflow: ellipsis;
     font-family: Arial;
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
+    
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    align-self: stretch;
+    overflow: hidden;
+    margin-bottom: 4px;
+    
 }
 
 .item__content .item__price1{
     display: flex;
     gap: 1px;
     align-items: center;
-    margin-top: 4px;
+    min-height: 14px;
 }
 
 .item__price1 .price1{
@@ -97,8 +103,7 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 14px;
-    min-height: 14px;
+    line-height: normal;
     text-decoration-line: line-through;
 }
 
@@ -110,6 +115,7 @@
     display: flex;
     gap: 1px;
     align-items: center;
+    margin-bottom: 2px;
 }
 
 .item__price2 .price2{
@@ -118,7 +124,7 @@
     font-variant-numeric: lining-nums proportional-nums;
     text-overflow: ellipsis;
     font-family: Arial;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -135,20 +141,20 @@
     text-overflow: ellipsis;
     font-family: Arial;
     font-size: 11px;
+    min-height: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 13px;
-    min-height: 13px;
-    margin-top: 2px;
+    line-height: normal;
+    margin-bottom: 4px;
 }
 
 .item__content .item__brand{
-    margin-top: 8px;
     display: flex;
-    gap: 2px;
+    gap: 2px;align-items: center;
 }
 
 .item__brand .brand__logo{
+    /* aspect-ratio: 1/1; */
     max-width: 20px;
 }
 
@@ -162,7 +168,7 @@
     line-height: 150%; /* 16.5px */
 }
 
-.shopping-ads #prev-button, .shopping-ads #next-button{
+.shopping-ads #up-button, .shopping-ads #down-button{
     display: flex;
     width: 24px;
     height: 24px;
@@ -175,16 +181,19 @@
     background: rgba(0, 0, 0, 0.20);
 }
 
-.shopping-ads #prev-button{
+.shopping-ads #up-button{
     position: absolute;
-    left: 4px;
-    top: 35%;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
 }
 
-.shopping-ads #next-button{
+.shopping-ads #down-button{
     position: absolute;
-    right: 4px;
-    top: 35%;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+
 }
 
 .shopping-ads .logo-sma{
