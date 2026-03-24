@@ -12,7 +12,8 @@
 }
 
 .native{
-    width: 100%;
+    width: 304px;
+    height: 254px;
     border: 2px solid #F5F5F5;
     display: flex;
     flex-direction: column;
@@ -39,6 +40,9 @@
 }
 
 .native .native__img{
+    width: 300px;
+    height: 180px;
+    flex-shrink: 0;
     aspect-ratio: 5/3;
 }
 
@@ -63,6 +67,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px; /* 133.333% */
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .native__content .native__brand{
@@ -103,8 +112,8 @@
 }
 
 .native__brand .divider{
-    width: 0.5px;
-    height: 7px;
+    width: 0.87px;
+    height: 8px;
     background-color: rgba(102, 102, 102, 0.50);
 }
 
