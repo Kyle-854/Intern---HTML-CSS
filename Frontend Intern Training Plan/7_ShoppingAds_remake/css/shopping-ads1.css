@@ -208,3 +208,9 @@
     flex-shrink: 0;
     aspect-ratio: 29/40;
 }
+
+@media screen and (max-width: 375px){
+    .shopping-ads #prev-button{
+        display: none;
+    }
+}
