@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const resetAutoPlay = () =>{
         clearInterval(autoPlay);
-        startAutoPlay();
+        // startAutoPlay();
     };
 
     nextButton.addEventListener('click', () =>{
@@ -55,5 +55,5 @@ document.addEventListener('DOMContentLoaded', function(){
         resetAutoPlay();
     });
 
-    startAutoPlay();
+    // startAutoPlay();
 });

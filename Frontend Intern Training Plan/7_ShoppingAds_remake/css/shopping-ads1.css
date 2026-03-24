@@ -177,13 +177,16 @@
 .shopping-ads #prev-button{
     position: absolute;
     left: 4px;
-    top: 35%;
+    top: 50%;
+    transform: translateY(-50%);
+
 }
 
 .shopping-ads #next-button{
     position: absolute;
     right: 4px;
-    top: 35%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .shopping-ads .logo-sma{
