@@ -23,7 +23,6 @@
     overflow: hidden;
     overflow-y: auto;
     scroll-snap-type:  y mandatory;
-    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 

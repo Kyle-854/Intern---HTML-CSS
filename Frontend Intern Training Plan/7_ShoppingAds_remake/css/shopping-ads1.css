@@ -27,7 +27,6 @@
 
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 

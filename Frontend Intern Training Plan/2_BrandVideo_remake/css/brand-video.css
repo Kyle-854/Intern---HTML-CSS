@@ -21,6 +21,7 @@
 .brand-video{
     width: 100%;
     border: 1px solid #EBEBEB;
+    background-color: #FCFAF6;
     padding: 5px 35px;
     display: flex;
     flex-direction: column;
@@ -57,7 +58,11 @@
 }
 
 .brand-video__content iframe{
-    aspect-ratio: 5/3;
+    aspect-ratio: 16/9;
+}
+
+.brand-video__content video{
+    aspect-ratio: 16/9;
 }
 
 .brand-video__content .barnd-video__info{
@@ -79,6 +84,7 @@
 .barnd-video__info .brand-video__brand{
     display: flex;
     gap: 3px;
+    align-items: center;
 }
 
 .brand-video__brand .logo-container{
@@ -117,9 +123,9 @@
 }
 
 .brand-video__brand .divider{
-    font-size: 12px;
-    font-weight: 700;
-    color: rgba(102, 102, 102, 0.50);
+    width: 0.5px;
+    height: 7px;
+    background-color: rgba(102, 102, 102, 0.50);
 }
 
 .brand-video__brand .partner{
