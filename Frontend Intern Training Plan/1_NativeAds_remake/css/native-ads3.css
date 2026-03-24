@@ -8,12 +8,12 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .native{
-    width: 304px;
-    height: 254px;
+    width: 300px;
+    height: 250px;
     border: 2px solid #F5F5F5;
     display: flex;
     flex-direction: column;
@@ -78,7 +78,6 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    margin-bottom: 2px;
 }
 
 .native__brand .logo-container{
