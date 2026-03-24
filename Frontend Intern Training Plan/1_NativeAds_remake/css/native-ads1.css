@@ -75,6 +75,8 @@
 
 .native__content .line{
     width: 100%;
+    border: none;
+    border-top: 1px solid #F2F2F2;
 }
 
 .native__content .native__footer{
@@ -96,7 +98,7 @@
 .native__brand .rectangle{
     width: 3px;
     height: 16px;
-    background-color: rgba(102, 102, 102, 0.50);
+    background-color: #637381
 }
 
 .native__brand .partner{
