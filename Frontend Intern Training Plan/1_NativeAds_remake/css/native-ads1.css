@@ -76,7 +76,9 @@
 .native__content .line{
     width: 100%;
     border: none;
-    border-top: 1px solid #F2F2F2;
+    height: 1.5px;
+    background-color: #F2F2F2;
+
 }
 
 .native__content .native__footer{
