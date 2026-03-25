@@ -27,8 +27,6 @@
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
-
     border-bottom: 1px solid #9F224E;
 }
 
@@ -39,17 +37,19 @@
 .news__item-container .news__item{
     display: flex;
     gap: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 15.5px;
 }
 
 .news__item .news__img{
     aspect-ratio: 5/3;
+    max-width: 110px;
 }
 
 .news__img img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .news__item .news__title{
@@ -73,9 +73,11 @@
 .news__item-container .line{
     border: none;
     border-top: 1px dashed #B8B8B8;
-    margin-bottom: 16px;
+    margin-bottom: 15.5px;
 }
 
 .news__item-container .logo{
     float: right;
+    width: 60px;
+    aspect-ratio: 63/16;
 }
