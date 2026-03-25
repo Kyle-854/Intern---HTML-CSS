@@ -8,7 +8,6 @@ body{
     width: 100%;
     position: fixed;
     bottom: 0;
-
 }
 
 .news{
@@ -57,6 +56,7 @@ body{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .news__content-container .news__content{
