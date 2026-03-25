@@ -20,6 +20,7 @@
 
 .news{
     width: 100%;
+    height: 100%;
     border: 1px solid #E5E5E5;
     padding: 15px;
     display: flex;
@@ -37,13 +38,16 @@
 }
 
 .news__item .news__img{
-    aspect-ratio: 5/3;
+    aspect-ratio: 145/88;
+    width: 145px;
+    flex-shrink: 0;
 }
 
 .news__img img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .news__item .news__content{
@@ -72,7 +76,9 @@
 
 .line{
     border: none;
-    border-top: 1px solid #E5E5E5;
+    height: 1px;
+    background-color: #E5E5E5;
+    width: 100%;
     margin: 13px 0;
 }
 
