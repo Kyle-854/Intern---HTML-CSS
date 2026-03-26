@@ -153,8 +153,7 @@
 }
 
 .item__brand .brand__logo{
-    /* aspect-ratio: 1/1; */
-    max-width: 20px;
+    width: 16px;
 }
 
 .item__brand .brand__name{
@@ -165,6 +164,12 @@
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 16.5px */
+}
+
+.item__brand .verified{
+    width: 14px;
+    height: 14px;
+    aspect-ratio: 1/1;
 }
 
 .shopping-ads #up-button, .shopping-ads #down-button{
