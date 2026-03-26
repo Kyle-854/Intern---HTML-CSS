@@ -24,7 +24,7 @@
     gap: 12px;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: relative;
     bottom: 0;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .sticky__content-container .sticky__img{
-    aspect-ratio: 5/3;
+    aspect-ratio: 16/9;
     height: 90px;
 }
 
@@ -122,8 +122,8 @@
 }
 
 .sticky__brand .divider{
-    width: 0.5px;
-    height: 7px;
+    width: 0.87px;
+    height: 6.64px;
     background-color: rgba(102, 102, 102, 0.50);
 }
 
