@@ -144,6 +144,7 @@
 .item__content .item__brand{
     margin-top: 8px;
     display: flex;
+    align-items: center;
     gap: 2px;
 }
 
@@ -161,6 +162,12 @@
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 16.5px */
+}
+
+.item__brand .verified{
+    width: 14px;
+    height: 14px;
+    aspect-ratio: 1/1;
 }
 
 .shopping-ads #prev-button, .shopping-ads #next-button{
