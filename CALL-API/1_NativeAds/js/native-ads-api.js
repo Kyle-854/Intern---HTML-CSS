@@ -6,21 +6,38 @@ async function loadData(){
         //XỬ LÝ
         //url
         const nativeFrame = document.querySelector('.native');
-        nativeFrame.addEventListener('click', function(){
-            window.open(data.url, '_blank');
-        });
+        if(nativeFrame){
+            nativeFrame.addEventListener('click', function(){
+                window.open(data.url, '_blank');
+            });
+        }
         //title
-        document.querySelector('.native__title').innerText = data.title;
+        const native_title = document.querySelector('.native__title');
+        if (native_title) {
+            native_title.innerText = data.title;
+        }
         //img
-        document.querySelector('.native__img').src = data.img__url;
+        const native_img = document.querySelector('.native__img');
+        if (native_img) {
+            native_img.src = data.img__url;
+        }
         //brand__name
-        document.querySelector('.partner').innerText = data.brand__name;
+        const native_brand_name = document.querySelector('.partner');
+        if (native_brand_name) {
+            native_brand_name.innerText = data.brand__name;
+        }
         //decription
-        document.querySelector('.native__decription').innerText = data.decription;
+        const native_decription = document.querySelector('.native__decription');
+        if (native_decription) {
+            native_decription.innerText = data.decription;
+        }
+        //cta
+        const native_cta = document.querySelector('.cta');
+        if (native_cta) {
+            native_cta.innerText = data.cta;
+        }
         //brand__img
 
-        //cta
-        document.querySelector('.cta').innerText = data.cta;
 
     } catch (error) {
         console.error('Lỗi: ', error);
