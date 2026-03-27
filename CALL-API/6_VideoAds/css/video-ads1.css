@@ -47,7 +47,7 @@
 .video-ads .video-ads__content{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: space-between;
 }
 
 .video-ads__content .video-ads__title{
