@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../../assets/fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    src: url('../../assets/fonts/PublicSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.brand-video{
+    width: 100%;
+    border: 1px solid #EBEBEB;
+    background-color: #FCFAF6;
+    padding: 5px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.brand-video .brand-video__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.brand-video__header img{
+    width: 16px;
+    height: 16px;
+}
+
+.brand-video__header p{
+    color: var(--text-subdued, #7F7F7F);
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+.brand-video .brand-video__content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.brand-video__content iframe{
+    aspect-ratio: 16/9;
+}
+
+.brand-video__content video{
+    aspect-ratio: 16/9;
+}
+
+.brand-video__content .barnd-video__info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.barnd-video__info .brand-video__title{
+    color: #222;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Merriweather;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+}
+
+.barnd-video__info .brand-video__brand{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.brand-video__brand .logo-container{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.logo-container .logoSMA{
+    height: 16px;
+}
+
+.logo-container .logo2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6px;
+}
+
+.logo2 .textSMA{
+    height: 6.5px;
+}
+
+.logo2 .power{
+    display: flex;
+    align-items: center;
+    gap: 1.2px;
+}
+
+.power .powered-by{
+    height: 3px;
+}
+
+.power .FPT-Online{
+    height: 5px;
+}
+
+.brand-video__brand .divider{
+    width: 0.5px;
+    height: 7px;
+    background-color: rgba(102, 102, 102, 0.50);
+}
+
+.brand-video__brand .partner{
+    color: rgba(117, 117, 117, 0.80);
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+}
+
+.partner strong{
+    color: #757575;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+}

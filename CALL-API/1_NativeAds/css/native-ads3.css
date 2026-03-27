@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../../assets/fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.native{
+    width: 300px;
+    height: 250px;
+    border: 2px solid #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.native #native__close-button{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1px solid #ECECEC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -12px;
+    left: 4px;
+}
+
+#native__close-button img{
+    height: 15px;
+    width: 15px;
+}
+
+.native .native__img{
+    width: 300px;
+    height: 180px;
+    flex-shrink: 0;
+    aspect-ratio: 5/3;
+}
+
+.native__img img{
+    height: 100%;
+    width: 100%;
+}
+
+.native .native__content{
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+.native__content .native__title{
+    color: #222;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Merriweather;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 133.333% */
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.native__content .native__brand{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.native__brand .logo-container{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.logo-container .logo2{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.logo2 .textSMA{
+    height: 7px;
+}
+
+.logo2 .power{
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.power .powered-by{
+    height: 3px;
+}
+
+.power .FPT-Online{
+    height: 5px;
+}
+
+.native__brand .divider{
+    width: 0.87px;
+    height: 8px;
+    background-color: rgba(102, 102, 102, 0.50);
+}
+
+.native__brand .partner{
+    color: rgba(117, 117, 117, 0.80);
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+}
+
+.partner strong{
+    color: #757575;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+}

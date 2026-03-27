@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.shopping-ads{
+    border: 1px solid #E5E5E5;
+    padding: 20px 8px 8px 8px;
+    position: relative;
+
+    height: 100vh;
+
+    /* margin: 20px; */
+}
+
+.shopping-ads .shopping-ads__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    scroll-snap-type:  y mandatory;
+    scrollbar-width: none;
+}
+
+.shopping-ads__wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.shopping-ads__wrapper .items-container{
+    width: 100%;
+    display: flex;
+    gap: 8px;
+
+    scroll-snap-align: start;
+}
+
+.items-container .item{
+    display: flex;
+    padding-bottom: 5px;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
+    border: 1px solid #F2F2F2;
+    background: #FFF;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.10);
+    width: 100%;
+
+}
+
+.item .item__img{
+    aspect-ratio: 1/1;
+    /* width: 138px; */
+}
+
+.item__img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    border-radius: 7px 7px 0 0;
+}
+
+.item .item__content{
+    padding: 0 8px;
+}
+
+.item__content .item__name{
+    color: #222;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 4px;
+    
+}
+
+.item__content .item__price1{
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    min-height: 14px;
+}
+
+.item__price1 .price1{
+    overflow: hidden;
+    color: #767676;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: line-through;
+}
+
+.item__price1 .unit1{
+    font-size: 10px;
+}
+
+.item__content .item__price2{
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.item__price2 .price2{
+    overflow: hidden;
+    color: #DD2225;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.item__price2 .unit2{
+    font-size: 12px;
+}
+
+.item__content .item__recommend{
+    overflow: hidden;
+    color: #048845;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-overflow: ellipsis;
+    font-family: Arial;
+    font-size: 11px;
+    min-height: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 4px;
+}
+
+.item__content .item__brand{
+    display: flex;
+    gap: 2px;align-items: center;
+}
+
+.item__brand .brand__logo{
+    width: 16px;
+}
+
+.item__brand .brand__name{
+    color: #222;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 16.5px */
+}
+
+.item__brand .verified{
+    width: 14px;
+    height: 14px;
+    aspect-ratio: 1/1;
+}
+
+.shopping-ads #up-button, .shopping-ads #down-button{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: none;
+    background: rgba(0, 0, 0, 0.20);
+}
+
+.shopping-ads #up-button{
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+}
+
+.shopping-ads #down-button{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+
+}
+
+.shopping-ads .logo-sma{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: 28px;
+    height: 16px;
+    padding: 2px 7px 2px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 0 0 0 8px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.logo-sma img{
+    width: 8.23px;
+    height: 11.352px;
+    flex-shrink: 0;
+    aspect-ratio: 29/40;
+}

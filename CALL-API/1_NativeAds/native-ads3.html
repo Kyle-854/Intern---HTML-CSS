@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Ads 3 - remake</title>
+    <link rel="stylesheet" href="./css/native-ads3.css">
+</head>
+<body>
+    <div class="native">
+        <button id="native__close-button">
+            <img src="../assets/images/close_fill.svg" alt="btn_close">
+        </button>
+
+        <div class="native__img">
+            <img src="../assets/images/image (1).png" alt="Image">
+        </div>
+
+        <div class="native__content">
+            <h2 class="native__title">
+                Vinhomes Cần Giờ ra mắt đợt 1: Nhà 'tựa rừng, view hồ' 800 ha
+            </h2>
+
+            <div class="native__brand">
+                <div class="logo-container">
+                    <img class="logoSMA" src="../assets/images/logo-sma.svg" alt="logoSMA">
+
+                    <div class="logo2">
+                        <img class="textSMA" src="../assets/images/logo-sma-text.svg" alt="textSMA">
+
+                        <div class="power">
+                            <img class="powered-by" src="../assets/images/logo-powered-by-text.svg" alt="powered-by">
+                            <img class="FPT-Online" src="../assets/images/logo-fpt-online.svg" alt="fpt-online">
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <p class="partner">Sponsored by <strong>Vinhomes</strong></p>
+                <img class="verified" src="../assets/images/logo-verified.svg" alt="verified">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const closeButton = document.getElementById('native__close-button');
+
+        closeButton.addEventListener('click', function(){
+            document.body.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

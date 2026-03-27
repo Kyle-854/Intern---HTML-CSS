@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../../assets/fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sticky{
+    width: 100%;
+    padding-right: 16px;
+    border-radius: 4px 4px 0 0;
+    border-top: 1px solid #DADADA;
+    border-right: 1px solid #DADADA;
+    border-left: 1px solid #DADADA;
+    background: #EBF7FF;
+    box-shadow: 0 -4px 16px -2px rgba(16, 24, 40, 0.15);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+}
+
+.sticky #sticky__close-button{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+.sticky__close-button img{
+    height: 15px;
+    width: 15px;
+}
+
+.sticky .sticky__content-container{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sticky__content-container .sticky__img{
+    aspect-ratio: 16/9;
+    height: 90px;
+}
+
+.sticky__img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px 0 0 0;
+}
+
+.sticky__content-container .sticky__content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sticky__content .sticky__title{
+    color: #222;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Merriweather;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.sticky__content .sticky__brand{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sticky__brand .logo-container{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.logo-container .logo2{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.logo2 .textSMA{
+    height: 7px;
+}
+
+.logo2 .power{
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.power .powered-by{
+    height: 3px;
+}
+
+.power .FPT-Online{
+    height: 5px;
+}
+
+.sticky__brand .divider{
+    width: 0.87px;
+    height: 6.64px;
+    background-color: rgba(102, 102, 102, 0.50);
+}
+
+.sticky__brand .partner{
+    color: #000;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.sticky .sticky__button-tu-van{
+    text-decoration: none;
+    background-color: #03A9F5;
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    color: #FFF;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    white-space: nowrap;
+}

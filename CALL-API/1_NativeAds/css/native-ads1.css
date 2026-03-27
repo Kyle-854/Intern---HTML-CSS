@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../../assets/fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    src: url('../../assets/fonts/PublicSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.native{
+    width: 100%;
+    min-height: 275px;
+    border: 1px solid #D0D9D8;
+    display: flex;
+}
+
+.native .native__img-container{
+    aspect-ratio: 4/3;
+
+    height: 275px;
+    flex-shrink: 0;
+}
+
+.native__img-container .native__img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.native .native__content{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.native__content .native__info{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.native__info .native__title{
+    color: #333;
+    font-family: 'Merriweather';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.native__info .native__decription{
+    color: #9B9B9B;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 400;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.native__content .line{
+    width: 100%;
+    border: none;
+    height: 1.5px;
+    background-color: #F2F2F2;
+
+}
+
+.native__content .native__footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.native__footer .native__brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.native__brand img{
+    width: 101px;
+    height: 26px;
+}
+
+.native__brand .rectangle{
+    width: 3px;
+    height: 16px;
+    background-color: #637381
+}
+
+.native__brand .partner{
+    color: #637381;
+    font-family: Public Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.native__footer .native__register{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.native__register p{
+    color: #2D2E7F;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.native__register img{
+    width: 8px;
+    height: 12px;
+}
+
