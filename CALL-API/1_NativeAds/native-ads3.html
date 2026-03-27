@@ -12,8 +12,8 @@
             <img src="../assets/images/close_fill.svg" alt="btn_close">
         </button>
 
-        <div class="native__img">
-            <img src="../assets/images/image (1).png" alt="Image">
+        <div class="native__img-container">
+            <img class="native__img" src="../assets/images/image (1).png" alt="Image">
         </div>
 
         <div class="native__content">
@@ -40,6 +40,11 @@
             </div>
         </div>
     </div>
+
+    <button id="call-api" style="position: fixed; bottom: 50%; left: 50%;">
+        CALL API
+    </button>
+    <script src="./js/native-ads-api.js"></script>
 
     <script>
         const closeButton = document.getElementById('native__close-button');

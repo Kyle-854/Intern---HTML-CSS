@@ -39,14 +39,14 @@
     width: 15px;
 }
 
-.native .native__img{
+.native .native__img-container{
     width: 300px;
     height: 180px;
     flex-shrink: 0;
     aspect-ratio: 5/3;
 }
 
-.native__img img{
+.native__img-container .native__img{
     height: 100%;
     width: 100%;
 }
