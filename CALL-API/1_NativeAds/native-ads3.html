@@ -49,8 +49,9 @@
     <script>
         const closeButton = document.getElementById('native__close-button');
 
-        closeButton.addEventListener('click', function(){
+        closeButton.addEventListener('click', function(event){
             document.body.style.display = 'none';
+            event.stopPropagation();
         });
     </script>
 </body>

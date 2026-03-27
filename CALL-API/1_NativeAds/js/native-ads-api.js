@@ -36,6 +36,17 @@ async function loadData(){
         if (native_cta) {
             native_cta.innerText = data.cta;
         }
+        //cta__url
+        const native_cta_url = document.querySelector('.native__register');
+        if (native_cta_url) {
+            native_cta_url.href = data.cta__url;
+            native_cta_url.target = '_blank';
+
+            native_cta_url.addEventListener('click', function(event){
+                event.stopPropagation();
+            });
+        }
+
         //brand__img
 
 
