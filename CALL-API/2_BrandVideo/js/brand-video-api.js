@@ -16,7 +16,8 @@ async function loadData() {
         //brand__name
             document.querySelector('.partner').innerText = data.brand__name;
         //video
-            document.querySelector('.vid__src').src = data.video; //không có lấy được dữ liệu mới
+            document.querySelector('.vid').src = data.video;
+            document.querySelector('.vid').load();
 
         // CHẶN CLICK LAN TRUYỀN (Để bấm play/pause video không bị nhảy trang)
             const videoElement = document.querySelector('.vid');
