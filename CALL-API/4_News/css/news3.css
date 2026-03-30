@@ -45,12 +45,12 @@
     height: 15px;
 }
 
-.news .news__item-container{
+.news .news__items-container{
     display: flex;
     gap: 13px;
 }
 
-.news__item-container .news__item{
+.news__items-container .news__item{
     display: flex;
     flex-direction: column;
     gap: 10px;

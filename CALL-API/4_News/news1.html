@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="news">
-        <div class="news__items-container">
+        <div class="news__items-container" data-line="true">
             <!-- item 1 -->
-            <div class="news__item">
+            <div class="news__item temp" style="display: none;">
                 <div class="news__img">
                     <img src="../assets/images/new_img.png" alt="Image">
                 </div>
@@ -25,45 +25,6 @@
                     </p>
                 </div>
             </div>
-
-            <hr class="line">
-
-            <!-- item 2 -->
-            <!-- <div class="news__item">
-                <div class="news__img">
-                    <img src="../assets/images/new_img.png" alt="Image">
-                </div>
-
-                <div class="news__content">
-                    <h2 class="news__title">
-                        Bcons City Dĩ An 2,2 tỷ đồng căn 2 phòng ngủ, giao nhà hoàn thiện
-                    </h2>
-
-                    <p class="news__decription">
-                        Giỏ hàng tháng 04/2025 với chính sách hấp dẫn: Thanh toán 20% chiết khấu ngay 3% ký hợp đồng.
-                    </p>
-                </div>
-            </div> -->
-
-            <!-- <hr class="line"> -->
-
-            <!-- item 3 -->
-            <!-- <div class="news__item">
-                <div class="news__img">
-                    <img src="../assets/images/new_img.png" alt="Image">
-                </div>
-
-                <div class="news__content">
-                    <h2 class="news__title">
-                        Bcons City Dĩ An 2,2 tỷ đồng căn 2 phòng ngủ, giao nhà hoàn thiện
-                    </h2>
-
-                    <p class="news__decription">
-                        Giỏ hàng tháng 04/2025 với chính sách hấp dẫn: Thanh toán 20% chiết khấu ngay 3% ký hợp đồng.
-                    </p>
-                </div>
-            </div> -->
-
         </div>
 
         <div class="news__brand">
@@ -72,5 +33,8 @@
     </div>
 
     <script src="./js/news-api.js"></script>
+    <script>
+        loadData(2);
+    </script>
 </body>
 </html>

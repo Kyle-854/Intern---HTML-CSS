@@ -30,11 +30,11 @@
     border-bottom: 1px solid #9F224E;
 }
 
-.news .news__item-container{
+.news .news__items-container{
 
 }
 
-.news__item-container .news__item{
+.news__items-container .news__item{
     display: flex;
     gap: 10px;
     margin-bottom: 15.5px;

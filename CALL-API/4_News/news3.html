@@ -14,31 +14,9 @@
             <img src="../assets/images/Logo SmartAds full.svg" alt="logo_SMA-full">
         </div>
 
-        <div class="news__item-container">
+        <div class="news__items-container">
             <!-- item1 -->
-            <div class="news__item">
-                <div class="news__img">
-                    <img src="../assets/images/new_img.png" alt="image">
-                </div>
-
-                <p class="news__title">
-                    Bcons City Dĩ An 2,2 tỷ đồng căn 2 phòng ngủ, giao nhà hoàn thiện
-                </p>
-            </div>
-
-            <!-- item2 -->
-            <div class="news__item">
-                <div class="news__img">
-                    <img src="../assets/images/new_img.png" alt="image">
-                </div>
-
-                <p class="news__title">
-                    Bcons City Dĩ An 2,2 tỷ đồng căn 2 phòng ngủ, giao nhà hoàn thiện
-                </p>
-            </div>
-
-            <!-- item3 -->
-            <div class="news__item">
+            <div class="news__item temp" style="display: none;">
                 <div class="news__img">
                     <img src="../assets/images/new_img.png" alt="image">
                 </div>
@@ -49,5 +27,10 @@
             </div>
         </div>
     </div>
+
+    <script src="./js/news-api.js"></script>
+    <script>
+        loadData(3);
+    </script>
 </body>
 </html>
