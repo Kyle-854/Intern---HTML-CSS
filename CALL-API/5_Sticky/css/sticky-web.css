@@ -128,6 +128,10 @@
 }
 
 .sticky__brand .partner{
+    
+}
+
+.partner strong{
     color: #000;
     font-family: Arial;
     font-size: 12px;
@@ -136,7 +140,7 @@
     line-height: normal;
 }
 
-.sticky .sticky__button-tu-van{
+.sticky .sticky__button-cta{
     text-decoration: none;
     background-color: #03A9F5;
     padding: 8px 12px;

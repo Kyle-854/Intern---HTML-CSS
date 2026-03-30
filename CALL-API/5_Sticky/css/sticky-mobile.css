@@ -115,10 +115,10 @@
     line-height: normal;
 }
 
-.sticky .sticky__button-tu-van{
-    width: 24px;
-    height: 24px;
+.sticky .sticky__button-cta{
+    text-decoration: none;
     background-color: #03A9F5;
+    color: #FFF;
     padding: 4px;
     border-radius: 12px;
     display: flex;

@@ -19,15 +19,26 @@ async function loadData() {
                     title.innerText = data.title;
                 }
             //img__url
-                const img_url = document.querySelector('.sticky__img img');
-                if (img_url) {
-                    img_url.scr = data.img__url;
+                const sticky_img  = document.querySelector('.sticky__img img');
+                if (sticky_img) {
+                    sticky_img.src = data.img__url;
                 }
             //brand__name
+                const brand_name = document.querySelector('.partner strong');
+                if(brand_name) {
+                    brand_name.innerText = data.brand__name;
+                }
+            //cta, cta__url
+                const cta = document.querySelector('.sticky__button-cta');
+                if(cta){
+                    cta.innerText = data.cta;
+                    cta.href = data.cta__url;
+                    cta.target = '_blank';
 
-            //cta
-
-            //cta__url
+                    cta.addEventListener('click', function(event){
+                        event.stopPropagation();
+                    });
+                }
         }
     } catch (error) {
         console.error('Lỗi: ', error);
