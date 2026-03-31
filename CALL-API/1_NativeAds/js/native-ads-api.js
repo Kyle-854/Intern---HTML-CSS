@@ -18,13 +18,13 @@ async function loadData(){
             }
         //img
             const native_img = document.querySelector('.native__img');
-            if (native_img && data.img__url) {
-                native_img.src = data.img__url;
+            if (native_img && data.img_url) {
+                native_img.src = data.img_url;
             }
         //brand__name
             const native_brand_name = document.querySelector('.partner');
-            if (native_brand_name && data.brand__name) {
-                native_brand_name.innerText = data.brand__name;
+            if (native_brand_name && data.brand_name) {
+                native_brand_name.innerText = data.brand_name;
             }
         //decription
             const native_decription = document.querySelector('.native__decription');
@@ -38,8 +38,8 @@ async function loadData(){
             }
         //cta__url
             const native_cta_url = document.querySelector('.native__register');
-            if (native_cta_url && data.cta__url) {
-                native_cta_url.href = data.cta__url;
+            if (native_cta_url && data.cta_url) {
+                native_cta_url.href = data.cta_url;
                 native_cta_url.target = '_blank';
 
                 native_cta_url.addEventListener('click', function(event){

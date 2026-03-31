@@ -35,6 +35,7 @@
 }
 
 .items-container .item {
+    width: 116px;
     border: 1px solid #ECECEC;
     border-radius: 8px;
     padding-bottom: 5px;

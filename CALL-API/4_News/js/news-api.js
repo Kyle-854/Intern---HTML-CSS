@@ -7,7 +7,7 @@ async function loadData(limit) {
         const container = document.querySelector('.news__items-container');
         const temp = document.querySelector('.temp');
 
-        data.forEach((item, index) => {
+        data.forEach((item) => {
             const clone = temp.cloneNode(true); //tương đương .news__item
 
             if (clone) {
@@ -31,10 +31,10 @@ async function loadData(limit) {
                     if (decription && item.decription) {
                         decription.innerText = item.decription;
                     }
-                //img__url
+                //img_url
                     const news__img = clone.querySelector('.news__img img');
-                    if (news__img && item.img__url) {
-                        news__img.src = item.img__url;
+                    if (news__img && item.img_url) {
+                        news__img.src = item.img_url;
                     }
 
                 container.appendChild(clone);

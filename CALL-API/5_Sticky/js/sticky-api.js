@@ -18,21 +18,21 @@ async function loadData() {
             }
         //img__url
             const sticky_img  = document.querySelector('.sticky__img img');
-            if (sticky_img && data.img__url) {
-                sticky_img.src = data.img__url;
+            if (sticky_img && data.img_url) {
+                sticky_img.src = data.img_url;
             }
         //brand__name
             const brand_name = document.querySelector('.partner strong');
-            if(brand_name && data.brand__name) {
-                brand_name.innerText = data.brand__name;
+            if(brand_name && data.brand_name) {
+                brand_name.innerText = data.brand_name;
             }
         //cta, cta__url
             const cta = document.querySelector('.sticky__button-cta');
             if(cta && data.cta){
                 cta.innerText = data.cta;
                 
-                if(data.cta__url){
-                    cta.href = data.cta__url;
+                if(data.cta_url){
+                    cta.href = data.cta_url;
                     cta.target = '_blank';
                 }
 

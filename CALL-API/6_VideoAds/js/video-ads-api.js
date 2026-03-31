@@ -18,13 +18,13 @@ async function loadData() {
             }
         //img__url
             const vid_img = document.querySelector('.video-ads__Img img');
-            if(vid_img && data.img__url){
-                vid_img.src = data.img__url;
+            if(vid_img && data.img_url){
+                vid_img.src = data.img_url;
             }
         //brand__name
             const vid_brand_name = document.querySelector('.partner strong');
-            if(vid_brand_name && data.brand__name){
-                vid_brand_name.innerText = data.brand__name;
+            if(vid_brand_name && data.brand_name){
+                vid_brand_name.innerText = data.brand_name;
             }
         //decription
             const vid_decription = document.querySelector('.video-ads__decription');

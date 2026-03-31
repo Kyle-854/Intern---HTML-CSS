@@ -18,18 +18,18 @@ async function loadData(limit) {
             }
         //img__url
             const img = document.querySelector('.news__img img');
-            if (img && data.img__url) {
-                img.src = data.img__url;
+            if (img && data.img_url) {
+                img.src = data.img_url;
             }
         //brand__name
             const brand__name = document.querySelector('.partner strong');
-            if (brand__name && data.brand__name) {
-                brand__name.innerText = data.brand__name;
+            if (brand__name && data.brand_name) {
+                brand__name.innerText = data.brand_name;
             }
         //cta__url
             const cta = document.querySelector('.news__button');
-            if (cta && data.cta__url) {
-                cta.href = data.cta__url;
+            if (cta && data.cta_url) {
+                cta.href = data.cta_url;
                 cta.target = '_blank';
 
                 cta.addEventListener('click', function(event){

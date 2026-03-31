@@ -23,8 +23,8 @@ async function loadData() {
             }
         //brand__name
             const bvbrandname = document.querySelector('.partner strong');
-            if (bvbrandname && data.brand__name) {
-                bvbrandname.innerText = data.brand__name;
+            if (bvbrandname && data.brand_name) {
+                bvbrandname.innerText = data.brand_name;
             }
         //video
             const bvvideo = document.querySelector('.vid');
