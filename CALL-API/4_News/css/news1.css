@@ -35,6 +35,15 @@
 .news__items-container .news__item{
     display: flex;
     gap: 10px;
+    border-top: 1px solid  #E5E5E5;
+    margin-top: 13px;
+    padding-top: 13px;
+}
+
+.news__item:first-child{
+    border: none;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .news__item .news__img{

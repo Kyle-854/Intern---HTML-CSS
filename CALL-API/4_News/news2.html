@@ -36,11 +36,17 @@
         </a>
     </div>
 
+    <script src="./js/news2-api.js"></script>
+    <script>
+        loadData(1);
+    </script>
+
     <script>
         const closeButton = document.getElementById('news__close-button');
 
-        closeButton.addEventListener('click', function(){
+        closeButton.addEventListener('click', function(event){
             document.body.style.display = 'none';
+            event.stopPropagation();
         });
     </script>
 </body>

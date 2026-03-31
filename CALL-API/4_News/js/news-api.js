@@ -5,7 +5,6 @@ async function loadData(limit) {
     
         //-------------------- XỬ LÝ ---------------------
         const container = document.querySelector('.news__items-container');
-        const hasLine = container.dataset.line === 'true';
         const temp = document.querySelector('.temp');
 
         data.forEach((item, index) => {
@@ -39,13 +38,6 @@ async function loadData(limit) {
                     }
 
                 container.appendChild(clone);
-
-                //Thêm line
-                if (hasLine && index < data.length - 1) {
-                    const hr = document.createElement('hr');
-                    hr.classList.add('line');
-                    container.appendChild(hr);
-                }
             }
         });
         temp.remove();
