@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.news{
+    width: 100%;
+    padding: 8px 20px;
+    background-color: rgba(0, 0, 0, 0.60);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    position: relative;
+}
+
+.news #news__close-button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+}
+
+#news__close-button img{
+    width: 12.5px;
+    height: 12.5px;
+}
+
+.news .news__content-container{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.news__content-container .news__img{
+    aspect-ratio: 1/1;
+    width: 84px;
+    flex-shrink: 0;
+
+}
+
+.news__img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.news__content-container .news__content{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.news__content .news__title{
+    color: #FFF;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.news__content .news__brand{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+
+.news__brand .logoSMA{
+    width: 10px;
+    height: 13.491px;
+    aspect-ratio: 10.00/13.49;
+}
+
+.news__brand .divider{
+    width: 0.5px;
+    height: 7px;
+    background-color: rgba(102, 102, 102, 0.50);
+}
+
+.news__brand .partner{
+    color: rgba(255, 255, 255, 0.80);
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */           
+}
+
+.partner strong{
+    color: #FFF;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.news .news__button{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background: #03A9F5;
+}
