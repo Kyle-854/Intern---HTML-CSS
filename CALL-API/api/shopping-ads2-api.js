@@ -1,6 +1,6 @@
 async function loadData(limit) {
     try {
-        const res = await fetch(`http://localhost:3001/creatives?type=shopping-ads&limit=${limit}`);
+        const res = await fetch(`https://69d315a1336103955f8e8baa.mockapi.io/creatives?type=shopping-ads&page=1&limit=${limit}`);
         const data = await res.json();
 
         //--------------XỬ LÝ--------------

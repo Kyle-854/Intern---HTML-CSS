@@ -2,7 +2,7 @@ async function loadData(limit) {
   try {
     limit = Math.max(4, Math.min(limit, 12));
     const data = await $.get(
-      `http://localhost:3001/creatives?type=news&_limit=${limit}`,
+      `https://69d315a1336103955f8e8baa.mockapi.io/creatives?type=news&page=1&limit=${limit}`,
     );
 
     const contentContainer = $(".news__content-container");

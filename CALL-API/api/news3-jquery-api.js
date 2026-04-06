@@ -1,6 +1,6 @@
 async function loadData(limit) {
     try {
-        const data = await $.get(`http://localhost:3001/creatives?type=news&_limit=${limit}`);
+        const data = await $.get(`https://69d315a1336103955f8e8baa.mockapi.io/creatives?type=news&page=1&limit=${limit}`);
 
         const container = $('.news__items-container');
         container.empty();

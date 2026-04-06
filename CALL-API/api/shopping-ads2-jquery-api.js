@@ -1,6 +1,6 @@
 async function loadData(limit) {
     try {
-        const data = await $.get(`http://localhost:3001/creatives?type=shopping-ads&_limi=${limit}`);
+        const data = await $.get(`https://69d315a1336103955f8e8baa.mockapi.io/creatives?type=shopping-ads&page=1&limit=${limit}`);
         
         const wrapper = $('.shopping-ads__wrapper');
         wrapper.empty();

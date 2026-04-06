@@ -1,6 +1,6 @@
 async function loadData(){
     try {
-        const res = await fetch('http://localhost:3001/creatives?type=masthead');
+        const res = await fetch('https://69d315a1336103955f8e8baa.mockapi.io/creatives?type=masthead');
         const data = (await res.json())[0];
 
         //------------------- XỬ LÝ -------------------
