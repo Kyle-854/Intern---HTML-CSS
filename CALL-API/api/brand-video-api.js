@@ -5,27 +5,41 @@ async function loadData() {
 
         //----------------------XỬ LÝ----------------------
         //url
-            const brandVideoFrame = document.querySelector('.brand-video');
-            if (brandVideoFrame && data.url) {
-                brandVideoFrame.addEventListener('click', function(){
-                    window.open(data.url, '_blank');
-                });
-            }
+            // const brandVideoFrame = document.querySelector('.brand-video');
+            // if (brandVideoFrame && data.url) {
+            //     brandVideoFrame.addEventListener('click', function(){
+            //         window.open(data.url, '_blank');
+            //     });
+            // }
+
+            const url = data.url ?? '#';
         //title
             const bvtitle = document.querySelector('.brand-video__title');
             if (bvtitle && data.title) {
                 bvtitle.innerText = data.title;
+
+                bvtitle.addEventListener('click', () => {
+                    window.open(url, '_blank');
+                });
             }
         //poster
             const bvposter = document.querySelector('.vid');
             if (bvposter && data.poster) {
                 bvposter.poster = data.poster;
             }
-        //brand__name
+        //brand__name & brand_url
             const bvbrandname = document.querySelector('.partner strong');
             if (bvbrandname && data.brand_name) {
                 bvbrandname.innerText = data.brand_name;
             }
+        //brand_url
+            const bvbrandurl = document.querySelector('.partner');
+            if (bvbrandurl && data.brand_url) {
+                bvbrandurl.href = data.brand_url;
+                bvbrandurl.target = '_blank';
+            }
+                
+        
         //video
             const bvvideo = document.querySelector('.vid');
             if (bvvideo && data.video) {

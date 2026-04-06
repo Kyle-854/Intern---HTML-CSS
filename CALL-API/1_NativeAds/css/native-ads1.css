@@ -59,6 +59,8 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
+
+    width: fit-content;
 }
 
 .native__info .native__decription{
@@ -71,6 +73,8 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    width: fit-content;
 }
 
 .native__content .line{
@@ -109,6 +113,8 @@
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
+
+    text-decoration: none;
 }
 
 .native__footer .native__register{
@@ -130,5 +136,18 @@
 .native__register img{
     width: 8px;
     height: 12px;
+}
+
+.logoSMA{
+    display: flex;
+    align-items: center;
+}
+
+.native__title, 
+.native__decription, 
+.native__register,
+.native__img,
+.partner{
+    cursor: pointer;
 }
 
