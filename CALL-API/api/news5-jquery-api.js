@@ -40,10 +40,22 @@ async function loadData(limit) {
         `;
 
         const newsItem1 = $(htmlString1);
-        newsItem1.on("click", function () {
-          window.open(url, "_blank");
-        });
+        // newsItem1.on("click", function () {
+        //   window.open(url, "_blank");
+        // });
         container1.append(newsItem1);
+
+        const newsTitle1 = newsItem1.find('.news__title1');
+        newsTitle1.on('click', () => {
+          window.open(url, '_blank');
+        });
+
+        const newsImg1 = newsItem1.find('.news__item1__img');
+        newsImg1.on('click', () => {
+          window.open(url, '_blank');
+        });
+
+
       } else {
         if (index % 2 === 0) {
           item2_container = $('<div class="news__item2-container"></div>');
@@ -63,10 +75,20 @@ async function loadData(limit) {
         `;
 
         const newsItem2 = $(htmlString2);
-        newsItem2.on("click", () => {
-          window.open(url, "_blank");
-        });
+        // newsItem2.on("click", () => {
+        //   window.open(url, "_blank");
+        // });
         item2_container.append(newsItem2);
+
+        const newsTitle2 = newsItem2.find('.news__title2');
+        newsTitle2.on('click', () => {
+          window.open(url, '_blank');
+        });
+
+        const newsImg2 = newsItem2.find('.news__item2__img');
+        newsImg2.on('click', () => {
+          window.open(url, '_blank');
+        });
       }
     });
 

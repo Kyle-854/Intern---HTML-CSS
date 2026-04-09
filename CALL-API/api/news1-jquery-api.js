@@ -39,7 +39,22 @@ async function loadData(limit) {
             const newItem = $(htmlString);
 
             //sự kiện click
-            newItem.on('click',function(){
+            // newItem.on('click',function(){
+            //     window.open(url, '_blank');
+            // });
+
+            const newsTile = newItem.find('.news__title');
+            newsTile.on('click', function(){
+                window.open(url, '_blank');
+            });
+
+            const newsImg = newItem.find('.news__img img');
+            newsImg.on('click', function(){
+                window.open(url, '_blank');
+            });
+
+            const newsDescript = newItem.find('.news__decription');
+            newsDescript.on('click', function(){
                 window.open(url, '_blank');
             });
 

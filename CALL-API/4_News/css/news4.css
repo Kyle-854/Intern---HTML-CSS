@@ -87,3 +87,9 @@
     aspect-ratio: 63/16;
     align-self: flex-end;
 }
+
+.news__img,
+.news__title{
+    cursor: pointer;
+
+}

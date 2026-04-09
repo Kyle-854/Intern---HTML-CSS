@@ -72,6 +72,8 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    width: fit-content;
 }
 
 .news__content .news__decription{
@@ -81,6 +83,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    width: fit-content;
 }
 
 .line{
@@ -114,4 +118,10 @@
     .news__content .news__decription{
         display: none;
     }
+}
+
+.news__img,
+.news__title,
+.news__decription{
+    cursor: pointer;
 }

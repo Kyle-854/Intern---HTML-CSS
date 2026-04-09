@@ -82,3 +82,8 @@
      -webkit-line-clamp: 3;
      overflow: hidden;
 }
+
+.news__img,
+.news__title{
+    cursor: pointer;
+}

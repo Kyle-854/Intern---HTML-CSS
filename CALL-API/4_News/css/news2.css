@@ -101,6 +101,8 @@ body{
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 18px */           
+
+    text-decoration: none;
 }
 
 .partner strong{
@@ -122,4 +124,11 @@ body{
     gap: 10px;
     border-radius: 12px;
     background: #03A9F5;
+}
+
+#news__close-button,
+.news__img,
+.news__title,
+.partner{
+    cursor: pointer;
 }

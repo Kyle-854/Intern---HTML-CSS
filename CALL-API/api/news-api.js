@@ -16,25 +16,39 @@ async function loadData(limit) {
                 clone.classList.remove('temp');
 
                 //url
-                    if (item.url) {
-                        clone.addEventListener('click', () => {
-                            window.open(item.url, '_blank');
-                        });
-                    }
+                    // if (item.url) {
+                    //     clone.addEventListener('click', () => {
+                    //         window.open(item.url, '_blank');
+                    //     });
+                    // }
+
+                    const url = item.url ?? '#';
                 //title
                     const title = clone.querySelector('.news__title');
                     if (title && item.title) {
                         title.innerText = item.title;
+
+                        title.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
                 //decription
                     const decription = clone.querySelector('.news__decription');
                     if (decription && item.decription) {
                         decription.innerText = item.decription;
+
+                        decription.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
                 //img_url
                     const news__img = clone.querySelector('.news__img img');
                     if (news__img && item.img_url) {
                         news__img.src = item.img_url;
+
+                        news__img.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
 
                 container.appendChild(clone);
