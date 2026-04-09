@@ -128,7 +128,7 @@
 }
 
 .sticky__brand .partner{
-    
+    text-decoration: none;
 }
 
 .partner strong{
@@ -154,4 +154,10 @@
     line-height: normal;
 
     white-space: nowrap;
+}
+
+.sticky__img,
+.sticky__title,
+#sticky__close-button{
+    cursor: pointer;
 }

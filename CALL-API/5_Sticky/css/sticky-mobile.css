@@ -104,6 +104,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    text-decoration: none;
 }
 
 .partner strong{
@@ -125,4 +127,11 @@
     align-items: center;
     justify-content: center;
 
+}
+
+.sticky__img,
+.sticky__title,
+#sticky__close-button,
+.partner{
+    cursor: pointer;
 }
