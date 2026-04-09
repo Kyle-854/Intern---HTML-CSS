@@ -16,30 +16,49 @@ async function loadData(limit) {
                 clone.classList.remove('temp');
 
                 //url
-                    if (item.url) {
-                        clone.addEventListener('click', () => {
-                            window.open(item.url, '_blank');
-                        });
-                    }
+                    // if (item.url) {
+                    //     clone.addEventListener('click', () => {
+                    //         window.open(item.url, '_blank');
+                    //     });
+                    // }
+
+                    const url = item.url ?? '#';
+
                 //img_url
                     const news__img = clone.querySelector('.item__img img');
                     if (news__img && item.img_url) {
                         news__img.src = item.img_url;
+
+                        news__img.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
                 //title
                     const title = clone.querySelector('.item__name');
                     if (title && item.title) {
                         title.innerText = item.title;
+
+                        title.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
                 //price2
                     const price2 = clone.querySelector('.price2');
                     if (price2 && item.price2) {
                         price2.innerText = item.price2;
+
+                        price2.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
                 //price1
                     const price1 = clone.querySelector('.price1');
                     if (price1 && item.price1) {
                         price1.innerText = item.price1;
+
+                        price1.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
 
                     if(!item.price1){
@@ -57,6 +76,10 @@ async function loadData(limit) {
                     const recommend = clone.querySelector('.item__recommend');
                     if (recommend && item.recommend) {
                         recommend.innerText = item.recommend;
+
+                        recommend.addEventListener('click', () => {
+                            window.open(url, '_blank');
+                        });
                     }
 
                     if(!item.recommend && recommend){
@@ -72,7 +95,13 @@ async function loadData(limit) {
                     if (brand_name && item.brand_name) {
                         brand_name.innerText = item.brand_name;
                     }
-                
+                //brand_url
+                    const brand_url = item.brand_url ?? '#';
+                    const item__brand = clone.querySelector('.item__brand');
+
+                    if (item__brand){
+                        item__brand.href = brand_url;
+                    }
 
                 container.appendChild(clone);
             }

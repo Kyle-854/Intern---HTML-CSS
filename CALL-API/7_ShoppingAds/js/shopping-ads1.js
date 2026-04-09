@@ -57,3 +57,20 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // startAutoPlay();
 });
+
+const logo_container = document.querySelector('.logo-sma');
+const logo1 = document.querySelector('.logo1');
+const logo2 = document.querySelector('.logo2');
+const logo3 = document.querySelector('.logo3');
+
+// logo_container.addEventListener('mouseover', () => {
+//     logo1.style.display = 'none';
+//     logo2.style.display = 'block';
+//     logo3.style.display = 'block';
+// });
+
+// logo_container.addEventListener('mouseout', () => {
+//     logo1.style.display = 'block';
+//     logo2.style.display = 'none';
+//     logo3.style.display = 'none';
+// });
