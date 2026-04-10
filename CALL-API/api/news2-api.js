@@ -5,13 +5,6 @@ async function loadData(limit) {
 
         //-------------------- XỬ LÝ ---------------------
         //url
-            // const news = document.querySelector('.news');
-            // if(news && data.url) {
-            //     news.addEventListener('click', () => {
-            //         window.open(data.url, '_blank');
-            //     });
-            // }
-
             const url = data.url ?? '#';
         //title
             const title = document.querySelector('.news__title');

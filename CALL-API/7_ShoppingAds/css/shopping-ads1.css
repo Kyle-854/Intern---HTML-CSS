@@ -4,13 +4,7 @@
     box-sizing: border-box;
 }
 
-/* .shopping-ads {
-    width: 100%;
-
-} */
-
 .shopping-ads{
-    /* max-width: 600px; */
     padding: 16px 8px;
     border-radius: 2px;
     border: 1px solid #ECECEC;
@@ -218,7 +212,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    /* width: 28px; */
     height: 16px;
     padding: 2px 7px 2px 10px;
     display: flex;

@@ -16,12 +16,6 @@ async function loadData(limit) {
                 clone.classList.remove('temp');
 
                 //url
-                    // if (item.url) {
-                    //     clone.addEventListener('click', () => {
-                    //         window.open(item.url, '_blank');
-                    //     });
-                    // }
-
                     const url = item.url ?? '#';
                 //title
                     const title = clone.querySelector('.news__title');

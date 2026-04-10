@@ -38,11 +38,6 @@ async function loadData(limit) {
 
             const newItem = $(htmlString);
 
-            //sự kiện click
-            // newItem.on('click',function(){
-            //     window.open(url, '_blank');
-            // });
-
             const newsTile = newItem.find('.news__title');
             newsTile.on('click', function(){
                 window.open(url, '_blank');

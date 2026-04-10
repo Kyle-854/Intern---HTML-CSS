@@ -5,13 +5,6 @@ async function loadData(){
 
         //-------------------XỬ LÝ----------------------
         //url
-            // const nativeFrame = document.querySelector('.native');
-            // if(nativeFrame && data.url){
-            //     nativeFrame.addEventListener('click', function(){
-            //         window.open(data.url, '_blank');
-            //     });
-            // }
-
             const url = data.url ?? '#';
         //title
             const native_title = document.querySelector('.native__title');

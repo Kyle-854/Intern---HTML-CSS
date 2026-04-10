@@ -5,13 +5,6 @@ async function loadData(){
 
         //------------------- XỬ LÝ -------------------
         //url
-            // const mastheadFrame = document.querySelector('.masthead');
-            // if (mastheadFrame && data.url) {
-            //     mastheadFrame.addEventListener('click', function(){
-            //         window.open(data.url, '_blank');
-            //     });
-            // }
-
             const url = data.url ?? '#';
         //title
             const masthead_title = document.querySelector('.masthead__title');

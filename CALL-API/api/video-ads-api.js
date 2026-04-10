@@ -5,12 +5,6 @@ async function loadData() {
 
         //---------------------- XỬ LÝ ----------------------
         //url
-            // const videoAdsFrame = document.querySelector('.video-ads');
-            // if(videoAdsFrame && data.url){
-            //     videoAdsFrame.addEventListener('click', function(){
-            //         window.open(data.url, '_blank');
-            //     });
-            // }
             const url = data.url ?? '#';
         //title
             const vid_title = document.querySelector('.video-ads__title');

@@ -40,9 +40,7 @@ async function loadData(limit) {
         `;
 
         const newsItem1 = $(htmlString1);
-        // newsItem1.on("click", function () {
-        //   window.open(url, "_blank");
-        // });
+
         container1.append(newsItem1);
 
         const newsTitle1 = newsItem1.find('.news__title1');

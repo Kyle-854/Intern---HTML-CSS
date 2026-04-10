@@ -28,10 +28,6 @@ async function loadData(limit) {
             
             const newItem = $(htmlString);
 
-            // newItem.on('click', function(){
-            //     window.open(url, '_blank');
-            // });
-
             container.append(newItem);
 
             const newsTitle = newItem.find('.news__title');

@@ -29,11 +29,6 @@ async function loadData(limit) {
 
             // --- ĐỔ DỮ LIỆU ---
             //url
-            // if (itemData.url) {
-            //     cloneItem.addEventListener('click', function(){
-            //         window.open(itemData.url, '_blank')
-            //     });
-            // }
             const url = itemData.url ?? '#';
             //img_url
             const img = cloneItem.querySelector('.item__img img');

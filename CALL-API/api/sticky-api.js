@@ -5,13 +5,6 @@ async function loadData() {
 
         //--------------------XỬ LÝ ----------------------
         //url
-            // const sticky_url = document.querySelector('.sticky');
-            // if (sticky_url && data.url) {
-            //     sticky_url.addEventListener('click', function() {
-            //         window.open(data.url, '_blank');                        
-            //     });
-            // }
-
             const url = data.url ?? '#';
         //title
             const title = document.querySelector('.sticky__title');
