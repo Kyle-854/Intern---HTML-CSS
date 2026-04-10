@@ -15,21 +15,23 @@ async function loadData(limit) {
             }
 
             //url
-                const url = item.url ? item.url : '#';
+                const url = item.url ?? '#';
             //img_url
-                const img_url = item.img_url ? item.img_url : '../assets/images/new_img.png';
+                const img_url = item.img_url ?? '../assets/images/new_img.png';
             //title
-                const title  = item.title ? item.title : 'No Title';
+                const title  = item.title ?? 'No Title';
             //price2
-                const price2 = item.price2 ? item.price2 : '';
+                const price2 = item.price2 ?? '';
             //price1
-                const price1 = item.price1 ? item.price1 : '';
+                const price1 = item.price1 ?? '';
             //recommend
-                const recommend = item.recommend ? item.recommend : '';
+                const recommend = item.recommend ?? '';
             //brand_logo
-                const brand_logo = item.brand_logo ? item.brand_logo : '../assets/images/new_img.png';
+                const brand_logo = item.brand_logo ?? '../assets/images/new_img.png';
             //brand_name
-                const brand_name = item.brand_name ? item.brand_name : 'No Brand';
+                const brand_name = item.brand_name ?? 'No Brand';
+            //brand_url
+                const brand_url = item.brand_url ?? '#';
 
             const htmlString = `
                 <div class="item">
@@ -54,17 +56,39 @@ async function loadData(limit) {
 
                         <p class="item__recommend">${recommend}</p>
 
-                        <div class="item__brand">
+                        <a class="item__brand" href="${brand_url}" target="_blank">
                             <img class="brand__logo" src="${brand_logo}" alt="logo">
                             <p class="brand__name">${brand_name}</p>
                             <img class="verified" src="../assets/images/logo-verified.svg" alt="verified">
-                        </div>
+                        </a>
                     </div>
                 </div>
             `;
 
             const newItem = $(htmlString);
-            newItem.on('click', () => {
+            
+            const itemImg = newItem.find('.item__img');
+            itemImg.on('click', function(){
+                window.open(url, '_blank');
+            });
+
+            const itemName = newItem.find('.item__name');
+            itemName.on('click', function(){
+                window.open(url, '_blank');
+            });
+
+            const itemPrice1 = newItem.find('.item__price1');
+            itemPrice1.on('click', function(){
+                window.open(url, '_blank');
+            });
+
+            const itemPrice2 = newItem.find('.item__price2');
+            itemPrice2.on('click', function(){
+                window.open(url, '_blank');
+            });
+
+            const itemRecommend = newItem.find('.item__recommend');
+            itemRecommend.on('click', function(){
                 window.open(url, '_blank');
             });
 

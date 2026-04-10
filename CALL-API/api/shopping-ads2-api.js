@@ -29,31 +29,48 @@ async function loadData(limit) {
 
             // --- ĐỔ DỮ LIỆU ---
             //url
-            if (itemData.url) {
-                cloneItem.addEventListener('click', function(){
-                    window.open(itemData.url, '_blank')
-                });
-            }
+            // if (itemData.url) {
+            //     cloneItem.addEventListener('click', function(){
+            //         window.open(itemData.url, '_blank')
+            //     });
+            // }
+            const url = itemData.url ?? '#';
             //img_url
             const img = cloneItem.querySelector('.item__img img');
             if (img && itemData.img_url){
                 img.src = itemData.img_url;
+
+                img.addEventListener('click', function(){
+                    window.open(url, '_blank');
+                });
             }
             //title
             const name = cloneItem.querySelector('.item__name');
             if (name && itemData.title){
                 name.innerText = itemData.title;
+
+                name.addEventListener('click', function(){
+                    window.open(url, '_blank');
+                });
             }
 
             //price2
                 const price2 = cloneItem.querySelector('.price2');
                 if (price2 && itemData.price2) {
                     price2.innerText = itemData.price2;
+
+                    price2.addEventListener('click', function(){
+                        window.open(url, '_blank');
+                    });
                 }
             //price1
                 const price1 = cloneItem.querySelector('.price1');
                 if (price1 && itemData.price1) {
                     price1.innerText = itemData.price1;
+
+                    price1.addEventListener('click', function(){
+                        window.open(url, '_blank');
+                    });
                 }
 
                 if(!itemData.price1){
@@ -71,6 +88,10 @@ async function loadData(limit) {
                 const recommend = cloneItem.querySelector('.item__recommend');
                 if (recommend && itemData.recommend) {
                     recommend.innerText = itemData.recommend;
+
+                    recommend.addEventListener('click', function(){
+                        window.open(url, '_blank');
+                    });
                 }
 
                 if(!itemData.recommend && recommend){
@@ -85,6 +106,12 @@ async function loadData(limit) {
                 const brand_name = cloneItem.querySelector('.brand__name');
                 if (brand_name && itemData.brand_name) {
                     brand_name.innerText = itemData.brand_name;
+                }
+            //brand_url
+                const brand_url = itemData.brand_url ?? '#';
+                const item__brand = cloneItem.querySelector('.item__brand');
+                if (item__brand) {
+                    item__brand.href = brand_url;
                 }
 
             // Nhét Item vào Container
