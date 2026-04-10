@@ -47,7 +47,7 @@
 }
 
 .news__item .news__img{
-    aspect-ratio: 145/88;
+    aspect-ratio: 5/3;
     width: 145px;
     flex-shrink: 0;
 }
