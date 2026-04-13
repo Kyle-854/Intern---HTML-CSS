@@ -115,7 +115,7 @@
 }
 
 .sign-in__content #password{
-    margin-bottom: 20px;
+    
 }
 
 .sign-in__content #email,
@@ -131,6 +131,65 @@
     border-radius: var(--Radius-radius-04, 8px);
     border: 1px solid var(--Component-Border-border-gray-stronger, #DFE3E8);
     background: var(--Colors-Surface-surface-neutral-white, #FFF);
+
+    caret-color: #048845;
+}
+
+#email::placeholder,
+#password::placeholder{
+    color: var(--Component-Text-text-secondary-muted, #CBCFD3);
+
+    /* Body-medium/Regular */
+    font-family: var(--Typography-Family-display, "Public Sans");
+    font-size: var(--Typography-Font-size-fs-xs, 16px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 19.2px */
+}
+
+#email:focus,
+#password:focus{
+    outline: none;
+    border: none;
+    border-radius: var(--Radius-radius-04, 8px);
+    border: 1px solid var(--Component-Border-border-primary-muted, #8CC8A9) !important; 
+    background: var(--Colors-Surface-surface-neutral-white, #FFF);
+    box-shadow: 0 0 0 4px var(--Color-Primary-primary-50, #E6F3EC);
+}
+
+.sign-in__content .password-container{
+    position: relative;
+}
+
+.password-container .eye-on,
+.password-container .eye-off{
+    position: absolute;
+    right: 12px;
+    top: 12px
+}
+
+.password-container .eye-off{
+    display: none;
+}
+
+/* Tắt icon con mắt mặc định trên trình duyệt Edge / Internet Explorer */
+#password::-ms-reveal,
+#password::-ms-clear {
+    display: none !important;
+}
+
+.not-correct{
+    display: none;
+    color: var(--Component-Text-text-danger, #BA1A1A);
+
+    /* Body-small/Regular */
+    font-family: var(--Typography-Family-display, "Public Sans");
+    font-size: var(--Typography-Font-size-fs-xl, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 16.8px */
+
+    margin-top: 4px;
 }
 
 .sign-in__content button{
@@ -157,7 +216,7 @@
     font-weight: 600;
     line-height: 120%; /* 19.2px */
 
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .sign-in__content .forgot-password{
@@ -177,6 +236,19 @@
 .sign-in .sign-in__footer{
     margin-top: auto;
     width: 100%;
+}
+
+.sign-in__footer a{
+    text-decoration: none;
+    color: var(--colors-text-gray, #9EA1A5);
+    text-align: right;
+
+    /* Body-caption/Regular */
+    font-family: var(--Typography-Family-display, "Public Sans");
+    font-size: var(--Typography-Font-size-fs-lg, 12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 14.4px */
 }
 
 .sign-in__footer .line1,
