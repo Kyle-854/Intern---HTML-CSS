@@ -99,7 +99,9 @@ function translate(lang){
             "atac": "Advertiser Terms and Conditions",
             "pp": "Privacy Policy",
             "cookies": "Cookies",
-            "reserved": "© 2026 SmartAds, FPT Online. All rights reserved."
+            "reserved": "© 2026 SmartAds, FPT Online. All rights reserved.",
+            "footer_line1": "Supporting over <span>57,254,060</span> audience",
+            "footer_line2": "Ensure <span>brand safety</span> with <span>trusted partners</span>"
 
         },
         "VIE": {
@@ -116,7 +118,9 @@ function translate(lang){
             "atac": "Điều khoản và điều kiện của nhà quảng cáo",
             "pp": "Chính sách bảo mật",
             "cookies": "Chính sách",
-            "reserved": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền."
+            "reserved": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền.",
+            "footer_line1": "Kết nối hơn <span>57,254,060</span> độc giả",
+            "footer_line2": "Đảm bảo <span>an toàn thương hiệu</span> với <span>đối tác uy tín</span>"
         }
     };
 
@@ -135,6 +139,8 @@ function translate(lang){
         document.querySelector('.pp').innerHTML = translations[lang].pp;
         document.querySelector('.cookies').innerHTML = translations[lang].cookies;
         document.querySelector('.line1').innerHTML = translations[lang].reserved;
+        document.querySelector('.footer-line1__text').innerHTML = translations[lang].footer_line1;
+        document.querySelector('.footer-line2__text').innerHTML = translations[lang].footer_line2;
     }
 }
 
