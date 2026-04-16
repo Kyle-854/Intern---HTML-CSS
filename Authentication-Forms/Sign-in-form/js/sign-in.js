@@ -84,63 +84,26 @@ function activeLang(){
 activeLang();
 
 function translate(lang){
-    const translations = {
-        "ENG": {
-            "title": "Sign In",
-            "desc_text": "Welcome back!",
-            "have_account": "Don't have an account? <a href=\"\https://smartads.tech\" target = \"_blank\">Get Started</a>",
-            "password": "Password",
-            "enterEmail": "Enter your email",
-            "enterPass": "Enter your password",
-            "btn_login": "Login",
-            "forgot_pass": "Forgot password?",
-            "ar": "Advertising Regulations",
-            "tos": "Terms of service",
-            "atac": "Advertiser Terms and Conditions",
-            "pp": "Privacy Policy",
-            "cookies": "Cookies",
-            "reserved": "© 2026 SmartAds, FPT Online. All rights reserved.",
-            "footer_line1": "Supporting over <span>57,254,060</span> audience",
-            "footer_line2": "Ensure <span>brand safety</span> with <span>trusted partners</span>"
 
-        },
-        "VIE": {
-            "title": "Đăng nhập",
-            "desc_text": "Chào mừng bạn quay lại!",
-            "have_account": "Chưa có tài khoản? <a href=\"\https://smartads.tech\" target = \"_blank\">Đăng ký</a>",
-            "password": "Mật khẩu",
-            "enterEmail": "Nhập email",
-            "enterPass": "Nhập mật khẩu",
-            "btn_login": "Đăng nhập",
-            "forgot_pass": "Quên mật khẩu?",
-            "ar": "Quy định về quảng cáo",
-            "tos": "Điều khoản dịch vụ",
-            "atac": "Điều khoản và điều kiện của nhà quảng cáo",
-            "pp": "Chính sách bảo mật",
-            "cookies": "Chính sách",
-            "reserved": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền.",
-            "footer_line1": "Kết nối hơn <span>57,254,060</span> độc giả",
-            "footer_line2": "Đảm bảo <span>an toàn thương hiệu</span> với <span>đối tác uy tín</span>"
-        }
-    };
+    const trans = translations;
 
     if(lang){
-        document.querySelector('title').innerHTML = translations[lang].title;
-        document.querySelector('.title').innerHTML = translations[lang].desc_text;
-        document.querySelector('.have-account').innerHTML = translations[lang].have_account;
-        document.querySelector('.password-text').innerHTML = translations[lang].password;
-        document.querySelector('#email').placeholder = translations[lang].enterEmail;
-        document.querySelector('#password').placeholder = translations[lang].enterPass;
-        document.querySelector('#btn_login').innerHTML = translations[lang].btn_login;
-        document.querySelector('.forgot-password').innerHTML = translations[lang].forgot_pass;
-        document.querySelector('.ar').innerHTML = translations[lang].ar;
-        document.querySelector('.tos').innerHTML = translations[lang].tos;
-        document.querySelector('.atac').innerHTML = translations[lang].atac;
-        document.querySelector('.pp').innerHTML = translations[lang].pp;
-        document.querySelector('.cookies').innerHTML = translations[lang].cookies;
-        document.querySelector('.line1').innerHTML = translations[lang].reserved;
-        document.querySelector('.footer-line1__text').innerHTML = translations[lang].footer_line1;
-        document.querySelector('.footer-line2__text').innerHTML = translations[lang].footer_line2;
+        document.querySelector('title').innerHTML = trans[lang].title;
+        document.querySelector('.title').innerHTML = trans[lang].desc_text;
+        document.querySelector('.have-account').innerHTML = trans[lang].have_account;
+        document.querySelector('.password-text').innerHTML = trans[lang].password;
+        document.querySelector('#email').placeholder = trans[lang].enterEmail;
+        document.querySelector('#password').placeholder = trans[lang].enterPass;
+        document.querySelector('#btn_login .btn-text').innerHTML = trans[lang].btn_login;
+        document.querySelector('.forgot-password').innerHTML = trans[lang].forgot_pass;
+        document.querySelector('.ar').innerHTML = trans[lang].ar;
+        document.querySelector('.tos').innerHTML = trans[lang].tos;
+        document.querySelector('.atac').innerHTML = trans[lang].atac;
+        document.querySelector('.pp').innerHTML = trans[lang].pp;
+        document.querySelector('.cookies').innerHTML = trans[lang].cookies;
+        document.querySelector('.line1').innerHTML = trans[lang].reserved;
+        document.querySelector('.footer-line1__text').innerHTML = trans[lang].footer_line1;
+        document.querySelector('.footer-line2__text').innerHTML = trans[lang].footer_line2;
     }
 }
 
@@ -163,4 +126,46 @@ function eyeOnOff(){
     });
 }
 eyeOnOff();
+
+function click_btn_login(){
+    const btn_login = document.querySelector('#btn_login');
+    btn_login.addEventListener('click', async function(){
+        btn_login.classList.add('loading');
+        btn_login.disabled = true;
+        
+        try {
+
+
+            await login();
+        } finally {
+            btn_login.classList.remove('loading');
+            btn_login.disabled = false;
+        }
+    });
+}
+click_btn_login();
+
+function disabled_btn_login(){
+    const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
+    const btn_login = document.querySelector('#btn_login');
+
+    btn_login.disabled = true;
+
+    const check = () => {
+        const emailCheck = email.value.trim();
+        const passwordCheck = password.value;
+
+        if (emailCheck !== '' && passwordCheck !== '') {
+            btn_login.disabled = false;
+        } else {
+            btn_login.disabled = true;
+        }
+        
+    }
+
+    email.addEventListener('input', check);
+    password.addEventListener('input', check);
+}
+disabled_btn_login();
 

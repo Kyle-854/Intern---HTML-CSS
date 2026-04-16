@@ -54,6 +54,8 @@
 
                     <input type="email" name="" id="email" placeholder="Enter your email ">
 
+                    <p class="email-error invalid-feedback">Invalid email format. Please enter a valid email address</p>
+
                     <p class="password-text">Password</p>
 
                     <div class="password-container">
@@ -62,9 +64,12 @@
                         <img class="eye-off" src="../assets/images/eye-off.svg" alt="eye-off">
                     </div>
 
-                    <p class="not-correct">Your email/password is not correct. Please try again</p>
+                    <p class="pw-error invalid-feedback">Your email/password is not correct. Please try again</p>
 
-                    <button type="submit" id="btn_login">Login</button>
+                    <button type="submit" id="btn_login">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Login</span>
+                    </button>
 
                     <a class="forgot-password" href="">Forgot password?</a>
                 </div>
@@ -198,14 +203,9 @@
 
     </div>
 
-    <script src="./js/sign-in.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="./js/sign-in.js"></script>
     <script src="./api/login-api.js"></script>
-    <script>
-        const btn_login = document.querySelector('#btn_login');
-        btn_login.addEventListener('click', function(){
-            login();
-        });
-    </script>
+    <script src="../translations.js"></script>
 </body>
 </html>
