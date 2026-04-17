@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Public Sans';
+    src: url('../../../assets/fonts/PublicSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-image: url('../../../assets/images/bg-sign-up.png');
+    background-size: cover;
+    background-position: left; 
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  
+}
+
+.sign-up{
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.sign-up .left-side{
+    width: 450px;
+    height: 800px;
+    padding: 40px;
+    background-color: #FCFCFD;
+    border-radius: 16px 0 0 16px;
+}
+
+.left-side .sign-up__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.sign-up__header .logo-container{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-container .logoSMA{
+    width: 29px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.logo-container .logo2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.logo2 .textSMA{
+    width: 94px;
+    height: 16px;   
+}
+
+.logo2 .power{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.power .powered-by{
+    height: 8px;
+    flex: 1 0 0;
+}
+
+.power .FPT-Online{
+    width: 35.589px;
+    height: 12.727px;
+}
+
+.sign-up__header .dropdown-menu{
+    position: relative;
+}
+
+.dropdown-menu .menu{
+    display: flex;
+    padding: 10px 4px;
+}
+
+.flag{
+    margin-right: 8px;
+}
+
+.language{
+    margin-right: 4px;
+    color: #9EA1A5;
+
+    /* Body-small/Regular */
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 16.8px */
+}
+
+.dropdown-menu .dropdown{
+    padding: 8px 10px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    visibility: hidden;
+}
+
+.dropdown .submenu{
+    display: flex;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.submenu:hover{
+    background: #048845;
+}
+
+.submenu:hover .language{
+    color: #FFF;
+}
+
+.sign-up .right-side{
+    width: 750px;
+    height: 800px;
+    background: linear-gradient(180deg, #F7F7F7 0%, #F5F5F5 90.1%);
+    border-radius: 0 16px 16px 0;
+}
+
+
+
+
