@@ -1,4 +1,4 @@
-function dropdownMenu(){
+function setupDropdown(){
     const menu = document.querySelector('.menu');
     const dropdown = document.querySelector('.dropdown');
 
@@ -23,9 +23,9 @@ function dropdownMenu(){
         }
     });
 }
-dropdownMenu();
+setupDropdown();
 
-function changeSubMenu(){
+function handleLanguageSelect(){
     const flag = document.querySelector('.menu .flag');
     const language = document.querySelector('.menu .language');
     const sub1 = document.querySelector('.sub1');
@@ -39,7 +39,7 @@ function changeSubMenu(){
         flag.src = subflag.src;
         language.innerHTML = sublanguage.innerHTML;
 
-        activeLang();
+        updateActiveLanguage();
         dropdown.style.visibility = 'hidden'
     });
 
@@ -50,13 +50,13 @@ function changeSubMenu(){
         flag.src = subflag.src;
         language.innerHTML = sublanguage.innerHTML;
 
-        activeLang();  
+        updateActiveLanguage();  
         dropdown.style.visibility = 'hidden'
     });
 }
-changeSubMenu();
+handleLanguageSelect();
 
-function activeLang(){
+function updateActiveLanguage(){
     const sub1 = document.querySelector('.sub1');
     const sub1_lang = document.querySelector('.sub1 .language');
     const sub2 = document.querySelector('.sub2');
@@ -68,7 +68,7 @@ function activeLang(){
         sub2.style.background = '';
         sub2_lang.style.color = '';
 
-        translate("ENG");
+        applyTranslations("ENG");
     } 
     
     if(document.querySelector('.language').innerHTML === "VIE"){
@@ -77,13 +77,13 @@ function activeLang(){
         sub1.style.background = '';
         sub1_lang.style.color = '';
 
-        translate("VIE");
+        applyTranslations("VIE");
     }
     
 }
-activeLang();
+updateActiveLanguage();
 
-function translate(lang){
+function applyTranslations(lang){
 
     const trans = translations;
 
@@ -107,7 +107,7 @@ function translate(lang){
     }
 }
 
-function eyeOnOff(){
+function setupPasswordToggle(){
     const eyeOn = document.querySelector('.eye-on');
     const eyeOff = document.querySelector('.eye-off');
     const password = document.querySelector('#password');
@@ -125,29 +125,36 @@ function eyeOnOff(){
 
     });
 }
-eyeOnOff();
+setupPasswordToggle();
 
-function click_btn_login(){
+function handleLoginFormSubmit(){
+    const form = document.querySelector('form');
     const btn_login = document.querySelector('#btn_login');
-    btn_login.addEventListener('click', async function(){
+
+    form.addEventListener('submit', async function(event){
+
+        event.preventDefault();
+
         btn_login.classList.add('loading');
         btn_login.disabled = true;
         
         try {
-
-
-            await login();
+            if(validateEmail()){
+                await login();
+            }
         } finally {
             btn_login.classList.remove('loading');
             btn_login.disabled = false;
         }
     });
 }
-click_btn_login();
+handleLoginFormSubmit();
 
-function disabled_btn_login(){
+function setupLoginValidation(){
     const email = document.querySelector('#email');
     const password = document.querySelector('#password');
+    const emailError = document.querySelector('.email-error');
+    const passwordError = document.querySelector('.password-error');
     const btn_login = document.querySelector('#btn_login');
 
     btn_login.disabled = true;
@@ -164,8 +171,30 @@ function disabled_btn_login(){
         
     }
 
-    email.addEventListener('input', check);
-    password.addEventListener('input', check);
+    email.addEventListener('input', function(){
+        emailError.style.display = 'none';
+        email.style.border = '1px solid #DFE3E8';
+        check();
+    });
+    password.addEventListener('input', function(){
+        passwordError.style.display = 'none';
+        password.style.border = '1px solid #DFE3E8';
+        check();
+    });
 }
-disabled_btn_login();
+setupLoginValidation();
+
+function validateEmail(){
+    const email = document.querySelector('#email');
+    const emailError = document.querySelector('.email-error');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailRegex.test(email.value.trim())){
+        emailError.style.display = 'block';
+        email.style.border = '2px solid #BA1A1A';
+        return false;
+    }
+    return true;
+}
 

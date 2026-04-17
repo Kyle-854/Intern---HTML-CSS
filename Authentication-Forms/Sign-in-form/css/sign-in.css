@@ -125,7 +125,7 @@
 }
 
 .sign-in__content #email{
-
+    margin-bottom: 12px;
 }
 
 .sign-in__content #password{
@@ -193,7 +193,6 @@
 }
 
 .invalid-feedback{
-    display: none;
     color: #BA1A1A;
 
     /* Body-small/Regular */
@@ -208,6 +207,11 @@
 
 .email-error{
     margin-bottom: 12px;
+    display: none;
+}
+
+.password-error{
+    display: none;
 }
 
 .sign-in__content #btn_login{

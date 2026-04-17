@@ -50,28 +50,31 @@
 
                     <p class="have-account">Don't have an account? <a href="">Get Started</a></p>
 
-                    <p class="email-text">Emai</p>
+                    <form method="post">
 
-                    <input type="email" name="" id="email" placeholder="Enter your email ">
-
-                    <p class="email-error invalid-feedback">Invalid email format. Please enter a valid email address</p>
-
-                    <p class="password-text">Password</p>
-
-                    <div class="password-container">
-                        <input type="password" id="password" placeholder="Enter your password">
-                        <img class="eye-on" src="../assets/images/eye-on.svg" alt="eye-on">
-                        <img class="eye-off" src="../assets/images/eye-off.svg" alt="eye-off">
-                    </div>
-
-                    <p class="pw-error invalid-feedback">Your email/password is not correct. Please try again</p>
-
-                    <button type="submit" id="btn_login">
-                        <span class="spinner"></span>
-                        <span class="btn-text">Login</span>
-                    </button>
-
-                    <a class="forgot-password" href="">Forgot password?</a>
+                        <p class="email-text">Email</p>
+                        
+                        <input name="" id="email" placeholder="Enter your email ">
+                        
+                        <p class="email-error invalid-feedback">Invalid email format. Please enter a valid email address</p>
+                        
+                        <p class="password-text">Password</p>
+                        
+                        <div class="password-container">
+                            <input type="password" id="password" placeholder="Enter your password">
+                            <img class="eye-on" src="../assets/images/eye-on.svg" alt="eye-on">
+                            <img class="eye-off" src="../assets/images/eye-off.svg" alt="eye-off">
+                        </div>
+                        
+                        <p class="password-error invalid-feedback">Your email/password is not correct. Please try again</p>
+                        
+                        <button type="submit" id="btn_login">
+                            <span class="spinner"></span>
+                            <span class="btn-text">Login</span>
+                        </button>
+                        
+                        <a class="forgot-password" href="">Forgot password?</a>
+                    </form>
                 </div>
 
                 <div class="sign-in__footer">
@@ -204,8 +207,8 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../translations.js"></script>
     <script type="module" src="./js/sign-in.js"></script>
     <script src="./api/login-api.js"></script>
-    <script src="../translations.js"></script>
 </body>
 </html>

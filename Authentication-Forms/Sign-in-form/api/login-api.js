@@ -24,7 +24,7 @@ async function login() {
         } else {
             notCorrect.style.display = 'block';
             emailInput.style.border = '2px solid #BA1A1A';
-            passwordInput.style.border = '2px solid #BA1A1A)';
+            passwordInput.style.border = '2px solid #BA1A1A';
 
         }    
     } catch (error) {
