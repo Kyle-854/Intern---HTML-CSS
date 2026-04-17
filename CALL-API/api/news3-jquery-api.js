@@ -10,7 +10,7 @@ async function loadData(limit) {
             //url
                 const url = item.url ? item.url : '#';
             //img_url
-                const img_url = item.img_url ? item.img_url : '../assets/images/new_img.png';
+                const img_url = item.img_url ? item.img_url : '../../assets/images/new_img.png';
             //title
                 const title  = item.title ? item.title : 'No Title';
 

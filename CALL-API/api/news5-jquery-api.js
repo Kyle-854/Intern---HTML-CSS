@@ -22,7 +22,7 @@ async function loadData(limit) {
       //img_url
       const img_url = item.img_url
         ? item.img_url
-        : "../assets/images/new_img.png";
+        : "../../assets/images/new_img.png";
       //title
       const title = item.title ? item.title : "No Title";
 
@@ -43,17 +43,15 @@ async function loadData(limit) {
 
         container1.append(newsItem1);
 
-        const newsTitle1 = newsItem1.find('.news__title1');
-        newsTitle1.on('click', () => {
-          window.open(url, '_blank');
+        const newsTitle1 = newsItem1.find(".news__title1");
+        newsTitle1.on("click", () => {
+          window.open(url, "_blank");
         });
 
-        const newsImg1 = newsItem1.find('.news__item1__img');
-        newsImg1.on('click', () => {
-          window.open(url, '_blank');
+        const newsImg1 = newsItem1.find(".news__item1__img");
+        newsImg1.on("click", () => {
+          window.open(url, "_blank");
         });
-
-
       } else {
         if (index % 2 === 0) {
           item2_container = $('<div class="news__item2-container"></div>');
@@ -78,14 +76,14 @@ async function loadData(limit) {
         // });
         item2_container.append(newsItem2);
 
-        const newsTitle2 = newsItem2.find('.news__title2');
-        newsTitle2.on('click', () => {
-          window.open(url, '_blank');
+        const newsTitle2 = newsItem2.find(".news__title2");
+        newsTitle2.on("click", () => {
+          window.open(url, "_blank");
         });
 
-        const newsImg2 = newsItem2.find('.news__item2__img');
-        newsImg2.on('click', () => {
-          window.open(url, '_blank');
+        const newsImg2 = newsItem2.find(".news__item2__img");
+        newsImg2.on("click", () => {
+          window.open(url, "_blank");
         });
       }
     });

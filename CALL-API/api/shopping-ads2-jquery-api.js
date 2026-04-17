@@ -17,7 +17,7 @@ async function loadData(limit) {
             //url
                 const url = item.url ?? '#';
             //img_url
-                const img_url = item.img_url ?? '../assets/images/new_img.png';
+                const img_url = item.img_url ?? '../../assets/images/new_img.png';
             //title
                 const title  = item.title ?? 'No Title';
             //price2
@@ -27,7 +27,7 @@ async function loadData(limit) {
             //recommend
                 const recommend = item.recommend ?? '';
             //brand_logo
-                const brand_logo = item.brand_logo ?? '../assets/images/new_img.png';
+                const brand_logo = item.brand_logo ?? '../../assets/images/new_img.png';
             //brand_name
                 const brand_name = item.brand_name ?? 'No Brand';
             //brand_url
@@ -59,7 +59,7 @@ async function loadData(limit) {
                         <a class="item__brand" href="${brand_url}" target="_blank">
                             <img class="brand__logo" src="${brand_logo}" alt="logo">
                             <p class="brand__name">${brand_name}</p>
-                            <img class="verified" src="../assets/images/logo-verified.svg" alt="verified">
+                            <img class="verified" src="../../assets/images/logo-verified.svg" alt="verified">
                         </a>
                     </div>
                 </div>

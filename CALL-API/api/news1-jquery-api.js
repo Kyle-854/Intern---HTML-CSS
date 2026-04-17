@@ -15,7 +15,7 @@ async function loadData(limit) {
             //decription
                 const description = item.decription ? item.decription : 'No Description';
             //img_url
-                const img_url = item.img_url ? item.img_url : '../assets/images/new_img.png';
+                const img_url = item.img_url ? item.img_url : '../../assets/images/new_img.png';
 
             //Khung item
             const htmlString = `
