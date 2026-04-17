@@ -88,22 +88,25 @@ function applyTranslations(lang){
     const trans = translations;
 
     if(lang){
-        document.querySelector('title').innerHTML = trans[lang].title;
-        document.querySelector('.title').innerHTML = trans[lang].desc_text;
-        document.querySelector('.have-account').innerHTML = trans[lang].have_account;
-        document.querySelector('.password-text').innerHTML = trans[lang].password;
-        document.querySelector('#email').placeholder = trans[lang].enterEmail;
-        document.querySelector('#password').placeholder = trans[lang].enterPass;
-        document.querySelector('#btn_login .btn-text').innerHTML = trans[lang].btn_login;
-        document.querySelector('.forgot-password').innerHTML = trans[lang].forgot_pass;
-        document.querySelector('.ar').innerHTML = trans[lang].ar;
-        document.querySelector('.tos').innerHTML = trans[lang].tos;
-        document.querySelector('.atac').innerHTML = trans[lang].atac;
-        document.querySelector('.pp').innerHTML = trans[lang].pp;
-        document.querySelector('.cookies').innerHTML = trans[lang].cookies;
-        document.querySelector('.line1').innerHTML = trans[lang].reserved;
-        document.querySelector('.footer-line1__text').innerHTML = trans[lang].footer_line1;
-        document.querySelector('.footer-line2__text').innerHTML = trans[lang].footer_line2;
+        const temp = trans[lang];
+        document.querySelector('title').innerHTML = temp.title;
+        document.querySelector('.title').innerHTML = temp.desc_text;
+        document.querySelector('.have-account').innerHTML = temp.have_account;
+        document.querySelector('.password-text').innerHTML = temp.password;
+        document.querySelector('#email').placeholder = temp.enter_email;
+        document.querySelector('#password').placeholder = temp.enter_pass;
+        document.querySelector('#btn_login .btn-text').innerHTML = temp.btn_login;
+        document.querySelector('.forgot-password').innerHTML = temp.forgot_pass;
+        document.querySelector('.ar').innerHTML = temp.ar;
+        document.querySelector('.tos').innerHTML = temp.tos;
+        document.querySelector('.atac').innerHTML = temp.atac;
+        document.querySelector('.pp').innerHTML = temp.pp;
+        document.querySelector('.cookies').innerHTML = temp.cookies;
+        document.querySelector('.line1').innerHTML = temp.reserved;
+        document.querySelector('.footer-line1__text').innerHTML = temp.footer_line1;
+        document.querySelector('.footer-line2__text').innerHTML = temp.footer_line2;
+        document.querySelector('.email-error').innerHTML = temp.email_error;
+        document.querySelector('.password-error').innerHTML = temp.password_error;
     }
 }
 

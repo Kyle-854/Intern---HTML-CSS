@@ -2,9 +2,11 @@ const SUPABASE_URL = 'https://tctjqxhtwhaplpvkmucz.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjdGpxeGh0d2hhcGxwdmttdWN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDM1NzQsImV4cCI6MjA5MTk3OTU3NH0.8oPOL5359o6sSp4UBGpY_3LjC0gCLPOpECm4Bo81eQI';
 
 async function login() {
-    const email = $('#email');
-    const password = $('#password');
-    const passwordError = $('.password-error');
+    const $email = $('#email');
+    const email = $email.val().trim();
+    const $password = $('#password');
+    const password = $password.val();
+    const $passwordError = $('.password-error');
 
     try {
         const res = await $.ajax({
@@ -15,8 +17,8 @@ async function login() {
                 'Content-Type': 'application/json'
             },
             data: JSON.stringify({
-                email: email.val(),
-                password: password.val()
+                email: email,
+                password: password
             })
         });
 
@@ -24,15 +26,11 @@ async function login() {
             console.log("Đăng nhập thành công! Token là:", res.access_token);
             alert("Đăng nhập thành công!");
         } 
-        // else{
-        //     passwordError.style.display = 'block';
-        //     password.style.border = '2px solid #BA1A1A';
-        // }
     } catch (error) {
         console.error('LỖI: ', error);
         if(error.status === 400){
-            passwordError.css('display', 'block');
-            password.css('border', '2px solid #BA1A1A');
+            $passwordError.css('display', 'block');
+            $password.css('border', '2px solid #BA1A1A');
         }
     }
 }

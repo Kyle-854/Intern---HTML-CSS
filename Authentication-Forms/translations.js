@@ -4,8 +4,8 @@ const translations = {
     "desc_text": "Welcome back!",
     "have_account": "Don't have an account? <a href=\"https://smartads.tech\" target = \"_blank\">Get Started</a>",
     "password": "Password",
-    "enterEmail": "Enter your email",
-    "enterPass": "Enter your password",
+    "enter_email": "Enter your email",
+    "enter_pass": "Enter your password",
     "btn_login": "Login",
     "forgot_pass": "Forgot password?",
     "ar": "Advertising Regulations",
@@ -15,15 +15,17 @@ const translations = {
     "cookies": "Cookies",
     "reserved": "© 2026 SmartAds, FPT Online. All rights reserved.",
     "footer_line1": "Supporting over <span>57,254,060</span> audience",
-    "footer_line2": "Ensure <span>brand safety</span> with <span>trusted partners</span>"
+    "footer_line2": "Ensure <span>brand safety</span> with <span>trusted partners</span>",
+    "email_error": "Invalid email format. Please enter a valid email address",
+    "password_error": "Your email/password is not correct. Please try again"
   },
   "VIE": {
     "title": "Đăng nhập",
     "desc_text": "Chào mừng bạn quay lại!",
     "have_account": "Chưa có tài khoản? <a href=\"https://smartads.tech\" target = \"_blank\">Đăng ký</a>",
     "password": "Mật khẩu",
-    "enterEmail": "Nhập email",
-    "enterPass": "Nhập mật khẩu",
+    "enter_email": "Nhập email",
+    "enter_pass": "Nhập mật khẩu",
     "btn_login": "Đăng nhập",
     "forgot_pass": "Quên mật khẩu?",
     "ar": "Quy định về quảng cáo",
@@ -33,6 +35,8 @@ const translations = {
     "cookies": "Chính sách",
     "reserved": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền.",
     "footer_line1": "Kết nối hơn <span>57,254,060</span> độc giả",
-    "footer_line2": "Đảm bảo <span>an toàn thương hiệu</span> với <span>đối tác uy tín</span>"
+    "footer_line2": "Đảm bảo <span>an toàn thương hiệu</span> với <span>đối tác uy tín</span>",
+    "email_error": "Định dạng email không hợp lệ. Vui lòng nhập đúng địa chỉ email",
+    "password_error": "Email/mật khẩu của bạn không chính xác. Vui lòng thử lại"
   }
 }
