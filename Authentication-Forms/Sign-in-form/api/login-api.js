@@ -1,35 +1,39 @@
-async function login() {
-    const email = $('#email').val();
-    const password = $('#password').val();
+const SUPABASE_URL = 'https://tctjqxhtwhaplpvkmucz.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjdGpxeGh0d2hhcGxwdmttdWN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDM1NzQsImV4cCI6MjA5MTk3OTU3NH0.8oPOL5359o6sSp4UBGpY_3LjC0gCLPOpECm4Bo81eQI';
 
-    if (!email || !password) {
-        alert('Vui lòng nhập đầy đủ thông tin!!!');
-        return;
-    }
+async function login() {
+    const email = $('#email');
+    const password = $('#password');
+    const passwordError = $('.password-error');
 
     try {
-        const user = await $.get('https://69d315a1336103955f8e8baa.mockapi.io/users');
-        
-        const validUser = user.find(u => u.email === email && u.password === password);
+        const res = await $.ajax({
+            url: `${SUPABASE_URL}/auth/v1/token?grant_type=password`,
+            type: 'POST',
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({
+                email: email.val(),
+                password: password.val()
+            })
+        });
 
-        const emailInput = document.querySelector('#email');
-        const passwordInput = document.querySelector('#password');
-        const notCorrect = document.querySelector('.invalid-feedback');
-
-        if(validUser){
-            notCorrect.style.display = 'none';
-            emailInput.style.border = '1px solid #DFE3E8';
-            passwordInput.style.border = '1px solid #DFE3E8';
-            alert('Đăng nhập thành công!!!');
-        } else {
-            notCorrect.style.display = 'block';
-            emailInput.style.border = '2px solid #BA1A1A';
-            passwordInput.style.border = '2px solid #BA1A1A';
-
-        }    
+        if (res.access_token) {
+            console.log("Đăng nhập thành công! Token là:", res.access_token);
+            alert("Đăng nhập thành công!");
+        } 
+        // else{
+        //     passwordError.style.display = 'block';
+        //     password.style.border = '2px solid #BA1A1A';
+        // }
     } catch (error) {
-        console.error('Lỗi: ', error);
-        alert('Lỗi kết nối !!!');
-    }   
+        console.error('LỖI: ', error);
+        if(error.status === 400){
+            passwordError.css('display', 'block');
+            password.css('border', '2px solid #BA1A1A');
+        }
+    }
 }
 // login();
