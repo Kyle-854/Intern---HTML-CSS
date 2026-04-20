@@ -168,8 +168,27 @@ function setupLoginValidation(){
 
         if (emailCheck !== '' && passwordCheck !== '') {
             btn_login.disabled = false;
+
+            btn_login.addEventListener('mouseenter', () => {
+                btn_login.style.cursor = 'pointer';
+                btn_login.style.boxShadow = '0 0 0 2px #E5E5E5';
+                btn_login.style.background = '#047B3E';
+
+            });
+
+            btn_login.addEventListener('mouseleave', () => {
+                btn_login.style.cursor = 'default';
+                btn_login.style.background = '#048845';
+                btn_login.style.boxShadow = 'none';
+            });
         } else {
             btn_login.disabled = true;
+
+            btn_login.addEventListener('mouseenter', () => {
+                btn_login.style.cursor = 'default';
+                btn_login.style.background = '#048845';
+                btn_login.style.boxShadow = 'none';
+            });
         }
         
     }
