@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="./css/sign-up.css" />
+  </head>
+  <body>
+    <div class="sign-up__wrapper">
+      <div class="sign-up">
+        <div class="left-side">
+          <div class="left-side__header">
+            <a
+              class="logo-container"
+              href="https://smartads.tech/"
+              target="_blank"
+            >
+              <img
+                class="logoSMA"
+                src="../../assets/images/logo-sma-color.svg"
+                alt="logoSMA"
+              />
+
+              <div class="logo2">
+                <img
+                  class="textSMA"
+                  src="../../assets/images/logo-sma-text.svg"
+                  alt="textSMA"
+                />
+
+                <div class="power">
+                  <img
+                    class="powered-by"
+                    src="../../assets/images/logo-powered-by-text.svg"
+                    alt="powered-by"
+                  />
+                  <img
+                    class="FPT-Online"
+                    src="../../assets/images/logo-fpt-online.svg"
+                    alt="fpt-online"
+                  />
+                </div>
+              </div>
+            </a>
+
+            <div class="dropdown-menu">
+              <div class="menu">
+                <img
+                  class="flag"
+                  src="https://st.smartads.tech/v162/images/new/icons/language-en.svg"
+                  alt="Eng"
+                />
+                <p class="language">ENG</p>
+                <img
+                  class="ic_down"
+                  src="../../assets/images/down_small_fill.svg"
+                  alt=""
+                />
+              </div>
+              <div class="dropdown">
+                <div class="submenu sub1">
+                  <img
+                    class="flag"
+                    src="https://st.smartads.tech/v162/images/new/icons/language-en.svg"
+                    alt="Eng"
+                  />
+                  <p class="language">ENG</p>
+                </div>
+                <div class="submenu sub2">
+                  <img
+                    class="flag"
+                    src="https://st.smartads.tech/v162/images/new/icons/language-vn.svg"
+                    alt="Vie"
+                  />
+                  <p class="language">VIE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="left-side__content">
+            <a class="back-to-home" href="">
+              <img src="../../assets/images/arrow_left_line_gay.svg" alt="" />
+              <p id="back-step1 back-step2">Back to home</p>
+            </a>
+
+            <p class="title">Let’s get started</p>
+
+            <p class="choose-options" id="content-description-step1 content-description-step2">Choose your account type</p>
+
+            <form id="select-option-form">
+              <div class="ads-option ads-pub-options">
+                <div class="ads-container ads-pub-containers">
+                  <img src="../../assets/images/ic_ads.svg" alt="" />
+
+                  <div class="ads ads-pub">
+                    <p class="ads__title ads-pub__title">Advertiser</p>
+                    <p class="ads__description ads-pub__description">
+                      Choose this if you are going to advertise for your
+                      company.
+                    </p>
+                  </div>
+                </div>
+
+                <input
+                  class="rdo-button rdo-ads"
+                  type="radio"
+                  name="sign-up__option"
+                  value="ads"
+                  checked
+                />
+              </div>
+
+              <div class="pub-option ads-pub-options">
+                <div class="pub-container ads-pub-containers">
+                  <img src="../../assets/images/ic_pub.svg" alt="" />
+
+                  <div class="pub ads-pub">
+                    <p class="pub__title ads-pub__title">Publisher</p>
+                    <p class="pub__description ads-pub__description">
+                      Choose this if you are partnering with SmartAds.
+                    </p>
+                  </div>
+                </div>
+
+                <input
+                  class="rdo-button rdo-pub"
+                  type="radio"
+                  name="sign-up__option"
+                  value="pub"
+                />
+              </div>
+
+              <button type="submit" class="btn_action">Continue</button>
+            </form>
+
+            <form id="sign-up-ads-form">
+              <!-- --------- -->
+              <p class="input__text">
+                Full name<span>*</span>
+              </p>
+
+              <input type="text" class="input__place" placeholder="Enter your full name">
+
+              <!-- --------- -->
+              <p class="input__text">
+                Company/ Personal email<span>*</span>
+              </p>
+
+               <input type="text" class="input__place" placeholder="Enter your company/personal email">
+
+              <!-- --------- -->
+              <p class="input__text">
+                Phone number<span>*</span>
+              </p>
+
+              <input type="text" class="input__place" placeholder="Enter your phone number">
+
+              <!-- --------- -->
+              <p class="input__text">
+                Industry<span>*</span>
+              </p>
+
+              <!-- <input type="text" class="input__place" placeholder=""> -->
+
+              <!-- --------- -->
+              <p class="input__text">
+                Company name
+              </p>
+
+              <input type="text" class="input__place" placeholder="Enter your company name">
+
+              <!-- --------- -->
+               <div class="agree-container">
+                <input type="checkbox">
+                
+                <p>
+                  I agree to <span>SmartAds Terms and Conditions</span>
+                </p>
+               </div>
+
+
+              <button type="submit" class="btn_action">Sign Up</button>
+            </form>
+
+            <form id="sign-up-pub-form">
+
+              <button type="submit" class="btn_action">Sign Up</button>
+            </form>
+
+            <p class="have-account">
+              Already have an account?
+              <a href="../Sign-in-form/sign-in.html">Login</a>
+            </p>
+          </div>
+
+          <div class="left-side__footer">
+            <div class="progress-text__container">
+              <p class="text1" id="text1-step1 text1-step2">Just one last step!</p>
+              <p class="text2">1/2</p>
+            </div>
+
+            <div class="progress-step">
+              <div class="step step1"></div>
+              <div class="step step2"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-side">
+
+          <div class="right-side__header1 right-side__header">
+            <p class="right-side__title1 right-side__title">
+              Sign Up to launch
+              <br />
+              your first campaign
+            </p>
+
+            <p class="right-side__description1 right-side__description">
+              Reach your audience on digital articles with
+              <br />
+              SmartAds AI-driven contextual targeting
+            </p>
+          </div>
+
+          <div class="right-side__header2 right-side__header">
+            <p class="right-side__title1 right-side__title">
+              Drive higher profit via better
+              <br />
+              fill rates and eCPMs
+            </p>
+
+            <p class="right-side__description1 right-side__description">
+              Track and manage inventory effectively
+              <br />
+              with real-time statistics
+            </p>
+          </div>
+
+          <div class="right-side__footer">
+            <div class="footer-line12__container">
+              <div class="footer-line1">
+                <div class="img-container">
+                  <img
+                    class="ic-person ic-person1"
+                    src="../../assets/images/ic_-person1.jpg"
+                    alt=""
+                  />
+                  <img
+                    class="ic-person ic-person2"
+                    src="../../assets/images/ic_-person2.jpg"
+                    alt=""
+                  />
+                  <img
+                    class="ic-person ic-person3"
+                    src="../../assets/images/ic_-person3.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <p class="footer-line1__text">
+                  Supporting over <span>57,254,060</span> audience
+                </p>
+              </div>
+
+              <p class="footer-line2__text">
+                Ensure <span>brand safety</span> with
+                <span>trusted partners</span>
+              </p>
+            </div>
+
+            <div class="footer-slider">
+              <div class="slider-track">
+                <div class="slider-group">
+                  <a
+                    class="logo-brand"
+                    href="https://fptonline.net"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-fptonline.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://vnexpress.net"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-vne.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://ngoisao.vnexpress.net"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-ngoisao.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://thanhnien.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-thanhnien.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://dantri.com.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-dantri.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://tuoitre.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-tuoitre.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://vietnamnet.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-vn-net.svg" alt="" />
+                  </a>
+                </div>
+
+                <div class="slider-group">
+                  <a
+                    class="logo-brand"
+                    href="https://fptonline.net"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-fptonline.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://vnexpress.net"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-vne.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://ngoisao.vnexpress.net"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-ngoisao.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://thanhnien.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-thanhnien.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://dantri.com.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-dantri.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://tuoitre.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-tuoitre.svg" alt="" />
+                  </a>
+                  <a
+                    class="logo-brand"
+                    href="https://vietnamnet.vn"
+                    target="_blank"
+                  >
+                    <img src="../../assets/images/logo-vn-net.svg" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/sign-up.js"></script>
+  </body>
+</html>
