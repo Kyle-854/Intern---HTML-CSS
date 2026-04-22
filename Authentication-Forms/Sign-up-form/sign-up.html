@@ -135,20 +135,28 @@
               <button type="submit" class="btn_action">Continue</button>
             </form>
 
-            <form id="sign-up-ads-form">
+            <form id="sign-up-ads-form" class="sign-up-form">
               <!-- --------- -->
               <p class="input__text">
                 Full name<span>*</span>
               </p>
-
+              
               <input type="text" class="input__place" placeholder="Enter your full name">
+              
+              <p class="invalid-feedback fullname-error">
+                Full name can’t be blank.
+              </p>
 
               <!-- --------- -->
               <p class="input__text">
                 Company/ Personal email<span>*</span>
               </p>
 
-               <input type="text" class="input__place" placeholder="Enter your company/personal email">
+              <input type="text" class="input__place" placeholder="Enter your company/personal email">
+
+              <p class="invalid-feedback email-error">
+                Email can’t be blank.
+              </p>
 
               <!-- --------- -->
               <p class="input__text">
@@ -157,12 +165,55 @@
 
               <input type="text" class="input__place" placeholder="Enter your phone number">
 
+              <p class="invalid-feedback phone-error">
+                Phone number can’t be blank.
+              </p>
+
               <!-- --------- -->
               <p class="input__text">
                 Industry<span>*</span>
               </p>
 
-              <!-- <input type="text" class="input__place" placeholder=""> -->
+              <div class="select">
+                <div class="select__title">
+                  <div class="select__text">Select your industry</div>
+                  <img class="ic-down-small-fill ic-small-fill" src="../../assets/images/ic-down-small-fill.png" alt="">
+                  <img class="ic-up-small-fill ic-small-fill" src="../../assets/images/ic-up-small-fill.png" alt="">
+                </div>
+
+                <div class="select__dropdown">
+                  <input type="search" class="search">
+
+                  <ul class="list">
+                    <li class="item">Real Estate</li>
+                    <li class="item">Travel, Hospitality & Restaurants</li>
+                    <li class="item">Education & Learning Solutions</li>
+                    <li class="item">E-commerce & Online Marketplaces</li>
+                    <li class="item">Food & Beverage (F&B)</li>
+                    <li class="item">Automative & Mobility</li>
+                    <li class="item">Pharmaceuticals & Healthcare Solution</li>
+                    <li class="item">Fashion, Beauty & Personal Care</li>
+                    <li class="item">Financial Services & Banking</li>
+                    <li class="item">Technology, Electronics & IT Solutions</li>
+                    <li class="item">Insurance & Risk Management</li>
+                    <li class="item">Entertainment, Media & Content Platforms</li>
+                    <li class="item">Furniture, Home Decor & Living</li>
+                    <li class="item">Transportation, Shipping & Logistics Solutions</li>
+                    <li class="item">Agriculture, Aquaculture & Agro-Tech</li>
+                    <li class="item">Fast-Moving Consumer Goods (FMCG)</li>
+                    <li class="item">Telecommunications & Connectivity</li>
+                    <li class="item">Baby & Maternity Care Products</li>
+                    <li class="item">Sports, Fitness & Wellness</li>
+                    <li class="item">Corporate Services, Recruitment & Human Resources</li>
+                    <li class="item">Healthcare Facilities, Hospitals & Clinics</li>
+                    <li class="item">Aviation & Air Travel</li>
+                    <li class="item">Advertising Agencies & Creative Solutions</li>
+                    <li class="item">Ad Networks & Programmatic Platforms</li>
+                    <li class="item">Other Verticals</li>
+                    <li class="item item-not-found">No results found</li>
+                  </ul>
+                </div>
+              </div>
 
               <!-- --------- -->
               <p class="input__text">
@@ -171,20 +222,24 @@
 
               <input type="text" class="input__place" placeholder="Enter your company name">
 
+              <p class="invalid-feedback company-name-error">
+                Company name must not exceed 200 characters
+              </p>
+
               <!-- --------- -->
-               <div class="agree-container">
-                <input type="checkbox">
-                
+              <div class="agree-container">
+                <input type="checkbox" class="agree-checkbox">
+
                 <p>
-                  I agree to <span>SmartAds Terms and Conditions</span>
+                  I agree to <a>SmartAds Terms and Conditions</a>
                 </p>
-               </div>
+              </div>
 
 
               <button type="submit" class="btn_action">Sign Up</button>
             </form>
 
-            <form id="sign-up-pub-form">
+            <form id="sign-up-pub-form" class="sign-up-form">
 
               <button type="submit" class="btn_action">Sign Up</button>
             </form>

@@ -156,4 +156,86 @@ function xuLyRadioButton(){
     });
     
 }
-// xuLyRadioButton();
+xuLyRadioButton();
+
+function xuLyIndustryList(){
+    const select = document.querySelector('.select');
+    const selectTitle = document.querySelector('.select__title');
+    const icDown = document.querySelector('.ic-down-small-fill');
+    const icUp = document.querySelector('.ic-up-small-fill');
+    const selectDropdown = document.querySelector('.select__dropdown');
+    const items =document.querySelectorAll('.item');
+    const selectText = document.querySelector('.select__text');
+
+    selectTitle.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        if(getComputedStyle(icUp).display === 'none'){
+            icUp.style.display = 'block';
+            icDown.style.display = 'none';
+            selectDropdown.style.display = 'block';
+        }
+        else{
+            icDown.style.display = 'block';
+            icUp.style.display = 'none';
+            selectDropdown.style.display = 'none';
+        }
+
+        items.forEach((item) => {
+            item.addEventListener('click', () => {
+                selectText.innerHTML = item.innerHTML;
+                selectText.style.color = '#000';
+
+                items.forEach(i => i.classList.remove('active'));
+
+                item.classList.add('active');
+
+                icDown.style.display = 'block';
+                icUp.style.display = 'none';
+                selectDropdown.style.display = 'none';
+            });
+
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!select.contains(e.target)) {
+            icDown.style.display = 'block';
+            icUp.style.display = 'none';
+            selectDropdown.style.display = 'none';
+        }
+    });
+}
+xuLyIndustryList();
+
+function xuLySearch() {
+    const search = document.querySelector('.search');
+    const items =document.querySelectorAll('.item');
+    const notFound =document.querySelector('.item-not-found');
+
+    search.addEventListener('input', () => {
+        const value = search.value.toLowerCase();
+        let result = false;
+
+        items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+
+        if (text.includes(value)) {
+            item.style.display = 'none';
+            result = true;
+        } else {
+            item.style.display = 'block';
+        }
+    });
+
+    if (result) {
+        notFound.style.display = 'none';
+    } else {
+        notFound.style.display = 'block';
+    }
+
+    });
+}
+xuLySearch();
+
+//CÁI Ô SEARCH BỊ LỖI: SAU KHI NHẬP KÍ TỰ VÀO VÀ XÓA ĐI THÌ CÁI .select bị co lại

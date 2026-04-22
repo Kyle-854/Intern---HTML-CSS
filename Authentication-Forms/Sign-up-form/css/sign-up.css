@@ -27,7 +27,7 @@
     margin: 0 auto;
     margin-top: 40px;
     display: flex;
-    height: 800px;
+    height: 920px;
 }
 
 .sign-up .left-side{
@@ -520,6 +520,239 @@
 /* #sign-up-ads-form, */
 #sign-up-pub-form{
     display: none;
+}
+
+.left-side__content .sign-up-form{
+
+}
+
+.sign-up-form .input__text{
+     color: #000;
+
+    /* Body-small/Semi */
+    font-family: "Public Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 16.8px */
+
+    margin-bottom: 6px;
+}
+
+.input__text span{
+    color: #BA1A1A;
+
+    /* Body-small/Semi */
+    font-family: "Public Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.sign-up-form .input__place{
+    display: flex;
+    width: 100%;;
+    height: 48px;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    border-radius: 8px;
+    border: 1px solid #DFE3E8;
+    background: #FFF;
+
+    margin-bottom: 12px;
+}
+
+.sign-up-form .input__place:last-of-type{
+    margin-bottom: 20px;
+}
+
+.input__place::placeholder{
+    color: #CBCFD3;
+
+    /* Body-medium/Regular */
+    font-family: "Public Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+}
+
+.input__place:focus{
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    border: 1px solid #8CC8A9 !important; 
+    background: #FFF;
+    box-shadow: 0 0 0 4px #E6F3EC;
+}
+
+.sign-up-form .agree-container{
+    display: flex;
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.agree-container .agree-checkbox{
+    height: 16px;
+    width: 16px;
+
+    appearance: none;
+
+    border-radius: 4px;
+    border: none;
+    border: 1px solid #CBCFD3 !important;
+    background: #FCFCFD;
+}
+
+.agree-checkbox:checked{
+    background-color: #048845;
+    background-image: url(../../../assets/images/ic-checked.svg);
+}
+
+.agree-container p{
+    color: #9EA1A5;
+
+    /* Body-small/Regular */
+    font-family: "Public Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 16.8px */
+}
+
+.agree-container p a{
+    color: #048845;
+
+    /* Body-small/Regular */
+    font-family: "Public Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.sign-up-form .select{
+    position: relative;
+    width: 100%;
+}
+
+.select .select__title{
+    display: flex;
+    justify-content: space-between;
+
+    height: 48px;
+    padding: 12px;
+    align-items: center;
+    align-self: stretch;
+
+    border-radius: 8px;
+    border: 1px solid #DFE3E8;
+    background-color: #fff;
+
+    margin-bottom: 12px;
+}
+
+.select__title .select__text{
+    color: #CBCFD3;
+
+    /* Body-medium/Regular */
+    font-family: "Public Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+}
+
+.select__title .ic-small-fill{
+    width: 15px;
+    height: 15px;
+}
+
+.select__title .ic-up-small-fill{
+    display: none;
+}
+
+.select .select__dropdown{
+    padding: 4px 6px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    position: absolute;
+    bottom: -290px;
+    display: none;
+}
+
+.select__dropdown .search{
+    border: 1px solid #dfe3e8;
+    border-radius: .5rem;
+    color: #222;
+    outline: 0;
+    padding: 10px 8px;
+    width: 100%;
+}
+
+.select__dropdown .list{
+    list-style: none;
+    height: 245px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.list .item{
+    display: flex;
+    padding: 10px 10px 10px 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+
+    color: #637381;
+
+    /* Body-medium/Regular */
+    font-family: "Public Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+}
+
+.list .item-not-found{
+    display: none;
+}
+
+.item:hover{
+    background-color: #F0F2F4;
+    color: #000;
+}
+
+.item.active{
+    background-color: #F7F7F8;
+    border-radius: 6px;
+}
+
+.sign-up-form .invalid-feedback{
+    color: #BA1A1A;
+
+    /* Body-small/Regular */
+    font-family: "Public Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 16.8px */
+
+    margin-bottom: 12px;
+
+    display: none;
+}
+
+.invalid-feedback:last-of-type{
+    margin-bottom: 20px;
 }
 
 
