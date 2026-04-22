@@ -208,34 +208,34 @@ function xuLyIndustryList(){
 }
 xuLyIndustryList();
 
-function xuLySearch() {
-    const search = document.querySelector('.search');
-    const items =document.querySelectorAll('.item');
-    const notFound =document.querySelector('.item-not-found');
+// function xuLySearch() {
+//     const search = document.querySelector('.search');
+//     const items =document.querySelectorAll('.item');
+//     const notFound =document.querySelector('.item-not-found');
 
-    search.addEventListener('input', () => {
-        const value = search.value.toLowerCase();
-        let result = false;
+//     search.addEventListener('input', () => {
+//         const value = search.value.toLowerCase();
+//         let result = false;
 
-        items.forEach(item => {
-        const text = item.textContent.toLowerCase();
+//         items.forEach(item => {
+//         const text = item.textContent.toLowerCase();
 
-        if (text.includes(value)) {
-            item.style.display = 'none';
-            result = true;
-        } else {
-            item.style.display = 'block';
-        }
-    });
+//         if (text.includes(value)) {
+//             item.style.display = 'none';
+//             result = true;
+//         } else {
+//             item.style.display = 'block';
+//         }
+//     });
 
-    if (result) {
-        notFound.style.display = 'none';
-    } else {
-        notFound.style.display = 'block';
-    }
+//     if (result) {
+//         notFound.style.display = 'none';
+//     } else {
+//         notFound.style.display = 'block';
+//     }
 
-    });
-}
-xuLySearch();
+//     });
+// }
+// xuLySearch();
 
 //CÁI Ô SEARCH BỊ LỖI: SAU KHI NHẬP KÍ TỰ VÀO VÀ XÓA ĐI THÌ CÁI .select bị co lại
