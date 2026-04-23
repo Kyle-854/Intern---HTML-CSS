@@ -80,14 +80,16 @@
           </div>
 
           <div class="left-side__content">
-            <a class="back-to-home" href="">
+            <a class="back-to-home" href="https://smartads.tech/">
               <img src="../../assets/images/arrow_left_line_gay.svg" alt="" />
-              <p id="back-step1 back-step2">Back to home</p>
+              <p id="back-step1">Back to home</p>
+              <p id="back-step2">Back</p>
             </a>
 
             <p class="title">Let’s get started</p>
 
-            <p class="choose-options" id="content-description-step1 content-description-step2">Choose your account type</p>
+            <p class="choose-options" id="content-description-step1">Choose your account type</p>
+            <p class="choose-options" id="content-description-step2">Please enter your details</p>
 
             <form id="select-option-form">
               <div class="ads-option ads-pub-options">
@@ -141,10 +143,10 @@
                 Full name<span>*</span>
               </p>
               
-              <input type="text" class="input__place" placeholder="Enter your full name">
+              <input type="text" id="full-name" class="input__place" placeholder="Enter your full name">
               
               <p class="invalid-feedback fullname-error">
-                Full name can’t be blank.
+                Full name must be at least 5 characters
               </p>
 
               <!-- --------- -->
@@ -152,10 +154,14 @@
                 Company/ Personal email<span>*</span>
               </p>
 
-              <input type="text" class="input__place" placeholder="Enter your company/personal email">
+              <input type="text" id="email" class="input__place" placeholder="Enter your company/personal email">
 
-              <p class="invalid-feedback email-error">
-                Email can’t be blank.
+              <p class="invalid-feedback email-error__invalid">
+                Email is not a valid email
+              </p>
+
+              <p class="invalid-feedback email-error__exists">
+                Email already exists
               </p>
 
               <!-- --------- -->
@@ -163,87 +169,89 @@
                 Phone number<span>*</span>
               </p>
 
-              <input type="text" class="input__place" placeholder="Enter your phone number">
+              <input type="text" id="phone-number" class="input__place" placeholder="Enter your phone number">
 
-              <p class="invalid-feedback phone-error">
-                Phone number can’t be blank.
+              <p class="invalid-feedback phone-number-error">
+                Phone number invalid
               </p>
 
               <!-- --------- -->
-              <p class="input__text">
-                Industry<span>*</span>
-              </p>
-
-              <div class="select">
-                <div class="select__title">
-                  <div class="select__text">Select your industry</div>
-                  <img class="ic-down-small-fill ic-small-fill" src="../../assets/images/ic-down-small-fill.png" alt="">
-                  <img class="ic-up-small-fill ic-small-fill" src="../../assets/images/ic-up-small-fill.png" alt="">
+               <div class="industry-container">
+                 <p class="input__text">
+                   Industry<span>*</span>
+                  </p>
+                  
+                  <div class="select">
+                    <div class="select__title">
+                      <div class="select__text">Select your industry</div>
+                      <img class="ic-down-small-fill ic-small-fill" src="../../assets/images/ic-down-small-fill.png" alt="">
+                      <img class="ic-up-small-fill ic-small-fill" src="../../assets/images/ic-up-small-fill.png" alt="">
+                    </div>
+                    
+                    <div class="select__dropdown">
+                      <input type="search" class="search">
+                      
+                      <ul class="list">
+                        <li class="item">Real Estate</li>
+                        <li class="item">Travel, Hospitality & Restaurants</li>
+                        <li class="item">Education & Learning Solutions</li>
+                        <li class="item">E-commerce & Online Marketplaces</li>
+                        <li class="item">Food & Beverage (F&B)</li>
+                        <li class="item">Automative & Mobility</li>
+                        <li class="item">Pharmaceuticals & Healthcare Solution</li>
+                        <li class="item">Fashion, Beauty & Personal Care</li>
+                        <li class="item">Financial Services & Banking</li>
+                        <li class="item">Technology, Electronics & IT Solutions</li>
+                        <li class="item">Insurance & Risk Management</li>
+                        <li class="item">Entertainment, Media & Content Platforms</li>
+                        <li class="item">Furniture, Home Decor & Living</li>
+                        <li class="item">Transportation, Shipping & Logistics Solutions</li>
+                        <li class="item">Agriculture, Aquaculture & Agro-Tech</li>
+                        <li class="item">Fast-Moving Consumer Goods (FMCG)</li>
+                        <li class="item">Telecommunications & Connectivity</li>
+                        <li class="item">Baby & Maternity Care Products</li>
+                        <li class="item">Sports, Fitness & Wellness</li>
+                        <li class="item">Corporate Services, Recruitment & Human Resources</li>
+                        <li class="item">Healthcare Facilities, Hospitals & Clinics</li>
+                        <li class="item">Aviation & Air Travel</li>
+                        <li class="item">Advertising Agencies & Creative Solutions</li>
+                        <li class="item">Ad Networks & Programmatic Platforms</li>
+                        <li class="item">Other Verticals</li>
+                        <li class="item item-not-found">No results found</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="select__dropdown">
-                  <input type="search" class="search">
-
-                  <ul class="list">
-                    <li class="item">Real Estate</li>
-                    <li class="item">Travel, Hospitality & Restaurants</li>
-                    <li class="item">Education & Learning Solutions</li>
-                    <li class="item">E-commerce & Online Marketplaces</li>
-                    <li class="item">Food & Beverage (F&B)</li>
-                    <li class="item">Automative & Mobility</li>
-                    <li class="item">Pharmaceuticals & Healthcare Solution</li>
-                    <li class="item">Fashion, Beauty & Personal Care</li>
-                    <li class="item">Financial Services & Banking</li>
-                    <li class="item">Technology, Electronics & IT Solutions</li>
-                    <li class="item">Insurance & Risk Management</li>
-                    <li class="item">Entertainment, Media & Content Platforms</li>
-                    <li class="item">Furniture, Home Decor & Living</li>
-                    <li class="item">Transportation, Shipping & Logistics Solutions</li>
-                    <li class="item">Agriculture, Aquaculture & Agro-Tech</li>
-                    <li class="item">Fast-Moving Consumer Goods (FMCG)</li>
-                    <li class="item">Telecommunications & Connectivity</li>
-                    <li class="item">Baby & Maternity Care Products</li>
-                    <li class="item">Sports, Fitness & Wellness</li>
-                    <li class="item">Corporate Services, Recruitment & Human Resources</li>
-                    <li class="item">Healthcare Facilities, Hospitals & Clinics</li>
-                    <li class="item">Aviation & Air Travel</li>
-                    <li class="item">Advertising Agencies & Creative Solutions</li>
-                    <li class="item">Ad Networks & Programmatic Platforms</li>
-                    <li class="item">Other Verticals</li>
-                    <li class="item item-not-found">No results found</li>
-                  </ul>
-                </div>
+              <!-- --------- -->
+              <div class="company-name-container">
+                <p class="input__text">
+                  Company name
+                </p>
+                
+                <input type="text" class="input__place" placeholder="Enter your company name">
+                
+                <p class="invalid-feedback company-name-error">
+                  Company name must not exceed 200 characters
+                </p>
               </div>
-
-              <!-- --------- -->
-              <p class="input__text">
-                Company name
-              </p>
-
-              <input type="text" class="input__place" placeholder="Enter your company name">
-
-              <p class="invalid-feedback company-name-error">
-                Company name must not exceed 200 characters
-              </p>
-
-              <!-- --------- -->
+                
+                <!-- --------- -->
               <div class="agree-container">
                 <input type="checkbox" class="agree-checkbox">
-
+                
                 <p>
                   I agree to <a>SmartAds Terms and Conditions</a>
                 </p>
               </div>
-
-
-              <button type="submit" class="btn_action">Sign Up</button>
+              
+              
+              <button type="submit" id="btn_sign-up" class="btn_action">
+                <span class="spinner"></span>
+                Sign Up
+              </button>
             </form>
-
-            <form id="sign-up-pub-form" class="sign-up-form">
-
-              <button type="submit" class="btn_action">Sign Up</button>
-            </form>
-
+            
             <p class="have-account">
               Already have an account?
               <a href="../Sign-in-form/sign-in.html">Login</a>
@@ -252,7 +260,8 @@
 
           <div class="left-side__footer">
             <div class="progress-text__container">
-              <p class="text1" id="text1-step1 text1-step2">Just one last step!</p>
+              <p class="text1" id="text1-step1">Just one last step!</p>
+              <p class="text1" id="text1-step2">Almost done!</p>
               <p class="text2">1/2</p>
             </div>
 

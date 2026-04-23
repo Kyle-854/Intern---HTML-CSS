@@ -159,6 +159,10 @@
     margin-bottom: 8px;
 }
 
+.back-to-home #back-step2{
+    display: none;
+}
+
 .left-side__content .title{
     color: var(--colors-text-gray-inverse, #000);
 
@@ -183,6 +187,10 @@
     line-height: 120%; /* 19.2px */
 
     margin-bottom: 20px;
+}
+
+.left-side__content #content-description-step2{
+    display: none;
 }
 
 .left-side__content .ads-pub-options{
@@ -516,11 +524,11 @@
     transform: scale(1.1);
 }
 
-#select-option-form,
-/* #sign-up-ads-form, */
-#sign-up-pub-form{
-    display: none;
-}
+/*----------------------- Ẩn form -----------------------*/
+/* #select-option-form{ display: none; } */
+
+#sign-up-ads-form{ display: none; }
+/*----------------------- Ẩn form -----------------------*/
 
 .left-side__content .sign-up-form{
 
@@ -686,6 +694,7 @@
     position: absolute;
     bottom: -290px;
     display: none;
+    width: 100%;
 }
 
 .select__dropdown .search{
@@ -753,6 +762,35 @@
 
 .invalid-feedback:last-of-type{
     margin-bottom: 20px;
+}
+
+#btn_sign-up{
+    display: flex;
+    gap: 8px;
+}
+
+#btn_sign-up:disabled{
+    opacity: 0.7;
+}
+
+#btn_sign-up .spinner{
+    width: 16px;
+    height: 16px;
+    border: 2px solid #FFF;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    display: none;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#btn_sign-up.loading .spinner {
+    display: inline-block;
 }
 
 

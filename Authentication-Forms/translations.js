@@ -2,7 +2,7 @@ const translations = {
   "ENG": {
     "title": "Sign In",
     "desc_text": "Welcome back!",
-    "have_account": "Don't have an account? <a href=\"https://smartads.tech\" target = \"_blank\">Get Started</a>",
+    "have_account": "Don't have an account? <a href=\"../Sign-up-form/sign-up.html\">Get Started</a>",
     "password": "Password",
     "enter_email": "Enter your email",
     "enter_pass": "Enter your password",
@@ -22,7 +22,7 @@ const translations = {
   "VIE": {
     "title": "Đăng nhập",
     "desc_text": "Chào mừng bạn quay lại!",
-    "have_account": "Chưa có tài khoản? <a href=\"https://smartads.tech\" target = \"_blank\">Đăng ký</a>",
+    "have_account": "Chưa có tài khoản? <a href=\"../Sign-up-form/sign-up.html\">Đăng ký</a>",
     "password": "Mật khẩu",
     "enter_email": "Nhập email",
     "enter_pass": "Nhập mật khẩu",

@@ -220,3 +220,28 @@ function validateEmail(){
     return true;
 }
 
+
+// const industryData = [
+//     {
+//         1: {
+//             'text_en': "Real Estate",
+//             'text_vi': "Real Estate",
+//         },
+//         1: {
+//             'text_en': "Travel, Hospitality & Restaurants",
+//             'text_vi': "Travel, Hospitality & Restaurants",
+//         },
+//         1: {
+//             'text_en': "Education & Learning Solutions",
+//             'text_vi': "Education & Learning Solutions",
+//         },
+//         1: {
+//             'text_en': "E-commerce & Online Marketplaces",
+//             'text_vi': "E-commerce & Online Marketplaces",
+//         },
+//         1: {
+//             'text_en': "Food & Beverage (F&B)",
+//             'text_vi': "Food & Beverage (F&B)",
+//         },
+//     }
+// ]

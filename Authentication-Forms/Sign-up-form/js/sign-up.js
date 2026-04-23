@@ -158,6 +158,82 @@ function xuLyRadioButton(){
 }
 xuLyRadioButton();
 
+function xuLyChuyenForm(){
+    const formStep1 = document.querySelector('#select-option-form');
+    const formStep2 = document.querySelector('#sign-up-ads-form');
+    const rdoAds = document.querySelector('.rdo-ads');
+    const rdoPub = document.querySelector('.rdo-pub');
+    const industryContainer = document.querySelector('.industry-container');
+    const companyNameContainer = document.querySelector('.company-name-container');
+    const backToHome = document.querySelector('.back-to-home');
+    const backStep1 = document.querySelector('#back-step1');
+    const backStep2 = document.querySelector('#back-step2');
+    const descriptionStep1 = document.querySelector('#content-description-step1');
+    const descriptionStep2 = document.querySelector('#content-description-step2');
+    const text1Step1 = document.querySelector('#text1-step1');
+    const text1Step2 = document.querySelector('#text1-step2');
+    const text2 = document.querySelector('.text2');
+    const step2 = document.querySelector('.step2');
+
+    let form;
+    let isForm2 = false;
+
+    formStep1.addEventListener('submit', (e) => {
+        e.preventDefault();
+        isForm2 = true;
+
+        if(rdoAds.checked){
+            form = 'ads';
+            
+            industryContainer.style.display = 'block';
+            companyNameContainer.style.display = 'block';
+        }
+        
+        if(rdoPub.checked){
+            form = 'pub';
+            
+            industryContainer.style.display = 'none';
+            companyNameContainer.style.display = 'none';
+        }
+
+        formStep1.style.display = 'none';
+        formStep2.style.display = 'block';
+        backStep1.style.display = 'none';
+        backStep2.style.display = 'block';
+        descriptionStep1.style.display = 'none';
+        descriptionStep2.style.display = 'block';
+        text1Step1.style.display = 'none';
+        text1Step2.style.display = 'block';
+        text2.innerHTML = '2/2';
+        step2.style.background = '#048845';
+
+    });
+
+    backToHome.addEventListener('click', (e) => {
+        if (isForm2) {
+            e.preventDefault();
+            isForm2 = false;
+
+            formStep1.style.display = 'block';
+            formStep2.style.display = 'none';
+            backStep1.style.display = 'block';
+            backStep2.style.display = 'none';
+            descriptionStep1.style.display = 'block';
+            descriptionStep2.style.display = 'none';
+            text1Step1.style.display = 'block';
+            text1Step2.style.display = 'none';
+            text2.innerHTML = '1/2';
+            step2.style.background = '#E8E8E8';
+
+
+        }
+    });
+
+    
+}
+xuLyChuyenForm();
+
+
 function xuLyIndustryList(){
     const select = document.querySelector('.select');
     const selectTitle = document.querySelector('.select__title');
@@ -238,4 +314,121 @@ xuLyIndustryList();
 // }
 // xuLySearch();
 
-//CÁI Ô SEARCH BỊ LỖI: SAU KHI NHẬP KÍ TỰ VÀO VÀ XÓA ĐI THÌ CÁI .select bị co lại
+// CÁI Ô SEARCH BỊ LỖI: SAU KHI NHẬP KÍ TỰ VÀO VÀ XÓA ĐI THÌ CÁI .select bị co lại
+
+function xuLyFullName(fullname){
+    const regex = /^[\p{L} ]+$/u;
+    const temp = fullname.value.trim().replace(/\s+/g, " ");
+    
+    return  temp.length >= 5 && regex.test(temp);
+}
+
+function xuLyEmail(email){
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email.value);
+}
+
+function xuLyPhoneNumber(phoneNumber){
+    const phoneNumberRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
+    return phoneNumberRegex.test(phoneNumber.value);
+}
+
+function xuLySignUp(){
+    const form = document.querySelector('#sign-up-ads-form');
+    const fullName = document.querySelector('#full-name');
+    const email = document.querySelector('#email');
+    const checkBox = document.querySelector('.agree-checkbox');
+    const btn_signUp = document.querySelector('#btn_sign-up');
+    const phoneNumber = document.querySelector('#phone-number');
+    const fullnameError = document.querySelector('.fullname-error');
+    const emailErrorInvalid = document.querySelector('.email-error__invalid');
+    const phoneNumberError = document.querySelector('.phone-number-error');
+
+    let temp;
+    btn_signUp.disabled = true;
+
+    const check = () =>{
+        const fullNameCheck = fullName.value.trim();
+        const emailCheck = email.value.trim();
+        const phoneNumberCheck = phoneNumber.value.trim();
+
+        if(fullNameCheck !== '' && emailCheck !== '' && phoneNumberCheck !== '' && checkBox.checked){
+            btn_signUp.disabled = false;
+        } else{
+            btn_signUp.disabled = true;
+        }
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        temp = true;
+
+        if (!xuLyFullName(fullName)) {
+            temp = false;
+            fullnameError.style.display = 'block';
+            fullName.style.border = '2px solid #BA1A1A';
+            fullName.style.marginBottom = '4px';
+        }
+
+        if (!xuLyEmail(email)) {
+            temp = false;
+            emailErrorInvalid.style.display = 'block';
+            email.style.border = '2px solid #BA1A1A';
+            email.style.marginBottom = '4px';
+        }
+
+        if (!xuLyPhoneNumber(phoneNumber)) {
+            temp = false;
+            phoneNumberError.style.display = 'block';
+            phoneNumber.style.border = '2px solid #BA1A1A';
+            phoneNumber.style.marginBottom = '4px';
+        }
+
+        if(checkBox.checked === false){
+            temp = false;
+        }
+
+
+        if (temp) {
+            btn_signUp.classList.add('loading');
+            btn_signUp.disabled = true;
+
+            try {
+                // await login();
+            } finally {
+                btn_signUp.classList.remove('loading');
+                btn_signUp.disabled = false;
+            }
+        }
+    });
+
+    fullName.addEventListener('input', () => {
+        fullnameError.style.display = 'none';
+        fullName.style.border = '1px solid #DFE3E8';
+        fullName.style.marginBottom = '12px';
+        check();
+
+    });
+
+    email.addEventListener('input', () => {
+        emailErrorInvalid.style.display = 'none';
+        email.style.border = '1px solid #DFE3E8';
+        email.style.marginBottom = '12px';
+        check();
+
+    });
+
+    phoneNumber.addEventListener('input', () => {
+        phoneNumberError.style.display = 'none';
+        phoneNumber.style.border = '1px solid #DFE3E8';
+        phoneNumber.style.marginBottom = '12px';
+        check();
+
+    });
+
+    checkBox.addEventListener('change', () => {
+        check();
+    });
+}
+xuLySignUp();
