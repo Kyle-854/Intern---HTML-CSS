@@ -207,6 +207,8 @@ function xuLyChuyenForm(){
         text2.innerHTML = '2/2';
         step2.style.background = '#048845';
 
+        xuLySignUp(form);
+
     });
 
     backToHome.addEventListener('click', (e) => {
@@ -233,6 +235,14 @@ function xuLyChuyenForm(){
 }
 xuLyChuyenForm();
 
+function showIndustry(){
+    const ul = document.querySelector('.list');
+
+    ul.innerHTML = Object.values(industryData).map(item => 
+        `<li class="item">${item.ENG}</li>`
+    ).join('');
+}
+showIndustry();
 
 function xuLyIndustryList(){
     const select = document.querySelector('.select');
@@ -240,37 +250,38 @@ function xuLyIndustryList(){
     const icDown = document.querySelector('.ic-down-small-fill');
     const icUp = document.querySelector('.ic-up-small-fill');
     const selectDropdown = document.querySelector('.select__dropdown');
-    const items =document.querySelectorAll('.item');
     const selectText = document.querySelector('.select__text');
+    const list =document.querySelector('.list');
 
     selectTitle.addEventListener('click', (e) => {
         e.stopPropagation();
 
-        if(getComputedStyle(icUp).display === 'none'){
-            icUp.style.display = 'block';
-            icDown.style.display = 'none';
-            selectDropdown.style.display = 'block';
-        }
-        else{
-            icDown.style.display = 'block';
-            icUp.style.display = 'none';
+        const isOpen = selectDropdown.style.display === 'block';
+
+        selectDropdown.style.display = isOpen ? 'none' : 'block';
+        icUp.style.display = isOpen ? 'none' : 'block';
+        icDown.style.display = isOpen ? 'block' : 'none';
+
+        list.addEventListener('click', (e) => {
+            const item = e.target.closest('.item');
+            if (!item) return;
+
+            // bỏ qua "not found"
+            if (item.classList.contains('item-not-found')) return;
+
+            selectText.innerHTML = item.innerHTML;
+            selectText.style.color = '#000';
+
+            // remove active cũ
+            document.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
+
+            // set active mới
+            item.classList.add('active');
+
+            // đóng dropdown
             selectDropdown.style.display = 'none';
-        }
-
-        items.forEach((item) => {
-            item.addEventListener('click', () => {
-                selectText.innerHTML = item.innerHTML;
-                selectText.style.color = '#000';
-
-                items.forEach(i => i.classList.remove('active'));
-
-                item.classList.add('active');
-
-                icDown.style.display = 'block';
-                icUp.style.display = 'none';
-                selectDropdown.style.display = 'none';
-            });
-
+            icUp.style.display = 'none';
+            icDown.style.display = 'block';
         });
     });
 
@@ -284,35 +295,31 @@ function xuLyIndustryList(){
 }
 xuLyIndustryList();
 
-// function xuLySearch() {
-//     const search = document.querySelector('.search');
-//     const items =document.querySelectorAll('.item');
-//     const notFound =document.querySelector('.item-not-found');
+function xuLySearch() {
+    const search = document.querySelector('.search');
+    const ul =document.querySelector('.list');
 
-//     search.addEventListener('input', () => {
-//         const value = search.value.toLowerCase();
-//         let result = false;
+    search.addEventListener('input', () => {        
 
-//         items.forEach(item => {
-//         const text = item.textContent.toLowerCase();
+        const keyword = search.value.toLowerCase().trim();
 
-//         if (text.includes(value)) {
-//             item.style.display = 'none';
-//             result = true;
-//         } else {
-//             item.style.display = 'block';
-//         }
-//     });
+        // lọc data
+        const filtered = Object.values(industryData).filter(item => 
+            item.ENG.toLowerCase().includes(keyword)
+        );
 
-//     if (result) {
-//         notFound.style.display = 'none';
-//     } else {
-//         notFound.style.display = 'block';
-//     }
+        // render lại list
+        if (filtered.length > 0) {
+            ul.innerHTML = filtered.map(item => 
+                `<li class="item">${item.ENG}</li>`
+            ).join('');
+        } else {
+            ul.innerHTML = `<li class="item item-not-found">No results found</li>`;
+        }
 
-//     });
-// }
-// xuLySearch();
+    });
+}
+xuLySearch();
 
 // CÁI Ô SEARCH BỊ LỖI: SAU KHI NHẬP KÍ TỰ VÀO VÀ XÓA ĐI THÌ CÁI .select bị co lại
 
@@ -333,16 +340,20 @@ function xuLyPhoneNumber(phoneNumber){
     return phoneNumberRegex.test(phoneNumber.value);
 }
 
-function xuLySignUp(){
+function xuLySignUp(role){
     const form = document.querySelector('#sign-up-ads-form');
     const fullName = document.querySelector('#full-name');
     const email = document.querySelector('#email');
     const checkBox = document.querySelector('.agree-checkbox');
+    const selectText = document.querySelector('.select__text');
+
     const btn_signUp = document.querySelector('#btn_sign-up');
     const phoneNumber = document.querySelector('#phone-number');
     const fullnameError = document.querySelector('.fullname-error');
     const emailErrorInvalid = document.querySelector('.email-error__invalid');
+    const emailErrorExists = document.querySelector('.email-error__exists');
     const phoneNumberError = document.querySelector('.phone-number-error');
+
 
     let temp;
     btn_signUp.disabled = true;
@@ -352,14 +363,21 @@ function xuLySignUp(){
         const emailCheck = email.value.trim();
         const phoneNumberCheck = phoneNumber.value.trim();
 
-        if(fullNameCheck !== '' && emailCheck !== '' && phoneNumberCheck !== '' && checkBox.checked){
+        if(
+            fullNameCheck !== '' && 
+            emailCheck !== '' && 
+            phoneNumberCheck !== '' && 
+            checkBox.checked &&
+            role === 'ads' &&
+            selectText.innerHTML === 'Select your industry'
+        ){
             btn_signUp.disabled = false;
         } else{
             btn_signUp.disabled = true;
         }
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         temp = true;
@@ -389,13 +407,12 @@ function xuLySignUp(){
             temp = false;
         }
 
-
         if (temp) {
             btn_signUp.classList.add('loading');
             btn_signUp.disabled = true;
 
             try {
-                // await login();
+                await handleCheckEmailExists();
             } finally {
                 btn_signUp.classList.remove('loading');
                 btn_signUp.disabled = false;
@@ -412,6 +429,7 @@ function xuLySignUp(){
     });
 
     email.addEventListener('input', () => {
+        emailErrorExists.style.display = 'none';
         emailErrorInvalid.style.display = 'none';
         email.style.border = '1px solid #DFE3E8';
         email.style.marginBottom = '12px';
@@ -431,4 +449,59 @@ function xuLySignUp(){
         check();
     });
 }
-xuLySignUp();
+// xuLySignUp();
+
+const SUPABASE_URL = 'https://tctjqxhtwhaplpvkmucz.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjdGpxeGh0d2hhcGxwdmttdWN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDM1NzQsImV4cCI6MjA5MTk3OTU3NH0.8oPOL5359o6sSp4UBGpY_3LjC0gCLPOpECm4Bo81eQI';
+
+async function handleCheckEmailExists() {
+    const emailInput = document.querySelector('#email');
+    const email = emailInput.value.trim();
+    const confirmContainer = document.querySelector('.confirm-email-container');
+    const emailErrorExists = document.querySelector('.email-error__exists');
+
+    try {
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/check-email`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+            },
+            body: JSON.stringify({ email })
+        });
+
+        const data = await res.json();
+
+        //EMAIL ĐÃ TỒN TẠI
+        if (data.exists) {
+            emailErrorExists.style.display = 'block';
+            emailInput.style.border = '2px solid #BA1A1A';
+            emailInput.style.marginBottom = '4px';
+            return;
+        }
+
+        //EMAIL CHƯA TỒN TẠI → HIỆN UI
+        confirmContainer.style.display = 'block';
+
+        let time = 3;
+        const countdownEl = confirmContainer.querySelector('.countdown');
+
+        const interval = setInterval(() => {
+            time--;
+
+            if (countdownEl) {
+                countdownEl.innerText = time;
+            }
+
+            if (time === 0) {
+                clearInterval(interval);
+                window.location.href = '../../Confirm-password-form/confirm-password.html';
+            }
+
+        }, 1000);
+
+    } catch (error) {
+        console.error('Lỗi:', error);
+    }
+}

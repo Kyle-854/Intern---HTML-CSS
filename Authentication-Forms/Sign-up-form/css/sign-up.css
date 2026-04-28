@@ -692,9 +692,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     position: absolute;
-    bottom: -290px;
+    top: 100%;
+    left: 0;
     display: none;
     width: 100%;
+
+    z-index: 999;
+    height: fit-content;
 }
 
 .select__dropdown .search{
@@ -708,7 +712,8 @@
 
 .select__dropdown .list{
     list-style: none;
-    height: 245px;
+    max-height: 245px;
+    height: fit-content;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -731,9 +736,9 @@
     line-height: 120%; /* 19.2px */
 }
 
-.list .item-not-found{
+/* .list .item-not-found{
     display: none;
-}
+} */
 
 .item:hover{
     background-color: #F0F2F4;
