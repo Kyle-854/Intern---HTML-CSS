@@ -1,3 +1,7 @@
+let currentRole = null;
+let selectedIndustry = null;
+
+
 function setupDropdown(){
     const menu = document.querySelector('.menu');
     const dropdown = document.querySelector('.dropdown');
@@ -175,7 +179,6 @@ function xuLyChuyenForm(){
     const text2 = document.querySelector('.text2');
     const step2 = document.querySelector('.step2');
 
-    let form;
     let isForm2 = false;
 
     formStep1.addEventListener('submit', (e) => {
@@ -183,14 +186,14 @@ function xuLyChuyenForm(){
         isForm2 = true;
 
         if(rdoAds.checked){
-            form = 'ads';
+            currentRole = 'ads';
             
             industryContainer.style.display = 'block';
             companyNameContainer.style.display = 'block';
         }
         
         if(rdoPub.checked){
-            form = 'pub';
+            currentRole = 'pub';
             
             industryContainer.style.display = 'none';
             companyNameContainer.style.display = 'none';
@@ -206,9 +209,6 @@ function xuLyChuyenForm(){
         text1Step2.style.display = 'block';
         text2.innerHTML = '2/2';
         step2.style.background = '#048845';
-
-        xuLySignUp(form);
-
     });
 
     backToHome.addEventListener('click', (e) => {
@@ -227,7 +227,8 @@ function xuLyChuyenForm(){
             text2.innerHTML = '1/2';
             step2.style.background = '#E8E8E8';
 
-
+            resetFormUI();
+            check();
         }
     });
 
@@ -243,6 +244,35 @@ function showIndustry(){
     ).join('');
 }
 showIndustry();
+
+function resetFormUI() {
+    // reset input
+    document.querySelector('#full-name').value = '';
+    document.querySelector('#email').value = '';
+    document.querySelector('#phone-number').value = '';
+    document.querySelector('.agree-checkbox').checked = false;
+
+    // reset error text
+    document.querySelector('.fullname-error').style.display = 'none';
+    document.querySelector('.email-error__invalid').style.display = 'none';
+    document.querySelector('.email-error__exists').style.display = 'none';
+    document.querySelector('.phone-number-error').style.display = 'none';
+
+    // reset border
+    const inputPlace = document.querySelectorAll('.input__place');
+    inputPlace.forEach(input => {
+        input.style.border = '1px solid #DFE3E8';
+        input.style.marginBottom = '12px';
+    });
+
+    // reset industry
+    selectedIndustry = null;
+    const selectText = document.querySelector('.select__text');
+    selectText.innerHTML = 'Select your industry';
+    selectText.style.color = '#aaa';
+
+    document.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
+}
 
 function xuLyIndustryList(){
     const select = document.querySelector('.select');
@@ -261,28 +291,33 @@ function xuLyIndustryList(){
         selectDropdown.style.display = isOpen ? 'none' : 'block';
         icUp.style.display = isOpen ? 'none' : 'block';
         icDown.style.display = isOpen ? 'block' : 'none';
+    
+    });
 
-        list.addEventListener('click', (e) => {
-            const item = e.target.closest('.item');
-            if (!item) return;
+    list.addEventListener('click', (e) => {
+        const item = e.target.closest('.item');
+        if (!item) return;
 
-            // bỏ qua "not found"
-            if (item.classList.contains('item-not-found')) return;
+        // bỏ qua "not found"
+        if (item.classList.contains('item-not-found')) return;
 
-            selectText.innerHTML = item.innerHTML;
-            selectText.style.color = '#000';
+        selectedIndustry = item.innerHTML;
 
-            // remove active cũ
-            document.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
+        selectText.innerHTML = item.innerHTML;
+        selectText.style.color = '#000';
 
-            // set active mới
-            item.classList.add('active');
+        // remove active cũ
+        document.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
 
-            // đóng dropdown
-            selectDropdown.style.display = 'none';
-            icUp.style.display = 'none';
-            icDown.style.display = 'block';
-        });
+        // set active mới
+        item.classList.add('active');
+
+        // đóng dropdown
+        selectDropdown.style.display = 'none';
+        icUp.style.display = 'none';
+        icDown.style.display = 'block';
+
+        check();
     });
 
     document.addEventListener('click', (e) => {
@@ -340,7 +375,29 @@ function xuLyPhoneNumber(phoneNumber){
     return phoneNumberRegex.test(phoneNumber.value);
 }
 
-function xuLySignUp(role){
+const check = () =>{
+    const isIndustryValid = selectedIndustry !== null;
+
+    const fullName = document.querySelector('#full-name');
+    const email = document.querySelector('#email');
+    const checkBox = document.querySelector('.agree-checkbox');
+    const phoneNumber = document.querySelector('#phone-number');
+    const btn_signUp = document.querySelector('#btn_sign-up');
+
+    const isCommonValid = 
+        fullName.value.trim() !== '' && 
+        email.value.trim() !== '' && 
+        phoneNumber.value.trim() !== '' && 
+        checkBox.checked;
+
+    const isValid = 
+        (currentRole === 'ads' && isCommonValid && isIndustryValid) ||
+        (currentRole === 'pub' && isCommonValid);
+        
+    btn_signUp.disabled = !isValid;
+}
+
+function xuLySignUp(){
     const form = document.querySelector('#sign-up-ads-form');
     const fullName = document.querySelector('#full-name');
     const email = document.querySelector('#email');
@@ -358,24 +415,26 @@ function xuLySignUp(role){
     let temp;
     btn_signUp.disabled = true;
 
-    const check = () =>{
-        const fullNameCheck = fullName.value.trim();
-        const emailCheck = email.value.trim();
-        const phoneNumberCheck = phoneNumber.value.trim();
+    // const check = () =>{
+    //     const fullNameCheck = fullName.value.trim();
+    //     const emailCheck = email.value.trim();
+    //     const phoneNumberCheck = phoneNumber.value.trim();
+    //     const isIndustryValid = role === 'pub' || selectedIndustry !== null;
 
-        if(
-            fullNameCheck !== '' && 
-            emailCheck !== '' && 
-            phoneNumberCheck !== '' && 
-            checkBox.checked &&
-            role === 'ads' &&
-            selectText.innerHTML === 'Select your industry'
-        ){
-            btn_signUp.disabled = false;
-        } else{
-            btn_signUp.disabled = true;
-        }
-    }
+    //     if(
+    //         fullNameCheck !== '' && 
+    //         emailCheck !== '' && 
+    //         phoneNumberCheck !== '' && 
+    //         isIndustryValid &&
+    //         checkBox.checked 
+    //     ){
+    //         btn_signUp.disabled = false;
+    //     } else{
+    //         btn_signUp.disabled = true;
+    //     }
+    // }
+
+    check();
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -449,7 +508,7 @@ function xuLySignUp(role){
         check();
     });
 }
-// xuLySignUp();
+xuLySignUp();
 
 const SUPABASE_URL = 'https://tctjqxhtwhaplpvkmucz.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjdGpxeGh0d2hhcGxwdmttdWN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDM1NzQsImV4cCI6MjA5MTk3OTU3NH0.8oPOL5359o6sSp4UBGpY_3LjC0gCLPOpECm4Bo81eQI';
@@ -459,6 +518,10 @@ async function handleCheckEmailExists() {
     const email = emailInput.value.trim();
     const confirmContainer = document.querySelector('.confirm-email-container');
     const emailErrorExists = document.querySelector('.email-error__exists');
+    const leftSideContent = document.querySelector('.left-side__content'); 
+    const leftSideFooter = document.querySelector('.left-side__footer');
+    const yourEmail = document.querySelector('.confirm-email__your-email');
+
 
     try {
         const res = await fetch(`${SUPABASE_URL}/functions/v1/check-email`, {
@@ -482,9 +545,12 @@ async function handleCheckEmailExists() {
         }
 
         //EMAIL CHƯA TỒN TẠI → HIỆN UI
-        confirmContainer.style.display = 'block';
+        confirmContainer.style.display = 'flex';
+        leftSideContent.style.display = 'none';
+        leftSideFooter.style.display = 'none';
+        yourEmail.innerHTML = email;
 
-        let time = 3;
+        let time = 5;
         const countdownEl = confirmContainer.querySelector('.countdown');
 
         const interval = setInterval(() => {
@@ -496,7 +562,7 @@ async function handleCheckEmailExists() {
 
             if (time === 0) {
                 clearInterval(interval);
-                window.location.href = '../../Confirm-password-form/confirm-password.html';
+                window.location.href = '/Authentication-Forms/Confirm-password-form/confirm-password.html';
             }
 
         }, 1000);

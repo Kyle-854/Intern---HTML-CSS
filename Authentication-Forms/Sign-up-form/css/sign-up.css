@@ -528,6 +528,10 @@
 /* #select-option-form{ display: none; } */
 
 #sign-up-ads-form{ display: none; }
+
+/* .left-side__content, .left-side__footer{
+    display: none;
+} */
 /*----------------------- Ẩn form -----------------------*/
 
 .left-side__content .sign-up-form{
@@ -798,5 +802,51 @@
     display: inline-block;
 }
 
+.confirm-email-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+    display: none;
+}
+
+.confirm-email-container img{
+    margin-bottom: 40px;
+}
+
+.confirm-email-container .confirm-email__title{
+    color: #000;
+    text-align: center;
+
+    /* H4/Semi */
+    font-family: "Public Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 38.4px */
+
+    margin-bottom: 8px;
+}
+
+.confirm-email-container .confirm-email__text{
+    color: #9EA1A5;
+    text-align: center;
+
+    /* Body-medium/Regular */
+    font-family: "Public Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+}
+
+.confirm-email__text span{
+    color: #000;
+
+    /* Body-sm/Semi */
+    font-weight: 600;
+    line-height: 24px;
+}
 
