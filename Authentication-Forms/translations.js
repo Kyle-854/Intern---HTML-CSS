@@ -78,7 +78,9 @@ const translationsSignUp = {
     "err_phone": "Phone number invalid",
     "err_company": "Company name must not exceed 200 characters",
     "footer_line1": "Supporting over <span>57,254,060</span> audience",
-    "footer_line2": "Ensure <span>brand safety</span> with <span>trusted partners</span>"
+    "footer_line2": "Ensure <span>brand safety</span> with <span>trusted partners</span>",
+    "confirm_title": "Confirm email",
+    "confirm_desc": "We've sent a confirmation email to <br><span class=\"confirm-email__your-email\">email@domain.com</span>.<br>If you don’t see it, check your spam folder or try <br>again in a few minutes."
   },
   "VIE": {
     "back_to_home": "Quay lại trang chủ",
@@ -116,6 +118,8 @@ const translationsSignUp = {
     "err_phone": "Số điện thoại không hợp lệ",
     "err_company": "Tên công ty không được vượt quá 200 ký tự",
     "footer_line1": "Kết nối hơn <span>57,254,060</span> độc giả",
-    "footer_line2": "Đảm bảo <span>an toàn thương hiệu</span> với <span>đối tác uy tín</span>"
+    "footer_line2": "Đảm bảo <span>an toàn thương hiệu</span> với <span>đối tác uy tín</span>",
+    "confirm_title": "Xác nhận email",
+    "confirm_desc": "Chúng tôi đã gửi email xác nhận đến <br><span class=\"confirm-email__your-email\">email@domain.com</span>.<br>Nếu bạn không thấy thư, hãy kiểm tra hộp thư rác hoặc thử lại sau vài phút."
   }
 };

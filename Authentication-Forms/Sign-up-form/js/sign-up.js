@@ -73,7 +73,6 @@ function updateActiveLanguage(){
         sub2.style.background = '';
         sub2_lang.style.color = '';
 
-        // applyTranslations("ENG");
         currentLang = 'ENG';
         applyTranslations("ENG");
     } 
@@ -84,7 +83,6 @@ function updateActiveLanguage(){
         sub1.style.background = '';
         sub1_lang.style.color = '';
 
-        // applyTranslations("VIE");
         currentLang = 'VIE';
         applyTranslations("VIE");
     }
@@ -162,6 +160,33 @@ function applyTranslations(lang){
         // Footers
         document.querySelector('.footer-line1__text').innerHTML = temp.footer_line1;
         document.querySelector('.footer-line2__text').innerHTML = temp.footer_line2;
+
+        // Confirm email
+        const confirmTitle = document.querySelector('.confirm-email__title');
+        const confirmDesc = document.querySelector('.confirm-email__text');
+        
+        if (confirmTitle && confirmDesc) {
+            confirmTitle.innerHTML = temp.confirm_title;
+            
+            // 1. Lấy email hiện tại trên màn hình (để không bị mất khi đang xem màn hình này mà user ấn đổi ngôn ngữ)
+            const currentEmailSpan = document.querySelector('.confirm-email__your-email');
+            let currentEmailValue = 'email@domain.com';
+            
+            // Nếu độ dài của email khác chữ "email@domain.com" mặc định, nghĩa là user đã submit
+            if (currentEmailSpan && currentEmailSpan.innerText !== 'email@domain.com' && currentEmailSpan.innerText !== '') {
+                currentEmailValue = currentEmailSpan.innerText;
+            } else {
+                // Hoặc lấy trực tiếp từ ô input email nếu họ chưa submit
+                const inputEmailVal = document.querySelector('#email').value.trim();
+                if(inputEmailVal) currentEmailValue = inputEmailVal;
+            }
+
+            // 2. Thay đoạn text bằng ngôn ngữ mới
+            confirmDesc.innerHTML = temp.confirm_desc;
+
+            // 3. Gắn lại đúng email của user vào thẻ span vừa được tạo ra
+            document.querySelector('.confirm-email__your-email').innerText = currentEmailValue;
+        }
     }
 }
 
