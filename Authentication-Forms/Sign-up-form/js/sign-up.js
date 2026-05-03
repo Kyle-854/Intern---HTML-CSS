@@ -496,25 +496,6 @@ function xuLySignUp(){
     let temp;
     btn_signUp.disabled = true;
 
-    // const check = () =>{
-    //     const fullNameCheck = fullName.value.trim();
-    //     const emailCheck = email.value.trim();
-    //     const phoneNumberCheck = phoneNumber.value.trim();
-    //     const isIndustryValid = role === 'pub' || selectedIndustry !== null;
-
-    //     if(
-    //         fullNameCheck !== '' && 
-    //         emailCheck !== '' && 
-    //         phoneNumberCheck !== '' && 
-    //         isIndustryValid &&
-    //         checkBox.checked 
-    //     ){
-    //         btn_signUp.disabled = false;
-    //     } else{
-    //         btn_signUp.disabled = true;
-    //     }
-    // }
-
     check();
 
     form.addEventListener('submit', async (e) => {
@@ -630,6 +611,19 @@ async function handleCheckEmailExists() {
         leftSideContent.style.display = 'none';
         leftSideFooter.style.display = 'none';
         yourEmail.innerHTML = email;
+
+        // --- THÊM ĐOẠN NÀY ĐỂ LƯU DỮ LIỆU CHUYỂN SANG TRANG SAU ---
+        const companyInput = document.querySelector('.company-name-container .input__place').value.trim();
+        const userData = {
+            role: currentRole, // 'ads' hoặc 'pub'
+            fullName: document.querySelector('#full-name').value.trim(),
+            email: email,
+            phone: document.querySelector('#phone-number').value.trim(),
+            industry: selectedIndustry,
+            company: companyInput
+        };
+        sessionStorage.setItem('signUpData', JSON.stringify(userData));
+        // --------------------------------------------------------
 
         let time = 5;
         const countdownEl = confirmContainer.querySelector('.countdown');

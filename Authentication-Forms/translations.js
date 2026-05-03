@@ -123,3 +123,38 @@ const translationsSignUp = {
     "confirm_desc": "Chúng tôi đã gửi email xác nhận đến <br><span class=\"confirm-email__your-email\">email@domain.com</span>.<br>Nếu bạn không thấy thư, hãy kiểm tra hộp thư rác hoặc thử lại sau vài phút."
   }
 };
+
+const translationsConfirm = {
+    "ENG": {
+        "back": "Back to home",
+        "title": "Welcome aboard!",
+        "desc": "Create a password and you’re in.",
+        "pass_label": "Password",
+        "confirm_label": "Confirm password",
+        "pass_placeholder": "Enter your password",
+        "confirm_placeholder": "Re-enter your password",
+        "err_blank": "Password can't be blank",
+        "err_min": "Minimum 12 characters",
+        "err_special": "At least one number & special character",
+        "err_case": "At least one lowercase & uppercase letter",
+        "err_match": "Password must match",
+        "btn_submit": "Submit",
+        "footer_line1": "© 2026 SmartAds, FPT Online. All rights reserved."
+    },
+    "VIE": {
+        "back": "Trở về trang chủ",
+        "title": "Chào mừng bạn!",
+        "desc": "Tạo mật khẩu và bắt đầu sử dụng.",
+        "pass_label": "Mật khẩu",
+        "confirm_label": "Xác nhận mật khẩu",
+        "pass_placeholder": "Nhập mật khẩu của bạn",
+        "confirm_placeholder": "Nhập lại mật khẩu",
+        "err_blank": "Mật khẩu không được để trống",
+        "err_min": "Tối thiểu 12 ký tự",
+        "err_special": "Ít nhất một chữ số & ký tự đặc biệt",
+        "err_case": "Ít nhất một chữ cái viết hoa & viết thường",
+        "err_match": "Mật khẩu phải trùng khớp",
+        "btn_submit": "Xác nhận",
+        "footer_line1": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền."
+    }
+};
