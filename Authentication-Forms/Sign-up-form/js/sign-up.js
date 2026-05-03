@@ -1,5 +1,6 @@
 let currentRole = null;
 let selectedIndustry = null;
+let currentLang = 'ENG';
 
 
 function setupDropdown(){
@@ -73,6 +74,8 @@ function updateActiveLanguage(){
         sub2_lang.style.color = '';
 
         // applyTranslations("ENG");
+        currentLang = 'ENG';
+        applyTranslations("ENG");
     } 
     
     if(document.querySelector('.language').innerHTML === "VIE"){
@@ -82,37 +85,85 @@ function updateActiveLanguage(){
         sub1_lang.style.color = '';
 
         // applyTranslations("VIE");
+        currentLang = 'VIE';
+        applyTranslations("VIE");
     }
-    
+
+    showIndustry();
 }
 updateActiveLanguage();
 
-// function applyTranslations(lang){
+function applyTranslations(lang){
 
-//     const trans = translations;
+    if(lang){
+        const temp = translationsSignUp[lang];
+        
+        // Buttons & Links
+        document.querySelector('#back-step1').innerHTML = temp.back_to_home;
+        document.querySelector('#back-step2').innerHTML = temp.back;
+        document.querySelector('.title').innerHTML = temp.title;
+        document.querySelector('#content-description-step1').innerHTML = temp.desc_step1;
+        document.querySelector('#content-description-step2').innerHTML = temp.desc_step2;
+        
+        // Roles (Advertiser / Publisher)
+        document.querySelector('.ads__title').innerHTML = temp.ads_title;
+        document.querySelector('.ads__description').innerHTML = temp.ads_desc;
+        document.querySelector('.pub__title').innerHTML = temp.pub_title;
+        document.querySelector('.pub__description').innerHTML = temp.pub_desc;
+        document.querySelector('#select-option-form .btn_action').innerHTML = temp.btn_continue;
 
-//     if(lang){
-//         const temp = trans[lang];
-//         document.querySelector('title').innerHTML = temp.title;
-//         document.querySelector('.title').innerHTML = temp.desc_text;
-//         document.querySelector('.have-account').innerHTML = temp.have_account;
-//         document.querySelector('.password-text').innerHTML = temp.password;
-//         document.querySelector('#email').placeholder = temp.enter_email;
-//         document.querySelector('#password').placeholder = temp.enter_pass;
-//         document.querySelector('#btn_login .btn-text').innerHTML = temp.btn_login;
-//         document.querySelector('.forgot-password').innerHTML = temp.forgot_pass;
-//         document.querySelector('.ar').innerHTML = temp.ar;
-//         document.querySelector('.tos').innerHTML = temp.tos;
-//         document.querySelector('.atac').innerHTML = temp.atac;
-//         document.querySelector('.pp').innerHTML = temp.pp;
-//         document.querySelector('.cookies').innerHTML = temp.cookies;
-//         document.querySelector('.line1').innerHTML = temp.reserved;
-//         document.querySelector('.footer-line1__text').innerHTML = temp.footer_line1;
-//         document.querySelector('.footer-line2__text').innerHTML = temp.footer_line2;
-//         document.querySelector('.email-error').innerHTML = temp.email_error;
-//         document.querySelector('.password-error').innerHTML = temp.password_error;
-//     }
-// }
+        // Form Inputs
+        const inputTexts = document.querySelectorAll('.input__text');
+        if(inputTexts.length >= 4) {
+            inputTexts[0].innerHTML = temp.fullname;
+            inputTexts[1].innerHTML = temp.email;
+            inputTexts[2].innerHTML = temp.phone;
+            inputTexts[3].innerHTML = temp.industry;
+        }
+        document.querySelector('.company-name-container .input__text').innerHTML = temp.company;
+        
+        // Placeholders
+        document.querySelector('#full-name').placeholder = temp.fullname_placeholder;
+        document.querySelector('#email').placeholder = temp.email_placeholder;
+        document.querySelector('#phone-number').placeholder = temp.phone_placeholder;
+        
+        // Nếu user chưa chọn ngành nghề nào thì đổi placeholder
+        if(!selectedIndustry) {
+            document.querySelector('.select__text').innerHTML = temp.industry_placeholder;
+        }
+        document.querySelector('.company-name-container .input__place').placeholder = temp.company_placeholder;
+        
+        // Agreements & Buttons
+        document.querySelector('.agree-container p').innerHTML = temp.agree;
+        document.querySelector('#btn_sign-up').childNodes[2].textContent = " " + temp.btn_signup; // Giữ lại thẻ span .spinner
+        document.querySelector('.have-account').innerHTML = temp.have_account;
+
+        // Progress text
+        document.querySelector('#text1-step1').innerHTML = temp.text1_step1;
+        document.querySelector('#text1-step2').innerHTML = temp.text1_step2;
+
+        // Right side Banners
+        const rightSideTitles = document.querySelectorAll('.right-side__title');
+        const rightSideDescs = document.querySelectorAll('.right-side__description');
+        if(rightSideTitles.length >= 2) {
+            rightSideTitles[0].innerHTML = temp.right_title1;
+            rightSideDescs[0].innerHTML = temp.right_desc1;
+            rightSideTitles[1].innerHTML = temp.right_title2;
+            rightSideDescs[1].innerHTML = temp.right_desc2;
+        }
+
+        // Errors
+        document.querySelector('.fullname-error').innerHTML = temp.err_fullname;
+        document.querySelector('.email-error__invalid').innerHTML = temp.err_email_invalid;
+        document.querySelector('.email-error__exists').innerHTML = temp.err_email_exists;
+        document.querySelector('.phone-number-error').innerHTML = temp.err_phone;
+        document.querySelector('.company-name-error').innerHTML = temp.err_company;
+
+        // Footers
+        document.querySelector('.footer-line1__text').innerHTML = temp.footer_line1;
+        document.querySelector('.footer-line2__text').innerHTML = temp.footer_line2;
+    }
+}
 
 function xuLyRadioButton(){
     const ads = document.querySelector('.ads-option');
@@ -240,8 +291,14 @@ function showIndustry(){
     const ul = document.querySelector('.list');
 
     ul.innerHTML = Object.values(industryData).map(item => 
-        `<li class="item">${item.ENG}</li>`
+        `<li class="item">${item[currentLang]}</li>`
     ).join('');
+    
+    // Reset lựa chọn nếu ngôn ngữ thay đổi để tránh lệch data
+    selectedIndustry = null;
+    const selectText = document.querySelector('.select__text');
+    selectText.innerHTML = translationsSignUp[currentLang].industry_placeholder;
+    selectText.style.color = '#aaa';
 }
 showIndustry();
 
@@ -268,7 +325,7 @@ function resetFormUI() {
     // reset industry
     selectedIndustry = null;
     const selectText = document.querySelector('.select__text');
-    selectText.innerHTML = 'Select your industry';
+    selectText.innerHTML = translationsSignUp[currentLang].industry_placeholder;
     selectText.style.color = '#aaa';
 
     document.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
@@ -332,26 +389,25 @@ xuLyIndustryList();
 
 function xuLySearch() {
     const search = document.querySelector('.search');
-    const ul =document.querySelector('.list');
+    const ul = document.querySelector('.list');
 
     search.addEventListener('input', () => {        
-
         const keyword = search.value.toLowerCase().trim();
 
-        // lọc data
+        // Lọc data theo ngôn ngữ hiện tại
         const filtered = Object.values(industryData).filter(item => 
-            item.ENG.toLowerCase().includes(keyword)
+            item[currentLang].toLowerCase().includes(keyword)
         );
 
-        // render lại list
+        // Render lại list
         if (filtered.length > 0) {
             ul.innerHTML = filtered.map(item => 
-                `<li class="item">${item.ENG}</li>`
+                `<li class="item">${item[currentLang]}</li>`
             ).join('');
         } else {
-            ul.innerHTML = `<li class="item item-not-found">No results found</li>`;
+            const notFoundText = currentLang === 'ENG' ? "No results found" : "Không tìm thấy kết quả";
+            ul.innerHTML = `<li class="item item-not-found">${notFoundText}</li>`;
         }
-
     });
 }
 xuLySearch();
