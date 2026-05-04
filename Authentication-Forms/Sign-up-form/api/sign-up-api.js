@@ -2,56 +2,50 @@ const SUPABASE_URL = 'https://tctjqxhtwhaplpvkmucz.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjdGpxeGh0d2hhcGxwdmttdWN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDM1NzQsImV4cCI6MjA5MTk3OTU3NH0.8oPOL5359o6sSp4UBGpY_3LjC0gCLPOpECm4Bo81eQI';
 
 async function handleSignUpSubmit() {
-    const userDataString = sessionStorage.getItem('signUpData');
+    // 1. Lấy Token từ bước trước
+    const token = sessionStorage.getItem('userToken');
     
-    if (!userDataString) {
-        alert("Dữ liệu đăng ký bị mất, vui lòng thực hiện lại từ đầu!");
-        window.location.href = '../Sign-up-form/sign-up.html';
+    if (!token) {
+        alert("Dữ liệu bị mất, vui lòng đăng ký lại!");
+        window.location.href = '../../Sign-up-form/sign-up.html';
         return;
     }
 
-    const userData = JSON.parse(userDataString);
-    const password = document.getElementById('password1').value;
+    const realPassword = document.getElementById('password1').value;
     const btnSubmit = document.getElementById('btn_submit');
 
     btnSubmit.classList.add('loading');
     btnSubmit.disabled = true;
 
     try {
-        const res = await fetch(`${SUPABASE_URL}/auth/v1/signup`, {
-            method: 'POST',
+        // 2. Gọi API UPDATE User (Dùng method PUT)
+        const res = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+            method: 'PUT',
             headers: {
                 'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${token}`, // Dùng Token thay vì Anon Key đơn thuần
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                email: userData.email,
-                password: password,
+                password: realPassword, // Đổi pass ảo thành pass thật
                 data: {
-                    full_name: userData.fullName,
-                    phone: userData.phone,
-                    role: userData.role,
-                    industry: userData.industry,
-                    company: userData.company,
-                    raw_password: password // THÊM DÒNG NÀY ĐỂ TRUYỀN MẬT KHẨU CHO TRIGGER
+                    raw_password: realPassword, // Đồng bộ pass qua table public cho bạn dễ nhìn
+                    status: 'active' // ĐỔI TRẠNG THÁI THÀNH KÍCH HOẠT
                 }
             })
         });
 
         const data = await res.json();
 
-        if (!res.ok) {
-            throw new Error(data.error_description || data.msg || 'Đăng ký thất bại');
-        }
+        if (!res.ok) throw new Error(data.error_description || data.msg);
 
-        alert("Đăng ký tài khoản thành công! Bạn có thể đăng nhập ngay bây giờ.");
-        
-        sessionStorage.removeItem('signUpData'); 
-        
-        window.location.href = `../Sign-in-form/sign-in.html`; 
+        // 3. THÀNH CÔNG
+        alert("Kích hoạt tài khoản thành công!");
+        sessionStorage.removeItem('userToken'); 
+        window.location.href = '../Sign-in-form/sign-in.html'; 
 
     } catch (error) {
-        console.error('LỖI ĐĂNG KÝ:', error);
+        console.error('LỖI KÍCH HOẠT:', error);
         alert("Có lỗi xảy ra: " + error.message);
     } finally {
         btnSubmit.classList.remove('loading');
