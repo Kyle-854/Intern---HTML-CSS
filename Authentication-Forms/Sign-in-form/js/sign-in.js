@@ -133,6 +133,9 @@ setupPasswordToggle();
 function handleLoginFormSubmit(){
     const form = document.querySelector('form');
     const btn_login = document.querySelector('#btn_login');
+    const emailError = document.querySelector('.email-error');
+    const passwordError = document.querySelector('.password-error');
+    const password = document.querySelector('#password');
 
     form.addEventListener('submit', async function(event){
 
@@ -140,6 +143,9 @@ function handleLoginFormSubmit(){
 
         btn_login.classList.add('loading');
         btn_login.disabled = true;
+        emailError.style.display = 'none';
+        passwordError.style.display = 'none';
+        password.style.border = '1px solid #DFE3E8';
         
         try {
             if(validateEmail()){

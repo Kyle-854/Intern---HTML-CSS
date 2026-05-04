@@ -656,13 +656,30 @@
 
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1227px){
     .sign-in__container{
         grid-template-columns: 1fr;
     }
     
     .sign-in__container .right-side{
         display: none;
+    }
+
+    .sign-in__container .left-side{
+        padding: 72px 57px 20px 57px;
+    }
+
+    .left-side .sign-in__content{
+        margin: 0;
+    }
+
+    .sign-in__content #email,
+    .sign-in__content #password{
+        width: 100%;
+    }
+
+    .line23{
+        display: flex;
     }
 }
 
@@ -671,19 +688,14 @@
         padding: 72px 57px 20px;
     }
 
-    .sign-in .sign-in__header{
-        margin-bottom: 80px;
-    }
-
-
     .sign-in .sign-in__content{
         margin: 0;
     }
 
-    .sign-in__content #email,
-    .sign-in__content #password{
-        width: 100%;
+    .line23{
+        display: block;
     }
+
 }
 
 @media screen and (max-width: 576px) {

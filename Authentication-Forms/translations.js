@@ -80,7 +80,13 @@ const translationsSignUp = {
     "footer_line1": "Supporting over <span>57,254,060</span> audience",
     "footer_line2": "Ensure <span>brand safety</span> with <span>trusted partners</span>",
     "confirm_title": "Confirm email",
-    "confirm_desc": "We've sent a confirmation email to <br><span class=\"confirm-email__your-email\">email@domain.com</span>.<br>If you don’t see it, check your spam folder or try <br>again in a few minutes."
+    "confirm_desc": "We've sent a confirmation email to <br><span class=\"confirm-email__your-email\">email@domain.com</span>.<br>If you don’t see it, check your spam folder or try <br>again in a few minutes.",
+    "leftside_footer_line1": "© 2026 SmartAds, FPT Online. All rights reserved.",
+    "ar": "Advertising Regulations",
+    "tos": "Terms of service",
+    "atac": "Advertiser Terms and Conditions",
+    "pp": "Privacy Policy",
+    "cookies": "Cookies"
   },
   "VIE": {
     "back_to_home": "Quay lại trang chủ",
@@ -120,7 +126,13 @@ const translationsSignUp = {
     "footer_line1": "Kết nối hơn <span>57,254,060</span> độc giả",
     "footer_line2": "Đảm bảo <span>an toàn thương hiệu</span> với <span>đối tác uy tín</span>",
     "confirm_title": "Xác nhận email",
-    "confirm_desc": "Chúng tôi đã gửi email xác nhận đến <br><span class=\"confirm-email__your-email\">email@domain.com</span>.<br>Nếu bạn không thấy thư, hãy kiểm tra hộp thư rác hoặc thử lại sau vài phút."
+    "confirm_desc": "Chúng tôi đã gửi email xác nhận đến <br><span class=\"confirm-email__your-email\">email@domain.com</span>.<br>Nếu bạn không thấy thư, hãy kiểm tra hộp thư rác hoặc thử lại sau vài phút.",
+    "leftside_footer_line1": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền.",
+    "ar": "Quy định về quảng cáo",
+    "tos": "Điều khoản dịch vụ",
+    "atac": "Điều khoản và điều kiện của nhà quảng cáo",
+    "pp": "Chính sách bảo mật",
+    "cookies": "Chính sách"
   }
 };
 

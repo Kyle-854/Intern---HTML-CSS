@@ -6,7 +6,7 @@ async function handleSignUpSubmit() {
     
     if (!userDataString) {
         alert("Dữ liệu đăng ký bị mất, vui lòng thực hiện lại từ đầu!");
-        window.location.href = '../../Sign-up-form/sign-up.html';
+        window.location.href = '../Sign-up-form/sign-up.html';
         return;
     }
 

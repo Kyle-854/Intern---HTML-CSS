@@ -161,6 +161,14 @@ function applyTranslations(lang){
         document.querySelector('.footer-line1__text').innerHTML = temp.footer_line1;
         document.querySelector('.footer-line2__text').innerHTML = temp.footer_line2;
 
+        document.querySelector('.line1').innerHTML =temp.leftside_footer_line1;
+        document.querySelector('.ar').innerHTML = temp.ar;
+        document.querySelector('.tos').innerHTML = temp.tos;
+        document.querySelector('.atac').innerHTML = temp.atac;
+        document.querySelector('.pp').innerHTML = temp.pp;
+        document.querySelector('.cookies').innerHTML = temp.cookies;
+
+
         // Confirm email
         const confirmTitle = document.querySelector('.confirm-email__title');
         const confirmDesc = document.querySelector('.confirm-email__text');
