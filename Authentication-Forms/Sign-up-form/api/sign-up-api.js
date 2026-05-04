@@ -7,7 +7,7 @@ async function handleSignUpSubmit() {
     
     if (!token) {
         alert("Dữ liệu bị mất, vui lòng đăng ký lại!");
-        window.location.href = '../../Sign-up-form/sign-up.html';
+        window.location.href = '../Sign-up-form/sign-up.html';
         return;
     }
 

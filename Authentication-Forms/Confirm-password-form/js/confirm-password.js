@@ -36,15 +36,15 @@ function applyTranslations(lang) {
     if(!translationsConfirm) return;
     const temp = translationsConfirm[lang];
 
-    document.querySelector('#back-text').innerHTML = temp.back;
+    document.querySelector('#back-text').innerHTML = temp.back_to_home;
     document.querySelector('.content__title').innerHTML = temp.title;
     document.querySelector('.content__description').innerHTML = temp.desc;
     
     const labels = document.querySelectorAll('.password-text');
-    if(labels[0]) labels[0].innerHTML = temp.pass_label;
+    if(labels[0]) labels[0].innerHTML = temp.password;
     if(labels[1]) labels[1].innerHTML = temp.confirm_label;
 
-    document.querySelector('#password1').placeholder = temp.pass_placeholder;
+    document.querySelector('#password1').placeholder = temp.enter_pass;
     document.querySelector('#password2').placeholder = temp.confirm_placeholder;
 
     document.querySelector('.error-text__password-blank').innerHTML = temp.err_blank;
@@ -54,7 +54,7 @@ function applyTranslations(lang) {
     document.querySelector('.error-text__must-match').innerHTML = temp.err_match;
 
     document.querySelector('.btn-text').innerHTML = temp.btn_submit;
-    document.querySelector('.line1').innerHTML = temp.footer_line1;
+    document.querySelector('.line1').innerHTML = temp.reserved;
     document.querySelector('.ar').innerHTML = temp.ar;
     document.querySelector('.tos').innerHTML = temp.tos;
     document.querySelector('.atac').innerHTML = temp.atac;

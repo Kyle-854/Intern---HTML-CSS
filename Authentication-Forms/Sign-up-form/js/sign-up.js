@@ -161,7 +161,7 @@ function applyTranslations(lang){
         document.querySelector('.footer-line1__text').innerHTML = temp.footer_line1;
         document.querySelector('.footer-line2__text').innerHTML = temp.footer_line2;
 
-        document.querySelector('.line1').innerHTML =temp.leftside_footer_line1;
+        document.querySelector('.line1').innerHTML =temp.reserved;
         document.querySelector('.ar').innerHTML = temp.ar;
         document.querySelector('.tos').innerHTML = temp.tos;
         document.querySelector('.atac').innerHTML = temp.atac;
@@ -362,6 +362,9 @@ function resetFormUI() {
     selectText.style.color = '#aaa';
 
     document.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
+
+    // reset company
+    document.querySelector('.company-name-container .input__place').value = '';
 }
 
 function xuLyIndustryList(){
