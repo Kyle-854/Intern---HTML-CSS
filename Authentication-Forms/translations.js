@@ -139,7 +139,12 @@ const translationsConfirm = {
         "err_case": "At least one lowercase & uppercase letter",
         "err_match": "Password must match",
         "btn_submit": "Submit",
-        "footer_line1": "© 2026 SmartAds, FPT Online. All rights reserved."
+        "footer_line1": "© 2026 SmartAds, FPT Online. All rights reserved.",
+        "ar": "Advertising Regulations",
+        "tos": "Terms of service",
+        "atac": "Advertiser Terms and Conditions",
+        "pp": "Privacy Policy",
+        "cookies": "Cookies"
     },
     "VIE": {
         "back": "Trở về trang chủ",
@@ -155,6 +160,11 @@ const translationsConfirm = {
         "err_case": "Ít nhất một chữ cái viết hoa & viết thường",
         "err_match": "Mật khẩu phải trùng khớp",
         "btn_submit": "Xác nhận",
-        "footer_line1": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền."
+        "footer_line1": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền.",
+        "ar": "Quy định về quảng cáo",
+        "tos": "Điều khoản dịch vụ",
+        "atac": "Điều khoản và điều kiện của nhà quảng cáo",
+        "pp": "Chính sách bảo mật",
+        "cookies": "Chính sách"
     }
 };

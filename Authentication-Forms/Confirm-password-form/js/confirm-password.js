@@ -1,6 +1,5 @@
 let currentLang = 'ENG';
 
-// 1. SETUP ĐỔI NGÔN NGỮ (Tương tự Sign in/Sign up)
 function setupLanguageSwitcher() {
     const menu = document.querySelector('.menu');
     const dropdown = document.querySelector('.dropdown');
@@ -56,9 +55,13 @@ function applyTranslations(lang) {
 
     document.querySelector('.btn-text').innerHTML = temp.btn_submit;
     document.querySelector('.line1').innerHTML = temp.footer_line1;
+    document.querySelector('.ar').innerHTML = temp.ar;
+    document.querySelector('.tos').innerHTML = temp.tos;
+    document.querySelector('.atac').innerHTML = temp.atac;
+    document.querySelector('.pp').innerHTML = temp.pp;
+    document.querySelector('.cookies').innerHTML = temp.cookies;
 }
 
-// 2. SETUP ẨN/HIỆN MẬT KHẨU
 function setupPasswordToggle(eyeOnClass, eyeOffClass, inputId) {
     const eyeOn = document.querySelector(`.${eyeOnClass}`);
     const eyeOff = document.querySelector(`.${eyeOffClass}`);
@@ -77,15 +80,14 @@ function setupPasswordToggle(eyeOnClass, eyeOffClass, inputId) {
     });
 }
 
-// 3. LOGIC VALIDATION
 function setupValidation() {
     const pass1 = document.getElementById('password1');
     const pass2 = document.getElementById('password2');
     const btnSubmit = document.getElementById('btn_submit');
     const errors = document.querySelectorAll('.error-container');
     
-    let hasInteracted = false; // Check xem user đã click vào form chưa
-    let isBlurred = false;     // Check xem user có click ra ngoài form chưa
+    let hasInteracted = false; 
+    let isBlurred = false;     
     
     btnSubmit.disabled = true;
 
@@ -93,7 +95,6 @@ function setupValidation() {
         const v1 = pass1.value;
         const v2 = pass2.value;
 
-        // Các điều kiện kiểm tra
         const cond1 = v1.length > 0; // Not blank
         const cond2 = v1.length >= 12; // Min 12 chars
         const cond3 = /[0-9]/.test(v1) && /[!@#$%^&*(),.?":{}|<>_\-+=/[\]\\]/.test(v1); // Number & Special char
@@ -112,8 +113,6 @@ function setupValidation() {
             } else {
                 allValid = false;
                 
-                // Logic đổi màu khi không thỏa điều kiện
-                // Theo Figma: Nếu form để trống và click ra ngoài -> Đỏ. Nếu đang gõ mà sai -> Đỏ. Nếu chưa gõ gì và đang nằm trong ô input -> Xám
                 if (isBlurred || v1.length > 0 || v2.length > 0) {
                     errorEl.classList.add('state-red');
                 } else {
@@ -122,7 +121,6 @@ function setupValidation() {
             }
         });
 
-        // Chỉ mở nút bấm khi 5 điều kiện đều xanh
         btnSubmit.disabled = !allValid;
     };
 
@@ -130,14 +128,14 @@ function setupValidation() {
         isBlurred = false;
         if (!hasInteracted) {
             hasInteracted = true;
-            errors.forEach(e => e.style.display = 'flex'); // Bắt đầu hiện 5 lỗi khi có focus
+            errors.forEach(e => e.style.display = 'flex'); 
         }
         validate();
     };
 
     const onBlur = () => {
         isBlurred = true;
-        validate(); // Trigger lại validate để chuyển Xám thành Đỏ nếu bỏ trống
+        validate(); 
     };
 
     pass1.addEventListener('focus', onFocus);
@@ -148,7 +146,6 @@ function setupValidation() {
     pass2.addEventListener('input', validate);
 }
 
-// KHỞI CHẠY TẤT CẢ
 document.addEventListener('DOMContentLoaded', () => {
     setupLanguageSwitcher();
     applyTranslations(currentLang);
