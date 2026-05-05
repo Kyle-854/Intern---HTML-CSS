@@ -1,5 +1,15 @@
 let currentLang = 'ENG';
 
+document.addEventListener('DOMContentLoaded', () => {
+    setupLanguageSwitcher();
+    applyTranslations(currentLang);
+    
+    setupPasswordToggle('eye-on1', 'eye-off1', 'password1');
+    setupPasswordToggle('eye-on2', 'eye-off2', 'password2');
+    
+    setupValidation();
+});
+
 function setupLanguageSwitcher() {
     const menu = document.querySelector('.menu');
     const dropdown = document.querySelector('.dropdown');
@@ -146,12 +156,3 @@ function setupValidation() {
     pass2.addEventListener('input', validate);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setupLanguageSwitcher();
-    applyTranslations(currentLang);
-    
-    setupPasswordToggle('eye-on1', 'eye-off1', 'password1');
-    setupPasswordToggle('eye-on2', 'eye-off2', 'password2');
-    
-    setupValidation();
-});

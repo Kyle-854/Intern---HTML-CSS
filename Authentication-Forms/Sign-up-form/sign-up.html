@@ -134,7 +134,7 @@
                 />
               </div>
 
-              <button type="submit" class="btn_action">Continue</button>
+              <button type="submit" name="btn_action" class="btn_action">Continue</button>
             </form>
 
             <form id="sign-up-ads-form" class="sign-up-form">
@@ -143,7 +143,7 @@
                 Full name<span>*</span>
               </p>
               
-              <input type="text" id="full-name" class="input__place" placeholder="Enter your full name">
+              <input type="text" name="full-name" id="full-name" class="input__place" placeholder="Enter your full name">
               
               <p class="invalid-feedback fullname-error">
                 Full name must be at least 5 characters
@@ -154,7 +154,7 @@
                 Company/ Personal email<span>*</span>
               </p>
 
-              <input type="text" id="email" class="input__place" placeholder="Enter your company/personal email">
+              <input type="text" name="email" id="email" class="input__place" placeholder="Enter your company/personal email">
 
               <p class="invalid-feedback email-error__invalid">
                 Email is not a valid email
@@ -169,7 +169,7 @@
                 Phone number<span>*</span>
               </p>
 
-              <input type="text" id="phone-number" class="input__place" placeholder="Enter your phone number">
+              <input type="text" name="phone-number" id="phone-number" class="input__place" placeholder="Enter your phone number">
 
               <p class="invalid-feedback phone-number-error">
                 Phone number invalid
@@ -189,7 +189,7 @@
                     </div>
                     
                     <div class="select__dropdown">
-                      <input type="search" class="search">
+                      <input type="search" name="search" class="search">
                       
                       <ul class="list">
                         <!-- <li class="item item-not-found">No results found</li> -->
@@ -229,7 +229,7 @@
                   Company name
                 </p>
                 
-                <input type="text" class="input__place" placeholder="Enter your company name">
+                <input type="text" name="company-name" class="input__place" placeholder="Enter your company name">
                 
                 <p class="invalid-feedback company-name-error">
                   Company name must not exceed 200 characters
@@ -238,7 +238,7 @@
                 
                 <!-- --------- -->
               <div class="agree-container">
-                <input type="checkbox" class="agree-checkbox">
+                <input type="checkbox" name="agree-checkbox" class="agree-checkbox">
                 
                 <p>
                   I agree to <a>SmartAds Terms and Conditions</a>
@@ -246,7 +246,7 @@
               </div>
               
               
-              <button type="submit" id="btn_sign-up" class="btn_action">
+              <button type="submit" name="btn_sign-up" id="btn_sign-up" class="btn_action">
                 <span class="spinner"></span>
                 Sign Up
               </button>

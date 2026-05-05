@@ -1,3 +1,13 @@
+document.addEventListener('DOMContentLoaded', () => {
+    setupDropdown();
+    handleLanguageSelect();
+    updateActiveLanguage();
+    setupPasswordToggle();
+    handleLoginFormSubmit();
+    setupLoginValidation();
+    
+});
+
 function setupDropdown(){
     const menu = document.querySelector('.menu');
     const dropdown = document.querySelector('.dropdown');
@@ -23,7 +33,6 @@ function setupDropdown(){
         }
     });
 }
-setupDropdown();
 
 function handleLanguageSelect(){
     const flag = document.querySelector('.menu .flag');
@@ -54,7 +63,6 @@ function handleLanguageSelect(){
         dropdown.style.visibility = 'hidden'
     });
 }
-handleLanguageSelect();
 
 function updateActiveLanguage(){
     const sub1 = document.querySelector('.sub1');
@@ -81,7 +89,6 @@ function updateActiveLanguage(){
     }
     
 }
-updateActiveLanguage();
 
 function applyTranslations(lang){
 
@@ -89,12 +96,14 @@ function applyTranslations(lang){
 
     if(lang){
         const temp = trans[lang];
+        const form = document.getElementById('sign-in-form');
+
         document.querySelector('title').innerHTML = temp.title;
         document.querySelector('.title').innerHTML = temp.desc_text;
         document.querySelector('.have-account').innerHTML = temp.have_account;
         document.querySelector('.password-text').innerHTML = temp.password;
-        document.querySelector('#email').placeholder = temp.enter_email;
-        document.querySelector('#password').placeholder = temp.enter_pass;
+        form.elements["email"].placeholder = temp.enter_email;
+        form.elements["password"].placeholder = temp.enter_pass;
         document.querySelector('#btn_login .btn-text').innerHTML = temp.btn_login;
         document.querySelector('.forgot-password').innerHTML = temp.forgot_pass;
         document.querySelector('.ar').innerHTML = temp.ar;
@@ -113,7 +122,8 @@ function applyTranslations(lang){
 function setupPasswordToggle(){
     const eyeOn = document.querySelector('.eye-on');
     const eyeOff = document.querySelector('.eye-off');
-    const password = document.querySelector('#password');
+    const form = document.getElementById('sign-in-form');
+    const password = form.elements["password"];
 
     eyeOn.addEventListener('click', () => {
         eyeOn.style.display = 'none';
@@ -128,14 +138,13 @@ function setupPasswordToggle(){
 
     });
 }
-setupPasswordToggle();
 
 function handleLoginFormSubmit(){
-    const form = document.querySelector('form');
-    const btn_login = document.querySelector('#btn_login');
+    const form = document.getElementById('sign-in-form');
+    const btn_login = form.elements["btn_login"];
     const emailError = document.querySelector('.email-error');
     const passwordError = document.querySelector('.password-error');
-    const password = document.querySelector('#password');
+    const password = form.elements["password"];
 
     form.addEventListener('submit', async function(event){
 
@@ -157,14 +166,14 @@ function handleLoginFormSubmit(){
         }
     });
 }
-handleLoginFormSubmit();
 
 function setupLoginValidation(){
-    const email = document.querySelector('#email');
-    const password = document.querySelector('#password');
+    const form = document.getElementById('sign-in-form');
+    const email = form.elements["email"];
+    const password = form.elements["password"];
     const emailError = document.querySelector('.email-error');
     const passwordError = document.querySelector('.password-error');
-    const btn_login = document.querySelector('#btn_login');
+    const btn_login = form.elements["btn_login"];
 
     btn_login.disabled = true;
 
@@ -210,10 +219,10 @@ function setupLoginValidation(){
         check();
     });
 }
-setupLoginValidation();
 
 function validateEmail(){
-    const email = document.querySelector('#email');
+    const form = document.getElementById('sign-in-form');
+    const email = form.elements["email"];
     const emailError = document.querySelector('.email-error');
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

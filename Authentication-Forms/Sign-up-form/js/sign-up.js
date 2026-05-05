@@ -2,6 +2,17 @@ let currentRole = null;
 let selectedIndustry = null;
 let currentLang = 'ENG';
 
+document.addEventListener('DOMContentLoaded', () => {
+    setupDropdown();
+    handleLanguageSelect();
+    updateActiveLanguage();
+    xuLyRadioButton();
+    xuLyChuyenForm();
+    showIndustry();
+    xuLyIndustryList();
+    xuLySearch();
+    xuLySignUp();
+});
 
 function setupDropdown(){
     const menu = document.querySelector('.menu');
@@ -28,7 +39,6 @@ function setupDropdown(){
         }
     });
 }
-setupDropdown();
 
 function handleLanguageSelect(){
     const flag = document.querySelector('.menu .flag');
@@ -59,7 +69,6 @@ function handleLanguageSelect(){
         dropdown.style.visibility = 'hidden'
     });
 }
-handleLanguageSelect();
 
 function updateActiveLanguage(){
     const sub1 = document.querySelector('.sub1');
@@ -89,7 +98,6 @@ function updateActiveLanguage(){
 
     showIndustry();
 }
-updateActiveLanguage();
 
 function applyTranslations(lang){
 
@@ -244,7 +252,6 @@ function xuLyRadioButton(){
     });
     
 }
-xuLyRadioButton();
 
 function xuLyChuyenForm(){
     const formStep1 = document.querySelector('#select-option-form');
@@ -318,7 +325,6 @@ function xuLyChuyenForm(){
 
     
 }
-xuLyChuyenForm();
 
 function showIndustry(){
     const ul = document.querySelector('.list');
@@ -333,7 +339,6 @@ function showIndustry(){
     selectText.innerHTML = translationsSignUp[currentLang].industry_placeholder;
     selectText.style.color = '#aaa';
 }
-showIndustry();
 
 function resetFormUI() {
     // reset input
@@ -421,7 +426,6 @@ function xuLyIndustryList(){
         }
     });
 }
-xuLyIndustryList();
 
 function xuLySearch() {
     const search = document.querySelector('.search');
@@ -446,26 +450,22 @@ function xuLySearch() {
         }
     });
 }
-xuLySearch();
 
-// CÁI Ô SEARCH BỊ LỖI: SAU KHI NHẬP KÍ TỰ VÀO VÀ XÓA ĐI THÌ CÁI .select bị co lại
-
-function xuLyFullName(fullname){
-    const regex = /^[\p{L} ]+$/u;
-    const temp = fullname.value.trim().replace(/\s+/g, " ");
+// function xuLyFullName(fullname){
+//     const temp = fullname.value.trim();
     
-    return  temp.length >= 5 && regex.test(temp);
-}
+//     return  temp.length >= 5;
+// }
 
-function xuLyEmail(email){
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email.value);
-}
+// function xuLyEmail(email){
+//     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+//     return emailRegex.test(email.value);
+// }
 
-function xuLyPhoneNumber(phoneNumber){
-    const phoneNumberRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
-    return phoneNumberRegex.test(phoneNumber.value);
-}
+// function xuLyPhoneNumber(phoneNumber){
+//     const phoneNumberRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
+//     return phoneNumberRegex.test(phoneNumber.value);
+// }
 
 const check = () =>{
     const isIndustryValid = selectedIndustry !== null;
@@ -514,21 +514,26 @@ function xuLySignUp(){
         
         temp = true;
 
-        if (!xuLyFullName(fullName)) {
+        //validate fullname
+        if (fullName.value.trim().length < 5) {
             temp = false;
             fullnameError.style.display = 'block';
             fullName.style.border = '2px solid #BA1A1A';
             fullName.style.marginBottom = '4px';
         }
 
-        if (!xuLyEmail(email)) {
+        //validate email
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email.value)) {
             temp = false;
             emailErrorInvalid.style.display = 'block';
             email.style.border = '2px solid #BA1A1A';
             email.style.marginBottom = '4px';
         }
 
-        if (!xuLyPhoneNumber(phoneNumber)) {
+        //validate phonenumber
+        const phoneNumberRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
+        if (!phoneNumberRegex.test(phoneNumber.value)) {
             temp = false;
             phoneNumberError.style.display = 'block';
             phoneNumber.style.border = '2px solid #BA1A1A';
@@ -581,7 +586,6 @@ function xuLySignUp(){
         check();
     });
 }
-xuLySignUp();
 
 const SUPABASE_URL = 'https://tctjqxhtwhaplpvkmucz.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjdGpxeGh0d2hhcGxwdmttdWN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDM1NzQsImV4cCI6MjA5MTk3OTU3NH0.8oPOL5359o6sSp4UBGpY_3LjC0gCLPOpECm4Bo81eQI';

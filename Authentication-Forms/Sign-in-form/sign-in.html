@@ -50,30 +50,30 @@
 
                     <p class="have-account">Don't have an account? <a href="../Sign-up-form/sign-up.html">Get Started</a></p>
 
-                    <form method="post">
+                    <form id="sign-in-form" method="post">
 
                         <p class="email-text">Email</p>
                         
-                        <input name="" id="email" class="input-place" placeholder="Enter your email ">
+                        <input name="email" id="email" class="input-place" placeholder="Enter your email ">
                         
                         <p class="email-error invalid-feedback">Invalid email format. Please enter a valid email address</p>
                         
                         <p class="password-text">Password</p>
                         
                         <div class="password-container">
-                            <input type="password" id="password" class="input-place" placeholder="Enter your password">
+                            <input name="password" type="password" id="password" class="input-place" placeholder="Enter your password">
                             <img class="eye-on" src="../../assets/images/eye-on.svg" alt="eye-on">
                             <img class="eye-off" src="../../assets/images/eye-off.svg" alt="eye-off">
                         </div>
                         
                         <p class="password-error invalid-feedback">Your email/password is not correct. Please try again</p>
                         
-                        <button type="submit" id="btn_login">
+                        <button type="submit" name="btn_login" id="btn_login">
                             <span class="spinner"></span>
                             <span class="btn-text">Login</span>
                         </button>
                         
-                        <a class="forgot-password" href="">Forgot password?</a>
+                        <a class="forgot-password" href="../Forgot-password-form/forgot-password.html">Forgot password?</a>
                     </form>
                 </div>
 
