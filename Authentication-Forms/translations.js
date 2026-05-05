@@ -145,6 +145,14 @@ const translationsConfirm = {
         "confirm_label": "Confirm password",
         "enter_pass": "Enter your password",
         "confirm_placeholder": "Re-enter your password",
+        
+        // --- THÊM TEXT CHO LUỒNG FORGOT PASSWORD ---
+        "reset_title": "Reset your password",
+        "reset_desc": "Almost done! Enter your new password, and you're all set.",
+        "new_password": "New password",
+        "new_pass_placeholder": "Enter your new password",
+        // -------------------------------------------
+
         "err_blank": "Password can't be blank",
         "err_min": "Minimum 12 characters",
         "err_special": "At least one number & special character",
@@ -166,6 +174,14 @@ const translationsConfirm = {
         "confirm_label": "Xác nhận mật khẩu",
         "enter_pass": "Nhập mật khẩu của bạn",
         "confirm_placeholder": "Nhập lại mật khẩu",
+        
+        // --- THÊM TEXT CHO LUỒNG FORGOT PASSWORD ---
+        "reset_title": "Đặt lại mật khẩu",
+        "reset_desc": "Sắp xong rồi! Nhập mật khẩu mới của bạn và hoàn tất.",
+        "new_password": "Mật khẩu mới",
+        "new_pass_placeholder": "Nhập mật khẩu mới",
+        // -------------------------------------------
+
         "err_blank": "Mật khẩu không được để trống",
         "err_min": "Tối thiểu 12 ký tự",
         "err_special": "Ít nhất một chữ số & ký tự đặc biệt",
@@ -179,4 +195,39 @@ const translationsConfirm = {
         "pp": "Chính sách bảo mật",
         "cookies": "Chính sách"
     }
+};
+
+const translationsForgotPassword = {
+  "ENG": {
+    "title": "Forgot Password",
+    "desc": "Forgot your password? Enter your email address to get a reset link.",
+    "placeholder": "Enter your email...",
+    "err_email": "Email address does not exist",
+    "btn_submit": "Send Request",
+    "confirm_title": "Confirm email",
+    "confirm_desc": "We've sent a confirmation email to {email}. If you don’t <br> see it, check your spam folder or try again in a few minutes.",
+    "countdown_text": "Didn’t get your email? ",
+    "reserved": "© 2026 SmartAds, FPT Online. All rights reserved.",
+    "ar": "Advertising Regulations",
+    "tos": "Terms of service",
+    "atac": "Advertiser Terms and Conditions",
+    "pp": "Privacy Policy",
+    "cookies": "Cookies"
+  },
+  "VIE": {
+    "title": "Quên mật khẩu",
+    "desc": "Quên mật khẩu? Nhập địa chỉ email của bạn để nhận liên kết đặt lại.",
+    "placeholder": "Nhập email của bạn...",
+    "err_email": "Địa chỉ email không tồn tại",
+    "btn_submit": "Gửi yêu cầu",
+    "confirm_title": "Xác nhận email",
+    "confirm_desc": "Chúng tôi đã gửi email xác nhận đến {email}. Nếu bạn không <br> thấy thư, hãy kiểm tra hộp thư rác hoặc thử lại sau vài phút.",
+    "countdown_text": "Chưa nhận được email? ",
+    "reserved": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền.",
+    "ar": "Quy định về quảng cáo",
+    "tos": "Điều khoản dịch vụ",
+    "atac": "Điều khoản và điều kiện của nhà quảng cáo",
+    "pp": "Chính sách bảo mật",
+    "cookies": "Chính sách"
+  }
 };
