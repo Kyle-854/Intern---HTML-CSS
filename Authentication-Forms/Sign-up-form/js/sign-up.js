@@ -622,7 +622,7 @@ async function handleCheckEmailExists() {
         }
 
         // Tạo mật khẩu ảo mặc định
-        const dummyPassword = "Chưa đặt mật khẩu ";
+        const dummyPassword = "Chưa đặt mật khẩu";
         const companyEl = document.querySelector('.company-name-container .input__place');
         const companyInput = companyEl ? companyEl.value.trim() : ''; // Nếu có ô đó thì lấy giá trị, không thì để chuỗi rỗng
 

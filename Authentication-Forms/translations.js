@@ -145,14 +145,6 @@ const translationsConfirm = {
         "confirm_label": "Confirm password",
         "enter_pass": "Enter your password",
         "confirm_placeholder": "Re-enter your password",
-        
-        // --- THÊM TEXT CHO LUỒNG FORGOT PASSWORD ---
-        "reset_title": "Reset your password",
-        "reset_desc": "Almost done! Enter your new password, and you're all set.",
-        "new_password": "New password",
-        "new_pass_placeholder": "Enter your new password",
-        // -------------------------------------------
-
         "err_blank": "Password can't be blank",
         "err_min": "Minimum 12 characters",
         "err_special": "At least one number & special character",
@@ -174,14 +166,6 @@ const translationsConfirm = {
         "confirm_label": "Xác nhận mật khẩu",
         "enter_pass": "Nhập mật khẩu của bạn",
         "confirm_placeholder": "Nhập lại mật khẩu",
-        
-        // --- THÊM TEXT CHO LUỒNG FORGOT PASSWORD ---
-        "reset_title": "Đặt lại mật khẩu",
-        "reset_desc": "Sắp xong rồi! Nhập mật khẩu mới của bạn và hoàn tất.",
-        "new_password": "Mật khẩu mới",
-        "new_pass_placeholder": "Nhập mật khẩu mới",
-        // -------------------------------------------
-
         "err_blank": "Mật khẩu không được để trống",
         "err_min": "Tối thiểu 12 ký tự",
         "err_special": "Ít nhất một chữ số & ký tự đặc biệt",
@@ -230,4 +214,47 @@ const translationsForgotPassword = {
     "pp": "Chính sách bảo mật",
     "cookies": "Chính sách"
   }
+};
+
+const translationsReset = {
+    "ENG": {
+        "title": "Reset your password",
+        "desc": "Almost done! Enter your new password, and you're all set.",
+        "newPassword": "New password",
+        "confirm_label": "Confirm password",
+        "enter_pass": "Enter your password",
+        "confirm_placeholder": "Re-enter your password",
+        "err_blank": "Password can't be blank",
+        "err_min": "Minimum 12 characters",
+        "err_special": "At least one number & special character",
+        "err_case": "At least one lowercase & uppercase letter",
+        "err_match": "Password must match",
+        "btn_submit": "Submit",
+        "reserved": "© 2026 SmartAds, FPT Online. All rights reserved.",
+        "ar": "Advertising Regulations",
+        "tos": "Terms of service",
+        "atac": "Advertiser Terms and Conditions",
+        "pp": "Privacy Policy",
+        "cookies": "Cookies"
+    },
+    "VIE": {
+        "title": "Thiết lập lại mật khẩu",
+        "desc": "Hoàn tất thiết lập! Nhập mật khẩu mới để tiếp tục.",
+        "newPassword": "Mật khẩu mới",
+        "confirm_label": "Xác nhận mật khẩu",
+        "enter_pass": "Nhập mật khẩu của bạn",
+        "confirm_placeholder": "Nhập lại mật khẩu",
+        "err_blank": "Mật khẩu không được để trống",
+        "err_min": "Tối thiểu 12 ký tự",
+        "err_special": "Ít nhất một chữ số & ký tự đặc biệt",
+        "err_case": "Ít nhất một chữ cái viết hoa & viết thường",
+        "err_match": "Mật khẩu phải trùng khớp",
+        "btn_submit": "Xác nhận",
+        "reserved": "© 2026 SmartAds, FPT Online. Đã đăng ký bản quyền.",
+        "ar": "Quy định về quảng cáo",
+        "tos": "Điều khoản dịch vụ",
+        "atac": "Điều khoản và điều kiện của nhà quảng cáo",
+        "pp": "Chính sách bảo mật",
+        "cookies": "Chính sách"
+    }
 };

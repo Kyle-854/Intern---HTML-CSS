@@ -18,18 +18,18 @@ async function handleSignUpSubmit() {
     btnSubmit.disabled = true;
 
     try {
-        // 2. Gọi API UPDATE User (Dùng method PUT)
+        // 2. Gọi API UPDATE User 
         const res = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
             method: 'PUT',
             headers: {
                 'apikey': SUPABASE_ANON_KEY,
-                'Authorization': `Bearer ${token}`, // Dùng Token thay vì Anon Key đơn thuần
+                'Authorization': `Bearer ${token}`, 
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                password: realPassword, // Đổi pass ảo thành pass thật
+                password: realPassword, 
                 data: {
-                    raw_password: realPassword, // Đồng bộ pass qua table public cho bạn dễ nhìn
+                    raw_password: realPassword, // Đồng bộ pass qua table public cho dễ nhìn
                     status: 'active' // ĐỔI TRẠNG THÁI THÀNH KÍCH HOẠT
                 }
             })
@@ -55,11 +55,30 @@ async function handleSignUpSubmit() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const confirmForm = document.getElementById('confirm-password-form');
+    const btnSubmit = confirmForm.elements['btn_submit'];
     
     if (confirmForm) {
-        confirmForm.addEventListener('submit', (e) => {
+        confirmForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            handleSignUpSubmit();
+
+            const pass1 = confirmForm.elements['password1'].value;
+            const pass2 = confirmForm.elements['password2'].value;
+
+            const cond1 = pass1.length > 0; // Not blank
+            const cond2 = pass1.length >= 12; // Min 12 chars
+            const cond3 = /[0-9]/.test(pass1) && /[!@#$%^&*(),.?":{}|<>_\-+=/[\]\\]/.test(pass1); // Number & Special char
+            const cond4 = /[a-z]/.test(pass1) && /[A-Z]/.test(pass1); // Lowercase & Uppercase
+            const cond5 = pass1 === pass2 && pass1.length > 0; // Passwords match
+
+            if (cond1 && cond2 && cond3 && cond4 && cond5) {
+                await handleSignUpSubmit();
+            }
+            else{
+                console.warn('Lỗi: Nút Submit bị mất disable khi dữ liệu không hợp lệ');
+                alert('Lỗi: Nút Submit bị mất disable khi dữ liệu không hợp lệ');
+                btnSubmit.disabled = true;
+            }
+
         });
     }
-});
+});  
