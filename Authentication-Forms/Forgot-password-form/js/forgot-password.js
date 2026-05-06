@@ -86,32 +86,26 @@ function applyTranslations(lang) {
     document.querySelector('.cookies').innerHTML = temp.cookies;
 }
 
-// Gộp chung Logic Form: Hiệu ứng gõ phím + Submit API
 function setupFormLogic() {
     const form = document.getElementById('forgot-password__form');
     if (!form) return;
 
-    // Lấy DOM bằng name
     const emailInput = form.elements['email'];
     const btnSubmit = form.elements['btn_submit'];
     const emailError = document.querySelector('.email-error');
 
-    // 1. KHÓA NÚT MẶC ĐỊNH & BẮT SỰ KIỆN GÕ PHÍM
     btnSubmit.disabled = true;
 
     emailInput.addEventListener('input', () => {
         const emailValue = emailInput.value.trim();
 
-        // Ẩn lỗi và reset border khi có thay đổi dữ liệu
         emailError.style.display = 'none';
         emailInput.style.border = '1px solid #DFE3E8';
         emailInput.style.marginBottom = '20px';
 
-        // Mở khóa nếu có chữ, khóa nếu rỗng
         btnSubmit.disabled = emailValue === '';
     });
 
-    // 2. BẮT SỰ KIỆN SUBMIT FORM KHI NHẤN NÚT
     form.addEventListener('submit', async (event) => {
         event.preventDefault(); // Ngăn trình duyệt reload
         
