@@ -203,15 +203,19 @@
     line-height: 120%; /* 16.8px */
 
     margin-top: 4px;
+
+    display: none;
 }
 
 .email-error{
     margin-bottom: 12px;
-    display: none;
 }
 
 .password-error{
-    display: none;
+}
+
+.error-border{
+    border: 2px solid #BA1A1A !important;
 }
 
 .sign-in__content #btn_login{
@@ -234,6 +238,12 @@
 
 #btn_login:disabled{
     opacity: 0.7;
+}
+
+.hover-btn{
+    background-color: #047B3E !important;  
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #E5E5E5;
 }
 
 #btn_login .spinner{
@@ -399,6 +409,13 @@
     color: #FFF;
 }
 
+.active-bglang{
+    background: #048845;
+}
+
+.active-txtlang{
+    color: #FFF
+}
 
 .sign-in__container .right-side{
     background: linear-gradient(180deg, #F7F7F7 0%, #F5F5F5 90.1%);
@@ -717,3 +734,5 @@
         width: 100%;
     }
 }
+
+

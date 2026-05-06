@@ -30,7 +30,8 @@ async function login() {
         console.error('LỖI: ', error);
         if(error.status === 400){
             $passwordError.css('display', 'block');
-            $password.css('border', '2px solid #BA1A1A');
+            // $password.css('border', '2px solid #BA1A1A');
+            $password.addClass('error-border');
         }
     }
 }

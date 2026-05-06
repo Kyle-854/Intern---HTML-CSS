@@ -71,19 +71,27 @@ function updateActiveLanguage(){
     const sub2_lang = document.querySelector('.sub2 .language');
 
     if(document.querySelector('.language').innerHTML === "ENG"){
-        sub1.style.background = 'var(--color-primary-500, #048845)';
-        sub1_lang.style.color = 'white';
-        sub2.style.background = '';
-        sub2_lang.style.color = '';
+        // sub1.style.background = '#048845';
+        // sub1_lang.style.color = 'white';
+        // sub2.style.background = '';
+        // sub2_lang.style.color = '';
+        sub1.classList.add('active-bglang');
+        sub2.classList.remove('active-bglang');
+        sub1_lang.classList.add('active-txtlang');
+        sub2_lang.classList.remove('active-txtlang');
 
         applyTranslations("ENG");
     } 
     
     if(document.querySelector('.language').innerHTML === "VIE"){
-        sub2.style.background = 'var(--color-primary-500, #048845)';
-        sub2_lang.style.color = 'white';
-        sub1.style.background = '';
-        sub1_lang.style.color = '';
+        // sub2.style.background = '#048845';
+        // sub2_lang.style.color = 'white';
+        // sub1.style.background = '';
+        // sub1_lang.style.color = '';
+        sub2.classList.add('active-bglang');
+        sub1.classList.remove('active-bglang');
+        sub2_lang.classList.add('active-txtlang');
+        sub1_lang.classList.remove('active-txtlang');
 
         applyTranslations("VIE");
     }
@@ -154,7 +162,8 @@ function handleLoginFormSubmit(){
         btn_login.disabled = true;
         emailError.style.display = 'none';
         passwordError.style.display = 'none';
-        password.style.border = '1px solid #DFE3E8';
+        // password.style.border = '1px solid #DFE3E8';
+        password.classList.remove('error-border');
         
         try {
             if(validateEmail()){
@@ -185,24 +194,29 @@ function setupLoginValidation(){
             btn_login.disabled = false;
 
             btn_login.addEventListener('mouseenter', () => {
-                btn_login.style.cursor = 'pointer';
-                btn_login.style.boxShadow = '0 0 0 2px #E5E5E5';
-                btn_login.style.background = '#047B3E';
+                // btn_login.style.cursor = 'pointer';
+                // btn_login.style.boxShadow = '0 0 0 2px #E5E5E5';
+                // btn_login.style.background = '#047B3E';
+                btn_login.classList.add('hover-btn');
 
             });
 
             btn_login.addEventListener('mouseleave', () => {
-                btn_login.style.cursor = 'default';
-                btn_login.style.background = '#048845';
-                btn_login.style.boxShadow = 'none';
+                // btn_login.style.cursor = 'default';
+                // btn_login.style.background = '#048845';
+                // btn_login.style.boxShadow = 'none';
+                btn_login.classList.remove('hover-btn');
+
             });
         } else {
             btn_login.disabled = true;
 
             btn_login.addEventListener('mouseenter', () => {
-                btn_login.style.cursor = 'default';
-                btn_login.style.background = '#048845';
-                btn_login.style.boxShadow = 'none';
+                // btn_login.style.cursor = 'default';
+                // btn_login.style.background = '#048845';
+                // btn_login.style.boxShadow = 'none';
+                btn_login.classList.remove('hover-btn');
+
             });
         }
         
@@ -210,12 +224,14 @@ function setupLoginValidation(){
 
     email.addEventListener('input', function(){
         emailError.style.display = 'none';
-        email.style.border = '1px solid #DFE3E8';
+        // email.style.border = '1px solid #DFE3E8';
+        email.classList.remove('error-border');
         check();
     });
     password.addEventListener('input', function(){
         passwordError.style.display = 'none';
-        password.style.border = '1px solid #DFE3E8';
+        // password.style.border = '1px solid #DFE3E8';
+        password.classList.remove('error-border');
         check();
     });
 }
@@ -229,7 +245,8 @@ function validateEmail(){
 
     if(!emailRegex.test(email.value.trim())){
         emailError.style.display = 'block';
-        email.style.border = '2px solid #BA1A1A';
+        // email.style.border = '2px solid #BA1A1A';
+        email.classList.add('error-border');
         return false;
     }
     return true;
