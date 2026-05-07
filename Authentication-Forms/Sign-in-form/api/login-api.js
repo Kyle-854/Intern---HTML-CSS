@@ -9,6 +9,36 @@ async function login() {
     const $passwordError = $('.password-error');
 
     try {
+        // const res = await $.ajax({
+        //     url: `${SUPABASE_URL}/auth/v1/token?grant_type=password`,
+        //     type: 'POST',
+        //     headers: {
+        //         'apikey': SUPABASE_ANON_KEY,
+        //         'Content-Type': 'application/json'
+        //     },
+        //     data: JSON.stringify({
+        //         email: email,
+        //         password: password
+        //     })
+        // });
+
+        // --- BƯỚC 1: KIỂM TRA STATUS TRƯỚC ---
+        const checkStatusRes = await $.ajax({
+            url: `${SUPABASE_URL}/rest/v1/users?email=eq.${email}&select=status`,
+            type: 'GET',
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+            }
+        });
+
+        // Nếu tìm thấy email và status là pending thì dùng alert và chặn luôn
+        if (checkStatusRes.length > 0 && checkStatusRes[0].status === 'pending') {
+            alert('Tài khoản chưa được kích hoạt. Vui lòng kiểm tra email của bạn!');
+            return; // Dừng lại, không chạy lệnh đăng nhập ở dưới
+        }
+
+        // --- BƯỚC 2: NẾU STATUS OK THÌ MỚI GỌI LỆNH ĐĂNG NHẬP ---
         const res = await $.ajax({
             url: `${SUPABASE_URL}/auth/v1/token?grant_type=password`,
             type: 'POST',

@@ -160,7 +160,7 @@ function setupFormLogic() {
 }
 
 function xuLyCountdown() {
-    let time = 120;
+    let time = 5;
     
     const timer = setInterval(() => {
         time--;
@@ -173,6 +173,8 @@ function xuLyCountdown() {
         if (time <= 0){
             clearInterval(timer);
             if (currentCountdown) currentCountdown.innerHTML = '0s';
+            
+            window.location.href = '../Reset-password-form/reset-password.html'; 
         }
     }, 1000);
 }

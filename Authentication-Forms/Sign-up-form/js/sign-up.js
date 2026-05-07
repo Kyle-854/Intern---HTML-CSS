@@ -621,11 +621,12 @@ async function handleCheckEmailExists() {
             return;
         }
 
-        // Tạo mật khẩu ảo mặc định
-        const dummyPassword = "Chưa đặt mật khẩu";
+        
         const companyEl = document.querySelector('.company-name-container .input__place');
         const companyInput = companyEl ? companyEl.value.trim() : ''; // Nếu có ô đó thì lấy giá trị, không thì để chuỗi rỗng
-
+        
+        const dummyPassword = "Chưa đặt mật khẩu";
+        
         // Gọi API tạo User ngay lập tức vào Supabase Auth
         const signUpRes = await fetch(`${SUPABASE_URL}/auth/v1/signup`, {
             method: 'POST',
@@ -635,14 +636,14 @@ async function handleCheckEmailExists() {
             },
             body: JSON.stringify({
                 email: email,
-                password: dummyPassword, // Nhét pass ảo vào
+                password: dummyPassword, // Tạo mật khẩu tạm cho bảng Authentication
                 data: {
                     full_name: document.querySelector('#full-name').value.trim(),
                     phone: document.querySelector('#phone-number').value.trim(),
                     role: currentRole, // 'ads' hoặc 'pub'
                     industry: selectedIndustry,
                     company: companyInput,
-                    raw_password: 'Chưa đặt mật khẩu', // Hiện chữ này trong Table Editor
+                    password: dummyPassword, // Mật khẩu trong bảng users của Table Editor
                     status: 'pending' // TRẠNG THÁI CHỜ
                 }
             })
