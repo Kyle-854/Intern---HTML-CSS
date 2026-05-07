@@ -2,7 +2,7 @@ const SUPABASE_URL = 'https://tctjqxhtwhaplpvkmucz.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjdGpxeGh0d2hhcGxwdmttdWN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDM1NzQsImV4cCI6MjA5MTk3OTU3NH0.8oPOL5359o6sSp4UBGpY_3LjC0gCLPOpECm4Bo81eQI';
 
 async function handleResetSubmit() {
-    // 1. LẤY TOKEN TỪ URL HASH (#access_token=...)
+    // 1. Lấy Token từ URL hash
     let token = null;
     const hash = window.location.hash;
     if (hash) {
@@ -11,7 +11,7 @@ async function handleResetSubmit() {
     }
 
     if (!token) {
-        alert("Liên kết đã hết hạn hoặc không hợp lệ. Vui lòng yêu cầu lại mã mới!");
+        alert("Không tìm thấy phiên xác thực. Vui lòng thử lại!");
         window.location.href = '../Forgot-password-form/forgot-password.html';
         return;
     }
@@ -23,8 +23,8 @@ async function handleResetSubmit() {
     btnSubmit.disabled = true;
 
     try {
-        // 2. GỌI API CẬP NHẬT MẬT KHẨU VỚI TOKEN VỪA LẤY ĐƯỢC
-        const res = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+        // --- BƯỚC A: CẬP NHẬT BẢNG AUTHENTICATION ---
+        const authRes = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
             method: 'PUT',
             headers: {
                 'apikey': SUPABASE_ANON_KEY,
@@ -34,24 +34,45 @@ async function handleResetSubmit() {
             body: JSON.stringify({
                 password: realPassword, 
                 data: {
-                    password: realPassword // Cập nhật luôn vào Table Editor cho đồng bộ
+                    password: realPassword,
+                    status: 'active' 
                 }
             })
         });
 
-        const data = await res.json();
+        const userData = await authRes.json();
 
-        if (!res.ok) throw new Error(data.error_description || data.msg);
+        if (!authRes.ok) throw new Error(userData.error_description || userData.msg);
 
-        // 3. THÀNH CÔNG
+        // --- BƯỚC B: ĐỒNG BỘ SANG TABLE EDITOR (BẢNG USERS) ---
+        // Chúng ta dùng email lấy được từ kết quả trả về của bước A để tìm đúng dòng cần update
+        const userEmail = userData.email;
+
+        const tableRes = await fetch(`${SUPABASE_URL}/rest/v1/users?email=eq.${userEmail}`, {
+            method: 'PATCH', // Dùng PATCH để cập nhật dữ liệu đã có
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({
+                password: realPassword, // Cập nhật cột password trong Table Editor
+                status: 'active'        // Chuyển luôn sang active để login được
+            })
+        });
+
+        if (!tableRes.ok) {
+            console.error("Lỗi đồng bộ Table Editor, nhưng Auth đã đổi xong.");
+        }
+
+        // THÀNH CÔNG
         alert("Cập nhật mật khẩu thành công! Vui lòng đăng nhập lại.");
-        
-        // Cập nhật xong thì xóa cái hash trên URL đi cho sạch sẽ
         window.history.replaceState(null, null, window.location.pathname);
         window.location.href = '../Sign-in-form/sign-in.html'; 
 
     } catch (error) {
-        console.error('LỖI CẬP NHẬT MẬT KHẨU:', error);
+        console.error('LỖI:', error);
         alert("Có lỗi xảy ra: " + error.message);
     } finally {
         btnSubmit.classList.remove('loading');
