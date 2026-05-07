@@ -128,8 +128,12 @@ function setupFormLogic() {
             const data = await res.json();
 
             if (data.exists) {
-                // --- GỌI API ĐỂ SUPABASE GỬI MAIL THẬT ---
-                const recoverRes = await fetch(`${SUPABASE_URL}/auth/v1/recover`, {
+                //EMAIL TỒN TẠI
+                // Link trang Reset Password của bạn trên Vercel
+                const redirectLink = 'https://kylelona.vercel.app/Authentication-Forms/Reset-password-form/reset-password.html';
+
+                // --- GỌI API ĐỂ SUPABASE GỬI MAIL (CÓ KÈM THEO LỆNH CHUYỂN HƯỚNG) ---
+                const recoverRes = await fetch(`${SUPABASE_URL}/auth/v1/recover?redirect_to=${redirectLink}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -141,14 +145,14 @@ function setupFormLogic() {
                 if (!recoverRes.ok) {
                     throw new Error("Không thể gửi email đặt lại mật khẩu");
                 }
-                // EMAIL TỒN TẠI: Ẩn form, hiện phần đếm ngược
+
+                // Ẩn form, hiện phần đếm ngược
                 document.querySelector('.forgot-password__content').style.display = 'none';
                 document.querySelector('.forgot-password__confirm-email').style.display = 'flex';
                 
                 const yourEmailSpan = document.getElementById('your-email');
                 if (yourEmailSpan) yourEmailSpan.innerText = emailValue;
 
-                // CHỈ KHI NÀO THÀNH CÔNG MỚI GỌI HÀM ĐẾM NGƯỢC
                 xuLyCountdown(); 
             } else {
                 // EMAIL KHÔNG TỒN TẠI: Hiện lỗi, đổi viền đỏ
