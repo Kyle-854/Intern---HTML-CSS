@@ -128,6 +128,19 @@ function setupFormLogic() {
             const data = await res.json();
 
             if (data.exists) {
+                // --- GỌI API ĐỂ SUPABASE GỬI MAIL THẬT ---
+                const recoverRes = await fetch(`${SUPABASE_URL}/auth/v1/recover`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY
+                    },
+                    body: JSON.stringify({ email: emailValue })
+                });
+
+                if (!recoverRes.ok) {
+                    throw new Error("Không thể gửi email đặt lại mật khẩu");
+                }
                 // EMAIL TỒN TẠI: Ẩn form, hiện phần đếm ngược
                 document.querySelector('.forgot-password__content').style.display = 'none';
                 document.querySelector('.forgot-password__confirm-email').style.display = 'flex';
@@ -160,7 +173,7 @@ function setupFormLogic() {
 }
 
 function xuLyCountdown() {
-    let time = 5;
+    let time = 120;
     
     const timer = setInterval(() => {
         time--;
@@ -173,8 +186,6 @@ function xuLyCountdown() {
         if (time <= 0){
             clearInterval(timer);
             if (currentCountdown) currentCountdown.innerHTML = '0s';
-            
-            window.location.href = '../Reset-password-form/reset-password.html'; 
         }
     }, 1000);
 }
