@@ -1,121 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartAds - Welcome</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-
-        .description {
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        .buttons-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 15px 40px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn-signin {
-            background-color: #667eea;
-            color: white;
-        }
-
-        .btn-signin:hover {
-            background-color: #5568d3;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-signup {
-            background-color: #764ba2;
-            color: white;
-        }
-
-        .btn-signup:hover {
-            background-color: #6a3d91;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(118, 75, 162, 0.4);
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 25px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .buttons-group {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ngô Anh Kiệt - Frontend Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Welcome to SmartAds</h1>
-        <p class="description">
-            Manage your advertising campaigns and grow your business with our powerful AI-driven platform.
-            Sign in to access your account or create a new one to get started.
-        </p>
-        
-        <div class="buttons-group">
-            <a href="Authentication-Forms/Sign-in-form/sign-in.html" class="btn btn-signin">Sign In</a>
-            <a href="Authentication-Forms/Sign-up-form/sign-up.html" class="btn btn-signup">Sign Up</a>
+    <!-- TopNavBar -->
+    <nav class="navbar">
+        <div class="navbar__brand">Kyle</div>
+        <div class="navbar__links">
+            <a class="navbar__link navbar__link--active" href="#">Experience</a>
+            <a class="navbar__link" href="#ads">Ads Formats</a>
+            <a class="navbar__link" href="#auth">Auth UI</a>
+            <a class="navbar__link" href="#contact">Contact</a>
         </div>
-    </div>
+        <a class="button button--primary"
+            href="https://docs.google.com/document/d/12lRPJ54TZOc4VSmtwxLFWJXALwWDQ9YF/edit?usp=sharing&ouid=115319845882422998464&rtpof=true&sd=true"
+            target="_blank">
+            View Report
+        </a>
+    </nav>
+
+    <main class="page-main">
+        <!-- Section 1: Hero Banner -->
+        <section class="section hero-section">
+            <div class="hero-content">
+                <span class="hero-badge">PORTFOLIO OVERVIEW</span>
+                <h1 class="hero-title">Hi, I'm Ngô Anh Kiệt</h1>
+                <h2 class="hero-subtitle">Frontend Intern @ FPT Online - SmartAds</h2>
+                <p class="hero-text">Welcome to my portfolio! This page showcases the UI components I built during my
+                    'Frontend Intern Training Plan (HTML / CSS / JS)'. Below is a directory of all the advertising
+                    formats
+                    and authentication forms I developed from Figma designs.</p>
+                <div>
+                    <a class="button button--primary button--large"
+                        href="https://docs.google.com/document/d/12lRPJ54TZOc4VSmtwxLFWJXALwWDQ9YF/edit?usp=sharing&ouid=115319845882422998464&rtpof=true&sd=true"
+                        target="_blank">
+                        View Full Report
+                        <span class="material-symbols-outlined button__icon">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <img alt="A modern workstation setup for a frontend developer. The scene features a sleek, minimalist desk with dual monitors displaying lines of HTML and CSS code against a dark IDE background. Soft, ambient white light illuminates the workspace, reflecting off the pristine surfaces. The aesthetic is clean, technical, and highly organized, emphasizing an engineering mindset."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfLwjN-5elOSurwb7Py0E9ooH44C9QOuHKwsz65dYSKioUtW4l_U0bzPZj3aZpO7pAUqaj7iOJqBJyz1I5_kGQBwfbk34b6BC_iC9hwpPz-P2ll6XseF1zeziuKV6nbhvgnwhnNGb4BS9dOKfRIXzRLKmqitk7nbc8lTdeqxyUuA5eljZrZ6hTtMBw58-QbRLla1HjV_V_UGWqQJGixnilb1Zm8FiMf4DEjP52CeVB4Qun0xWdWl8KZ98a8SuRgzwMyIKXZ-R27p0" />
+                <div class="hero-visual__overlay"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Ads Formats Showcase -->
+        <section class="section ads-section" id="ads">
+            <div class="section-header">
+                <h2>Advertising UI Formats</h2>
+                <p>Responsive ad formats designed for various device screens, ensuring high visibility and seamless user
+                    experience across platforms.</p>
+            </div>
+
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Native Ads 1 format" src="./assets/images/native-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <h3>Native Ads 1</h3>
+                        <a class="button button--link" href="./CALL-API/1_NativeAds/native-ads1.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Native Ads 2 format" src="./assets/images/native-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <h3>Native Ads 2</h3>
+                        <a class="button button--link" href="./CALL-API/1_NativeAds/native-ads2.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Native Ads 3 format" src="./assets/images/native-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <h3>Native Ads 3</h3>
+                        <a class="button button--link" href="./CALL-API/1_NativeAds/native-ads3.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Brand Video ad format" src="./assets/images/brand-video-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Video Player</span>
+                            <span class="tag">UI</span>
+                        </div>
+                        <h3>Brand Video</h3>
+                        <a class="button button--link" href="./CALL-API/2_BrandVideo/brand-video.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Masthead ad banner format" src="./assets/images/masthead-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Hero Banner</span>
+                            <span class="tag">Grid</span>
+                        </div>
+                        <h3>Masthead</h3>
+                        <a class="button button--link" href="./CALL-API/3_Masthead/masthead.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="News 1 format" src="./assets/images/news-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Feed</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h3>News 1</h3>
+                        <a class="button button--link" href="./CALL-API/4_News/news1.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="News 2 format" src="./assets/images/news-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Feed</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h3>News 2</h3>
+                        <a class="button button--link" href="./CALL-API/4_News/news2.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="News 3 format" src="./assets/images/news-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Feed</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h3>News 3</h3>
+                        <a class="button button--link" href="./CALL-API/4_News/news3.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="News 4 format" src="./assets/images/news-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Feed</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h3>News 4</h3>
+                        <a class="button button--link" href="./CALL-API/4_News/news4.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="News 5 format" src="./assets/images/news-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Feed</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h3>News 5</h3>
+                        <a class="button button--link" href="./CALL-API/4_News_jquery/news5.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Sticky Mobile ad format" src="./assets/images/sticky-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Fixed</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                        <h3>Sticky Mobile</h3>
+                        <a class="button button--link" href="./CALL-API/5_Sticky/sticky-mobile.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Sticky Web ad format" src="./assets/images/sticky-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Fixed</span>
+                            <span class="tag">Desktop</span>
+                        </div>
+                        <h3>Sticky Web</h3>
+                        <a class="button button--link" href="./CALL-API/5_Sticky/sticky-web.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Video Ads 1 format" src="./assets/images/video-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Video</span>
+                            <span class="tag">Player</span>
+                        </div>
+                        <h3>Video Ads 1</h3>
+                        <a class="button button--link" href="./CALL-API/6_VideoAds/video-ads1.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Video Ads 2 format" src="./assets/images/video-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Video</span>
+                            <span class="tag">Player</span>
+                        </div>
+                        <h3>Video Ads 2</h3>
+                        <a class="button button--link" href="./CALL-API/6_VideoAds/video-ads2.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Video Ads 3 format" src="./assets/images/video-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Video</span>
+                            <span class="tag">Player</span>
+                        </div>
+                        <h3>Video Ads 3</h3>
+                        <a class="button button--link" href="./CALL-API/6_VideoAds/video-ads3.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Video Ads 4 format" src="./assets/images/video-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">Video</span>
+                            <span class="tag">Player</span>
+                        </div>
+                        <h3>Video Ads 4</h3>
+                        <a class="button button--link" href="./CALL-API/6_VideoAds/video-ads4.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Shopping Ads 1 format" src="./assets/images/shopping-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Grid</span>
+                        </div>
+                        <h3>Shopping Ads 1</h3>
+                        <a class="button button--link" href="./CALL-API/7_ShoppingAds/shopping-ads1.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__media">
+                        <img alt="Shopping Ads 2 format" src="./assets/images/shopping-ads-preview.png" />
+                    </div>
+                    <div class="card__body">
+                        <div class="tag-list">
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Grid</span>
+                        </div>
+                        <h3>Shopping Ads 2</h3>
+                        <a class="button button--link" href="./CALL-API/7_ShoppingAds/shopping-ads2.html">View Demo
+                            <span class="material-symbols-outlined button__icon">arrow_outward</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 3: Auth UI Forms -->
+        <section class="section auth-section" id="auth">
+            <div class="section-header">
+                <h2>Authentication UI Forms</h2>
+                <p>Interactive forms with Javascript validation and dynamic features, focusing on secure and intuitive
+                    user
+                    onboarding flows.</p>
+            </div>
+
+            <div class="cards-grid cards-grid--small">
+                <article class="card card--stacked">
+                    <div class="card__icon">
+                        <span class="material-symbols-outlined">login</span>
+                    </div>
+                    <h3>Sign-in Form</h3>
+                    <p>Standard login interface with client-side validation and error state handling.</p>
+                    <a class="button button--outline" href="./Authentication-Forms/Sign-in-form/sign-in.html">View
+                        Demo</a>
+                </article>
+
+                <article class="card card--stacked">
+                    <div class="card__icon">
+                        <span class="material-symbols-outlined">person_add</span>
+                    </div>
+                    <h3>Sign-up Form</h3>
+                    <p>Multi-step registration for Advertiser &amp; Publisher roles with conditional fields.</p>
+                    <a class="button button--outline" href="./Authentication-Forms/Sign-up-form/sign-up.html">View
+                        Demo</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contact">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span>Ngô Anh Kiệt</span>
+                <span>© 2026 Ngô Anh Kiệt. Saigon Technology University (STU).</span>
+            </div>
+            <div class="footer__links">
+                <a aria-label="GitHub" href="https://github.com/Kyle-854" target="_blank"><span
+                        class="material-symbols-outlined">code</span></a>
+                <a aria-label="LinkedIn" href="https://www.linkedin.com/in/anh-ki%E1%BB%87t-ng%C3%B4-18b78938b/"
+                    target="_blank"><span class="material-symbols-outlined">work</span></a>
+                <a aria-label="Email" href="https://mail.google.com/mail/?view=cm&fs=1&to=anhkietngo0805@gmail.com"
+                    target="_blank"><span class="material-symbols-outlined">mail</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
